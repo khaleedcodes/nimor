@@ -13,10 +13,19 @@ type NavLinkProp = LinkType;
 type ButtonProp = {
   children: React.ReactNode;
 };
+type ProjectCardProps = {
+  projectImage: string;
+  projectTitle: string;
+  overlayProjectDescription: string;
+  link: string;
+  technologies: string;
+  linkName: string;
+};
 export type {
   PageLayoutProp,
   HamBurgerProps,
   LinkType,
   NavLinkProp,
   ButtonProp,
+  ProjectCardProps
 };
