@@ -17,20 +17,19 @@ function ProjectCard({
     <div
       onMouseEnter={toggleOverLay}
       onMouseLeave={toggleOverLay}
-      className="rounded-lg text-lg basis-[600px] border border-blue-900"
+      className="flex flex-col gap-4 basis-[600px]"
     >
-      <div className="flex flex-col justify-center w-full items-center">
+      <div className="flex flex-col justify-center w-full items-center rounded-lg overflow-hidden border">
         <a className="" href={link}>
-          <img
-            className="border border-red-600 w-full h-full"
-            src={projectImage}
-          />
+          <img className="w-full h-full" src={projectImage} />
         </a>
       </div>
-      <div>
-        <p>{projectTitle}</p>
+      <div className="flex flex-col gap-2">
+        <div className="flex justify-between">
+          <p className="font-bold">{projectTitle}</p>
+          <a href={link} className="text-first-accent hover:underline">{linkName}</a>
+        </div>
         <p>{overlayProjectDescription}</p>
-        <a href={link}>{linkName}</a>
       </div>
     </div>
   );

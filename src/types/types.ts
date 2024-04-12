@@ -13,6 +13,9 @@ type NavLinkProp = LinkType;
 type ButtonProp = {
   children: React.ReactNode;
 };
+type SectionHeaderProp = {
+  children: React.ReactNode;
+};
 type ProjectCardProps = {
   projectImage: string;
   projectTitle: string;
@@ -27,5 +30,6 @@ export type {
   LinkType,
   NavLinkProp,
   ButtonProp,
-  ProjectCardProps
+  ProjectCardProps,
+  SectionHeaderProp,
 };

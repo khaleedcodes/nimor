@@ -6,7 +6,7 @@ import FeedbacksSection from "./FeedbacksSection";
 import FaqSection from "./FaqSection";
 export default function LandingPage() {
   return (
-    <div className="w-full border border-blue-400">
+    <div className="w-full">
       <HeroSection />
       <ClientCarousel />
       <ProjectsSection />
