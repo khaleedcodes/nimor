@@ -21,13 +21,13 @@ function ProjectCard({
     >
       <div className="flex flex-col justify-center w-full items-center rounded-lg overflow-hidden border">
         <a className="" href={link}>
-          <img className="w-full h-full" src={projectImage} />
+          <img className="w-full h-full hover:scale-105 transition duration-300" src={projectImage} />
         </a>
       </div>
       <div className="flex flex-col gap-2">
         <div className="flex justify-between">
           <p className="font-bold">{projectTitle}</p>
-          <a href={link} className="text-first-accent hover:underline">{linkName}</a>
+          <a href={link} className="text-first-accent hover:underline hover:text-second-accent transition duration-300">{linkName}</a>
         </div>
         <p>{overlayProjectDescription}</p>
       </div>
