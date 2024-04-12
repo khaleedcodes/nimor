@@ -74,8 +74,8 @@ const faqs: FaqType[] = [
 function FaqList() {
   return (
     <div className="flex flex-col gap-4">
-      {faqs.map(({ question, answer }) => {
-        return <FaqItem question={question} answer={answer} />;
+      {faqs.map(({ question, answer }, index) => {
+        return <FaqItem question={question} answer={answer} key={index} />;
       })}
     </div>
   );
