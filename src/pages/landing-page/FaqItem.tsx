@@ -1,7 +1,26 @@
-function FaqItem() {
+import { useState } from "react";
+import Arrow from "../../assets/icons/Arrow";
+import { FaqItemProp } from "../../types/types";
+
+function FaqItem({ question, answer }: FaqItemProp) {
+  const [isActive, setIsActive] = useState(false);
+  function toggleIsActive() {
+    setIsActive((isActive) => !isActive);
+    console.log(isActive);
+  }
   return (
-    <div>FaqItem</div>
-  )
+    <div
+      className={`bg-[rgb(96,76,199,0.05)] ${
+        isActive ? "" : "h-16"
+      } overflow-hidden`}
+    >
+      <div className="flex items-center justify-between p-4">
+        <p className="text-first-accent font-bold">{question}</p>
+        <Arrow toggleIsActive={toggleIsActive} />
+      </div>
+      <p className="pb-4 pl-4 pr-4 text-second-accent">{answer}</p>
+    </div>
+  );
 }
 
-export default FaqItem
+export default FaqItem;

@@ -24,6 +24,14 @@ type ProjectCardProps = {
   technologies: string;
   linkName: string;
 };
+type ArrowProp = {
+  toggleIsActive: () => void;
+};
+type FaqType = {
+  question: string;
+  answer: string;
+};
+type FaqItemProp = FaqType;
 export type {
   PageLayoutProp,
   HamBurgerProps,
@@ -32,4 +40,7 @@ export type {
   ButtonProp,
   ProjectCardProps,
   SectionHeaderProp,
+  ArrowProp,
+  FaqItemProp,
+  FaqType,
 };
