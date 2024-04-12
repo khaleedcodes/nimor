@@ -17,21 +17,11 @@ function ProjectList() {
       technologies: "React & Tailwind",
     },
     {
-      projectImage: rentease,
-      projectTitle: "Rentease",
-      overlayProjectDescription:
-        "Rentease Simplifies rentals by providing transparency and scam prevention for both landlords and tenants.",
-      cardID: 2,
-      link: "https://renteasenow.netlify.app/",
-      linkName: "renteasenow.netlify.com",
-      technologies: "MERN Stack",
-    },
-    {
       projectImage: nairaupdatesng,
       projectTitle: "₦airaupdatesng",
       overlayProjectDescription:
         "₦airaupdatesng is an X bot that delivers instant exchange rate updates of the Nigerian Naira to your timeline.",
-      cardID: 3,
+      cardID: 2,
       link: "https://nairaupdatesng.netlify.app/bot",
       linkName: "nairaupdatesng.netlify.com",
       technologies: "Python, React & Tailwind",
@@ -41,10 +31,20 @@ function ProjectList() {
       projectTitle: "Bundleup",
       overlayProjectDescription:
         "Bundleup is a platform for showcasing all your links with just one click.",
-      cardID: 4,
+      cardID: 3,
       link: "https://bundleup.us",
       linkName: "bundleup.us",
       technologies: "React & Tailwind",
+    },
+    {
+      projectImage: rentease,
+      projectTitle: "Rentease",
+      overlayProjectDescription:
+        "Rentease Simplifies rentals by providing transparency and scam prevention for both landlords and tenants.",
+      cardID: 4,
+      link: "https://renteasenow.netlify.app/",
+      linkName: "renteasenow.netlify.com",
+      technologies: "MERN Stack",
     },
   ];
   return (
