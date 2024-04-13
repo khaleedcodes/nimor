@@ -12,15 +12,21 @@ function FaqItem({ question, answer }: FaqItemProp) {
       onClick={() => {
         toggleIsActive();
       }}
-      className={`cursor-pointer transition-all duration-300 bg-[rgb(96,76,199,0.03)] ${
-        isActive ? "" : "h-16 max-sm:h-[6rem]"
+      className={`cursor-pointer rounded-md transition-all duration-300 bg-[rgb(96,76,199,0.03)] ${
+        isActive ? "" : "h-16 max-sm:h-20 max-smallest:h-24"
       } overflow-hidden`}
     >
-      <div className="flex items-center justify-between p-4 max-sm:p-[1.4rem] gap-4">
+      <div className="flex items-center justify-between gap-4 p-4">
         <p className="text-first-accent font-bold">{question}</p>
         <Arrow isActive={isActive} />
       </div>
-      <p className="pb-4 pl-4 pr-4 text-second-accent">{answer}</p>
+      <p
+        className={`pb-4 pl-4 pr-4  text-second-accent ${
+          isActive ? "" : "max-sm:pt-4 max-smallest:pt-7"
+        }`}
+      >
+        {answer}
+      </p>
     </div>
   );
 }
