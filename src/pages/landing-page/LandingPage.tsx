@@ -1,17 +1,17 @@
 import HeroSection from "./HeroSection";
-import ClientCarousel from "./ClientCarousel";
+// import ClientCarousel from "./ClientCarousel";
 import ProjectsSection from "./ProjectsSection";
 import ProjectRoadmap from "./ProjectRoadmap";
-import FeedbacksSection from "./FeedbacksSection";
+// import FeedbacksSection from "./FeedbacksSection";
 import FaqSection from "./FaqSection";
 export default function LandingPage() {
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col gap-4">
       <HeroSection />
-      <ClientCarousel />
+      {/* <ClientCarousel /> */}
       <ProjectsSection />
       <ProjectRoadmap />
-      <FeedbacksSection />
+      {/* <FeedbacksSection /> */}
       <FaqSection />
     </div>
   );

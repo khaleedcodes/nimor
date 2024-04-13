@@ -10,7 +10,10 @@ function FaqItem({ question, answer }: FaqItemProp) {
   }
   return (
     <div
-      className={`bg-[rgb(96,76,199,0.05)] ${
+      // onClick={() => {
+      //   toggleIsActive();
+      // }}
+      className={`bg-[rgb(96,76,199,0.03)] ${
         isActive ? "" : "h-16"
       } overflow-hidden`}
     >
