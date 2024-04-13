@@ -1,6 +1,7 @@
 import SectionHeader from "../../components/SectionHeader";
 import "../../styles/feedback.css";
-import photo1 from "../../assets/images/image-daniel.jpg";
+// import photo1 from "../../assets/images/image-daniel.jpg";
+import photo1 from "../../assets/images/profile1.jpeg";
 import photo2 from "../../assets/images/image-jeanette.jpg";
 import photo3 from "../../assets/images/image-jonathan.jpg";
 import photo4 from "../../assets/images/image-kira.jpg";
@@ -19,15 +20,15 @@ function FeedbacksSection() {
                   <img src={photo1} alt="daniel clifford" />
                 </div>
                 <div>
-                  <h2 className="name">Daniel Clifford</h2>
-                  <p className="position">Verified Graduate</p>
+                  <h2 className="name">Khaleed Opeloyeru</h2>
+                  <p className="position">Verified Client</p>
                 </div>
               </div>
               <p>
-                "I couldn't be happier with the website Nimor created for my
-                business. From the initial consultation to the final launch,
-                they were professional, creative, and focused on meeting my
-                needs. Thank you for a job well done!"
+                " Thanks to Nimor, my web portfolio is now sleek, professional,
+                and gets me noticed. They nailed the design and made it easy for
+                potential clients to see my work. Highly recommend their
+                services! "
               </p>
             </article>
             <article className="testimonial flow bg-secondary-400 text-neutral-100">
@@ -37,14 +38,14 @@ function FeedbacksSection() {
                 </div>
                 <div>
                   <h2 className="name">Jonathan Walters</h2>
-                  <p className="position">Verified Graduate</p>
+                  <p className="position">Verified Client</p>
                 </div>
               </div>
               <p>
-                "I was impressed by the level of expertise Nimor brought to the
+                " I was impressed by the level of expertise Nimor brought to the
                 table. They guided me through the entire process, offered
                 valuable insights, and delivered a website that perfectly
-                captures the essence of my brand. Highly recommended!"
+                captures the essence of my brand. Highly recommended! "
               </p>
             </article>
             <article className="testimonial flow bg-neutral-100 text-secondary-400">
@@ -54,15 +55,15 @@ function FeedbacksSection() {
                 </div>
                 <div>
                   <h2 className="name">Jeanette Harmon</h2>
-                  <p className="position">Verified Graduate</p>
+                  <p className="position">Verified Client</p>
                 </div>
               </div>
               <p>
-                “Nimor's attention to detail and commitment to excellence set
+                “ Nimor's attention to detail and commitment to excellence set
                 them apart from other agencies. They were patient,
                 communicative, and went above and beyond to ensure my
                 satisfaction. I'm thrilled with my new website and grateful for
-                their hard work."
+                their hard work. "
               </p>
             </article>
             <article className="testimonial grid-col-span-2 flow bg-secondary-500 text-neutral-100">
@@ -76,14 +77,14 @@ function FeedbacksSection() {
                 </div>
                 <div>
                   <h2 className="name">Patrick Abrams</h2>
-                  <p className="position">Verified Graduate</p>
+                  <p className="position">Verified Client</p>
                 </div>
               </div>
               <p>
-                “Nimor exceeded my expectations in every way. They took the time
+                “ Nimor exceeded my expectations in every way. They took the time
                 to understand my vision and brought it to life with a stunning
                 website design. I'm thrilled with the results and would
-                definitely work with them again."
+                definitely work with them again. "
               </p>
             </article>
             <article className="testimonial flow bg-neutral-100 text-secondary-400">
@@ -93,16 +94,16 @@ function FeedbacksSection() {
                 </div>
                 <div>
                   <h2 className="name">Kira Whittle</h2>
-                  <p className="position">Verified Graduate</p>
+                  <p className="position">Verified Client</p>
                 </div>
               </div>
               <p>
-                "I am incredibly impressed with Nimor's professionalism and
+                " I am incredibly impressed with Nimor's professionalism and
                 dedication to their craft. They took the time to understand my
                 business goals and delivered a website that not only looks great
                 but also drives results. Working with Nimor was a seamless
                 experience, and I would highly recommend them to anyone looking
-                for top-notch web design services."
+                for top-notch web design services. "
               </p>
             </article>
           </main>
