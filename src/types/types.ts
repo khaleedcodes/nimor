@@ -25,7 +25,7 @@ type ProjectCardProps = {
   linkName: string;
 };
 type ArrowProp = {
-  toggleIsActive: () => void;
+  isActive: boolean;
 };
 type FaqType = {
   question: string;

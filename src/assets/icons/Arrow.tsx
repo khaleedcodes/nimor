@@ -1,11 +1,10 @@
 import { ArrowProp } from "../../types/types";
-function Arrow({ toggleIsActive }: ArrowProp) {
+function Arrow({ isActive }: ArrowProp) {
   return (
     <div
-      className="cursor-pointer"
-      onClick={() => {
-        toggleIsActive();
-      }}
+      className={`transition-all duration-300 ${
+        isActive ? "rotate-180" : ""
+      }`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -6,20 +6,19 @@ function FaqItem({ question, answer }: FaqItemProp) {
   const [isActive, setIsActive] = useState(false);
   function toggleIsActive() {
     setIsActive((isActive) => !isActive);
-    console.log(isActive);
   }
   return (
     <div
-      // onClick={() => {
-      //   toggleIsActive();
-      // }}
-      className={`bg-[rgb(96,76,199,0.03)] ${
+      onClick={() => {
+        toggleIsActive();
+      }}
+      className={`cursor-pointer transition-all duration-300 bg-[rgb(96,76,199,0.03)] ${
         isActive ? "" : "h-16"
       } overflow-hidden`}
     >
       <div className="flex items-center justify-between p-4">
         <p className="text-first-accent font-bold">{question}</p>
-        <Arrow toggleIsActive={toggleIsActive} />
+        <Arrow isActive={isActive} />
       </div>
       <p className="pb-4 pl-4 pr-4 text-second-accent">{answer}</p>
     </div>

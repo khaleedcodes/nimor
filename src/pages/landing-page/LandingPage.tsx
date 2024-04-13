@@ -2,7 +2,7 @@ import HeroSection from "./HeroSection";
 // import ClientCarousel from "./ClientCarousel";
 import ProjectsSection from "./ProjectsSection";
 // import ProjectRoadmap from "./ProjectRoadmap";
-// import FeedbacksSection from "./FeedbacksSection";
+import FeedbacksSection from "./FeedbacksSection";
 import FaqSection from "./FaqSection";
 export default function LandingPage() {
   return (
@@ -11,7 +11,7 @@ export default function LandingPage() {
       {/* <ClientCarousel /> */}
       <ProjectsSection />
       {/* <ProjectRoadmap /> */}
-      {/* <FeedbacksSection /> */}
+      <FeedbacksSection />
       <FaqSection />
     </div>
   );
