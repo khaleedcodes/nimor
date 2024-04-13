@@ -13,10 +13,10 @@ function FaqItem({ question, answer }: FaqItemProp) {
         toggleIsActive();
       }}
       className={`cursor-pointer transition-all duration-300 bg-[rgb(96,76,199,0.03)] ${
-        isActive ? "" : "h-16 max-sm:h-[4.5rem]"
+        isActive ? "" : "h-16 max-sm:h-[6rem]"
       } overflow-hidden`}
     >
-      <div className="flex items-center justify-between p-4 max-sm:p-[1.3rem] gap-4">
+      <div className="flex items-center justify-between p-4 max-sm:p-[1.4rem] gap-4">
         <p className="text-first-accent font-bold">{question}</p>
         <Arrow isActive={isActive} />
       </div>
