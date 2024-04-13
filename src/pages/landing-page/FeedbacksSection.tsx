@@ -1,5 +1,10 @@
 import SectionHeader from "../../components/SectionHeader";
 import "../../styles/feedback.css";
+import photo1 from "../../assets/images/image-daniel.jpg";
+import photo2 from "../../assets/images/image-jeanette.jpg";
+import photo3 from "../../assets/images/image-jonathan.jpg";
+import photo4 from "../../assets/images/image-kira.jpg";
+import photo5 from "../../assets/images/image-patrick.jpg";
 
 function FeedbacksSection() {
   return (
@@ -8,21 +13,16 @@ function FeedbacksSection() {
         <SectionHeader>Feedbacks</SectionHeader>
         <div className="feedback-body">
           <main className="testimonial-grid">
-            <article className="testimonial grid-col-span-2 flow bg-primary-400 quote text-neutral-100">
+            <article className="testimonial grid-col-span-2 flow quote text-neutral-100 bg-first-accent">
               <div className="flex">
                 <div>
-                  <img src="./images/image-daniel.jpg" alt="daniel clifford" />
+                  <img src={photo1} alt="daniel clifford" />
                 </div>
                 <div>
                   <h2 className="name">Daniel Clifford</h2>
                   <p className="position">Verified Graduate</p>
                 </div>
               </div>
-              {/* <p>
-                I received a job offer mid-course, and the subjects I learned
-                were current, if not more so, in the company I joined. I
-                honestly feel I got every penny’s worth.
-              </p> */}
               <p>
                 "I couldn't be happier with the website Nimor created for my
                 business. From the initial consultation to the final launch,
@@ -33,17 +33,13 @@ function FeedbacksSection() {
             <article className="testimonial flow bg-secondary-400 text-neutral-100">
               <div className="flex">
                 <div>
-                  <img
-                    src="./images/image-jonathan.jpg"
-                    alt="Jonathan Walters"
-                  />
+                  <img src={photo2} alt="Jonathan Walters" />
                 </div>
                 <div>
                   <h2 className="name">Jonathan Walters</h2>
                   <p className="position">Verified Graduate</p>
                 </div>
               </div>
-              {/* <p>The team was very supportive and kept me motivated</p> */}
               <p>
                 "I was impressed by the level of expertise Nimor brought to the
                 table. They guided me through the entire process, offered
@@ -54,17 +50,13 @@ function FeedbacksSection() {
             <article className="testimonial flow bg-neutral-100 text-secondary-400">
               <div className="flex">
                 <div>
-                  <img
-                    src="./images/image-jeanette.jpg"
-                    alt="Jeanette Harmon"
-                  />
+                  <img src={photo3} alt="Jeanette Harmon" />
                 </div>
                 <div>
                   <h2 className="name">Jeanette Harmon</h2>
                   <p className="position">Verified Graduate</p>
                 </div>
               </div>
-              {/* <p>An overall wonderful and rewarding experience</p> */}
               <p>
                 “Nimor's attention to detail and commitment to excellence set
                 them apart from other agencies. They were patient,
@@ -78,7 +70,7 @@ function FeedbacksSection() {
                 <div>
                   <img
                     className="border-primary-400"
-                    src="./images/image-patrick.jpg"
+                    src={photo4}
                     alt="Patrick Abrams"
                   />
                 </div>
@@ -87,11 +79,6 @@ function FeedbacksSection() {
                   <p className="position">Verified Graduate</p>
                 </div>
               </div>
-              {/* <p>
-                Awesome teaching support from TAs who did the bootcamp
-                themselves. Getting guidance from them and learning from their
-                experiences was easy.
-              </p> */}
               <p>
                 “Nimor exceeded my expectations in every way. They took the time
                 to understand my vision and brought it to life with a stunning
@@ -102,14 +89,13 @@ function FeedbacksSection() {
             <article className="testimonial flow bg-neutral-100 text-secondary-400">
               <div className="flex">
                 <div>
-                  <img src="./images/image-kira.jpg" alt="Kira Whittle" />
+                  <img src={photo5} alt="Kira Whittle" />
                 </div>
                 <div>
                   <h2 className="name">Kira Whittle</h2>
                   <p className="position">Verified Graduate</p>
                 </div>
               </div>
-              {/* <p>Such a life-changing experience. Highly recommended!</p> */}
               <p>
                 "I am incredibly impressed with Nimor's professionalism and
                 dedication to their craft. They took the time to understand my
