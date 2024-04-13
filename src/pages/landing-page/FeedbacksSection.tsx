@@ -1,11 +1,10 @@
 import SectionHeader from "../../components/SectionHeader";
 import "../../styles/feedback.css";
-// import photo1 from "../../assets/images/image-daniel.jpg";
 import photo1 from "../../assets/images/profile1.jpeg";
-import photo2 from "../../assets/images/image-jeanette.jpg";
-import photo3 from "../../assets/images/image-jonathan.jpg";
-import photo4 from "../../assets/images/image-kira.jpg";
-import photo5 from "../../assets/images/image-patrick.jpg";
+import photo2 from "../../assets/images/profile2.jpeg";
+import photo3 from "../../assets/images/profile3.png";
+import photo4 from "../../assets/images/profile5.png";
+import photo5 from "../../assets/images/profile4.png";
 
 function FeedbacksSection() {
   return (
@@ -17,7 +16,7 @@ function FeedbacksSection() {
             <article className="testimonial grid-col-span-2 flow quote text-neutral-100 bg-first-accent">
               <div className="flex">
                 <div>
-                  <img src={photo1} alt="daniel clifford" />
+                  <img src={photo1} alt="Khaleed Opeloyeru" />
                 </div>
                 <div>
                   <h2 className="name">Khaleed Opeloyeru</h2>
@@ -51,10 +50,10 @@ function FeedbacksSection() {
             <article className="testimonial flow bg-neutral-100 text-secondary-400">
               <div className="flex">
                 <div>
-                  <img src={photo3} alt="Jeanette Harmon" />
+                  <img src={photo3} alt="₦airaupdatesng" />
                 </div>
                 <div>
-                  <h2 className="name">Jeanette Harmon</h2>
+                  <h2 className="name">₦airaupdatesng</h2>
                   <p className="position">Verified Client</p>
                 </div>
               </div>
@@ -76,14 +75,14 @@ function FeedbacksSection() {
                   />
                 </div>
                 <div>
-                  <h2 className="name">Patrick Abrams</h2>
+                  <h2 className="name">Rentease</h2>
                   <p className="position">Verified Client</p>
                 </div>
               </div>
               <p>
-                “ Nimor exceeded my expectations in every way. They took the time
-                to understand my vision and brought it to life with a stunning
-                website design. I'm thrilled with the results and would
+                “ Nimor exceeded my expectations in every way. They took the
+                time to understand my vision and brought it to life with a
+                stunning website design. I'm thrilled with the results and would
                 definitely work with them again. "
               </p>
             </article>
@@ -93,7 +92,7 @@ function FeedbacksSection() {
                   <img src={photo5} alt="Kira Whittle" />
                 </div>
                 <div>
-                  <h2 className="name">Kira Whittle</h2>
+                  <h2 className="name">Bundleup</h2>
                   <p className="position">Verified Client</p>
                 </div>
               </div>
