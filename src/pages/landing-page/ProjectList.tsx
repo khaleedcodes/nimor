@@ -1,8 +1,8 @@
 import ProjectCard from "./ProjectCard";
 import nairaupdatesng from "../../assets/images/nairaupdatesng.png";
 import bundleup from "../../assets/images/bundleup.png";
-import rentease from "../../assets/images/rentease.png";
 import khaleedPortfolio from "../../assets/images/khaleed-portfolio.png";
+import quizwave from "../../assets/images/quizwave.png";
 
 function ProjectList() {
   const projectData = [
@@ -37,14 +37,14 @@ function ProjectList() {
       technologies: "React & Tailwind",
     },
     {
-      projectImage: rentease,
-      projectTitle: "Rentease",
+      projectImage: quizwave,
+      projectTitle: "Quizwave",
       overlayProjectDescription:
-        "Rentease Simplifies rentals by providing transparency and scam prevention for both landlords and tenants.",
+        "Quizwave is a sleek and user-friendly quiz app perfect for studying or testing your knowledge.",
       cardID: 4,
-      link: "https://renteasenow.netlify.app/",
-      linkName: "renteasenow.netlify.com",
-      technologies: "MERN Stack",
+      link: "https://quizwave.co",
+      linkName: "quizwave.co",
+      technologies: "React & Tailwind",
     },
   ];
   return (
