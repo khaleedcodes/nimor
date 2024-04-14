@@ -1,5 +1,5 @@
 import Button from "../../components/Button";
-import ClientCarousel from "./ClientCarousel";
+// import ClientCarousel from "./ClientCarousel";
 function HeroSection() {
   return (
     <div
@@ -18,7 +18,7 @@ function HeroSection() {
         </h1>
         <Button>Start a project with us</Button>
       </div>
-      <ClientCarousel />
+      {/* <ClientCarousel /> */}
     </div>
   );
 }
