@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 
 function PageLayout({ children }: PageLayoutProp) {
   return (
-    <div className="flex flex-col border">
+    <div className="flex flex-col gap-0">
       <NavBar />
       {children}
       <Footer />
