@@ -1,7 +1,25 @@
 import QuestionMark from "../../assets/icons/QuestionMark";
+import { useNavigate } from "react-router-dom";
 
 function ContactForm() {
-  
+  const navigate = useNavigate();
+  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const myForm = document.getElementById("contact-form") as HTMLFormElement | null;
+    if (myForm) {
+      const formData = new FormData(myForm);
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then(() => navigate("/submitted"))
+        .catch((error) => alert(error));
+    } else {
+      console.error("Form element not found.");
+    }
+  };
+
   return (
     <div
       className="basis-[422px] grow flex rounded-md flex-col justify-start items-center gap-8"
@@ -21,7 +39,8 @@ function ContactForm() {
         name="contact"
         className="flex flex-col gap-4 w-full items-center "
         method="POST"
-        action="/submitted"
+        onSubmit={submitHandler}
+        // action="/submitted"
       >
         <input type="hidden" name="form-name" value="contact" />
         <input
