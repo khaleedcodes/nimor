@@ -13,11 +13,6 @@ const faqs: FaqType[] = [
       "We offer a comprehensive range of web design and development services, including custom website design, front-end development, website maintenance, and more.",
   },
   {
-    question: "How is Nimor different from other agencies?",
-    answer:
-      "Nimor stands out from other agencies through our commitment to personalized service, attention to detail, and dedication to delivering exceptional results. We take the time to understand each client's unique goals and challenges, and tailor our solutions to meet their specific needs. Our collaborative approach, transparent communication, and focus on customer satisfaction set us apart in the industry.",
-  },
-  {
     question: "How much does a website cost?",
     answer:
       "The cost of a website varies depending on factors such as complexity, features, design requirements, and functionality. We provide personalized quotes tailored to each client's specific needs and budget.",
