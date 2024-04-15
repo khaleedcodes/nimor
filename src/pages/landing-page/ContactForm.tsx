@@ -1,8 +1,23 @@
 import QuestionMark from "../../assets/icons/QuestionMark";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 function ContactForm() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  // const handleSubmit = (event: ) => {
+  //   event.preventDefault();
+  
+  //   const myForm = event.target;
+  //   const formData = new FormData(myForm);
+  
+  //   fetch("/", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //     body: new URLSearchParams(formData).toString(),
+  //   })
+  //     .then(() => navigate("/thank-you/"))
+  //     .catch((error) => alert(error));
+  // };
+  
   return (
     <div
       className="basis-[422px] grow flex rounded-md flex-col justify-start items-center gap-8"
@@ -22,11 +37,12 @@ function ContactForm() {
         name="contact"
         className="flex flex-col gap-4 w-full items-center "
         method="POST"
-        onSubmit={(e) => {
-          e.preventDefault();
-          navigate("/submitted");
-          console.log("submitted");
-        }}
+        action="/"
+        // onSubmit={(e) => {
+        //   e.preventDefault();
+        //   navigate("/submitted");
+        //   console.log("submitted");
+        // }}
       >
         <input type="hidden" name="form-name" value="contact" />
         <input
