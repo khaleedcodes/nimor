@@ -16,7 +16,7 @@ function HeroSection() {
           Make your mark on the web with{" "}
           <span className="text-first-accent">Nimor</span>
         </h1>
-        <Button>Start a project with us</Button>
+        <Button classes="pt-3 pb-3 pl-10 pr-10">Start a project with us</Button>
       </div>
       {/* <ClientCarousel /> */}
     </div>

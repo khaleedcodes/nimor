@@ -6,7 +6,7 @@ function NavBar() {
       <nav className="justify-between items-center flex p-4 w-full">
         <WordMark />
         <div className="flex items-center gap-8">
-          <Button>Start a Project</Button>
+          <Button classes="pt-3 pb-3 pl-10 pr-10">Start a Project</Button>
         </div>
       </nav>
     </div>

@@ -16,15 +16,6 @@ function SolutionCard({
           <p className="text-center text-gray-600">{solution}</p>
         </div>
       </div>
-      {/* <div className="flex flex-col gap-2 items-center border rounded-md">
-        <img className="w-10 h-10" src={modern} alt="" />
-        <p className="text-center">Modern Website Designs by Nimor</p>
-        <p className="text-center">
-          Nimor can provide modern and visually appealing website designs that
-          captivate audiences, improve user experience, and reflect the
-          professionalism of the business.
-        </p>
-      </div> */}
     </div>
   );
 }

@@ -14,6 +14,7 @@ type LinkType = {
 type NavLinkProp = LinkType;
 type ButtonProp = {
   children: React.ReactNode;
+  classes? : string;
 };
 type SectionHeaderProp = {
   children: React.ReactNode;

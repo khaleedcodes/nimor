@@ -9,7 +9,9 @@ function SolutionsSection() {
           Solutions for Your Online Success with Nimor
         </SectionHeader>
         <SolutionList />
-        <Button>Make your mark on the web with Nimor</Button>
+        <Button classes="text-2xl pt-8 pb-8 pl-20 pr-20 max-sm:text-lg">
+          Make your mark on the web with Nimor
+        </Button>
       </div>
     </div>
   );
