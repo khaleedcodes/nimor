@@ -25,7 +25,7 @@ const faqs: FaqType[] = [
   {
     question: "How quickly can you complete a website?",
     answer:
-      "We understand the importance of timely delivery. The timeline for website development varies depending on the scope and requirements of the project. Typically, we can complete a simple website within a week. For more complex projects, the time-frame may extend to several weeks. However, we also offer expedited services for urgent projects, ensuring that your website is delivered as quickly as possible without compromising quality.",
+      "We understand the importance of timely delivery. The timeline for website development varies depending on the scope and requirements of the project. Typically, we can complete a simple website within a week. For more complex projects, the time-frame may extend to two weeks. However, we also offer expedited services for urgent projects, ensuring that your website is delivered as quickly as possible without compromising quality.",
   },
   {
     question: "Are there any refunds if I don't like the service?",
@@ -42,12 +42,6 @@ const faqs: FaqType[] = [
     question: "Do you provide ongoing support after the website is launched?",
     answer:
       "Absolutely! we offer ongoing support and maintenance services to ensure your website stays current with the latest trends and technologies. Our support packages include bug fixes and technical assistance as needed.",
-  },
-  {
-    question:
-      "How do you ensure websites are mobile-friendly (responsive design)?",
-    answer:
-      "We design and develop websites with responsive design principles, ensuring they adapt seamlessly to different screen sizes and devices. Our goal is to provide an optimal user experience across all devices",
   },
   {
     question: "What is your process for website design and development?",
