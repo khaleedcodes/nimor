@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/success",
+    path: "/submitted",
     element: <FormSubmittedPage />,
   },
 ]);
