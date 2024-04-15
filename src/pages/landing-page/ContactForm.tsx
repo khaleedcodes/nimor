@@ -4,7 +4,7 @@ function ContactForm() {
   return (
     <div
       className="basis-[422px] grow flex rounded-md flex-col justify-start items-center gap-8"
-      id="contact-form"
+      id="contact"
     >
       <div className="flex flex-col items-center gap-2 bg-[rgb(96,76,199,0.03)] p-4 w-full rounded-md">
         <div className="flex">
@@ -20,7 +20,7 @@ function ContactForm() {
         name="contact"
         className="flex flex-col gap-4 w-full items-center "
         method="POST"
-        action="/"
+        action="/success"
       >
         <input type="hidden" name="form-name" value="contact" />
         <input

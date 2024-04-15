@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./pages/landing-page/LandingPage";
 import PageLayout from "./pages/layout-page/LayoutPage";
 import ErrorPage from "./pages/error-page/ErrorPage";
+import FormSubmittedPage from "./pages/form-submitted-page/FormSubmittedPage";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
       </PageLayout>
     ),
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/success",
+    element: <FormSubmittedPage />,
   },
 ]);
 
