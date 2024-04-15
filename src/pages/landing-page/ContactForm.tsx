@@ -10,7 +10,6 @@ function ContactForm() {
     const myForm = event.target;
     const formData = new FormData(myForm);
 
-    // Convert FormData to URLSearchParams
     const searchParams = new URLSearchParams();
     formData.forEach((value, key) => {
       searchParams.append(key, value as string);
@@ -19,11 +18,10 @@ function ContactForm() {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      // body: new URLSearchParams(formData).toString(),
       body: searchParams.toString(),
     })
       .then(() => console.log("Form successfully submitted"))
-      .catch((error) => alert(error));
+      .catch((error) => console.error(error));
 
     navigate("/submitted");
   };
