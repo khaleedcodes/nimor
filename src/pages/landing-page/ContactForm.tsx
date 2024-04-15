@@ -1,6 +1,33 @@
 import QuestionMark from "../../assets/icons/QuestionMark";
+import { useNavigate } from "react-router-dom";
 
 function ContactForm() {
+  const navigate = useNavigate();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+
+    // Convert FormData to URLSearchParams
+    const searchParams = new URLSearchParams();
+    formData.forEach((value, key) => {
+      searchParams.append(key, value as string);
+    });
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      // body: new URLSearchParams(formData).toString(),
+      body: searchParams.toString(),
+    })
+      .then(() => console.log("Form successfully submitted"))
+      .catch((error) => alert(error));
+
+    navigate("/submitted");
+  };
+
   return (
     <div
       className="basis-[422px] grow flex rounded-md flex-col justify-start items-center gap-8"
@@ -21,7 +48,9 @@ function ContactForm() {
         name="contact"
         className="flex flex-col gap-4 w-full items-center "
         method="POST"
-        action="/submitted"
+        action="/src/pages/form-submitted-page/FormSubmittedPage.tsx"
+        data-netlify="true"
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
         <input
