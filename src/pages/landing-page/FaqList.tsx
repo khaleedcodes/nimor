@@ -28,11 +28,6 @@ const faqs: FaqType[] = [
       "We understand the importance of timely delivery. The timeline for website development varies depending on the scope and requirements of the project. Typically, we can complete a simple website within a week. For more complex projects, the time-frame may extend to several weeks. However, we also offer expedited services for urgent projects, ensuring that your website is delivered as quickly as possible without compromising quality.",
   },
   {
-    question: "What if I'm not happy with the results?",
-    answer:
-      "Customer satisfaction is our top priority, and we strive to ensure that every client is delighted with the final outcome of their project. If you're not satisfied with the results, we offer revisions and adjustments to address any concerns and ensure that the final product meets your expectations.",
-  },
-  {
     question: "Are there any refunds if I don't like the service?",
     answer:
       "We strive to deliver exceptional service and results to every client. If you're not satisfied with our service, we'll work closely with you to address any concerns and find a solution that meets your needs. While we don't offer refunds for services rendered, we are committed to ensuring your satisfaction and will do our best to make things right.",
