@@ -25,8 +25,8 @@ const websites: WebsiteType[] = [
 function WebsiteList() {
   return (
     <div className="flex gap-2 flex-wrap">
-      {websites.map(({ websiteTypeName }) => {
-        return <WebsiteItem websiteTypeName={websiteTypeName} />;
+      {websites.map(({ websiteTypeName }, index) => {
+        return <WebsiteItem websiteTypeName={websiteTypeName} key={index} />;
       })}
     </div>
   );
