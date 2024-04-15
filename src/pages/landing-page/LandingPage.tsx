@@ -4,6 +4,7 @@ import ProjectsSection from "./ProjectsSection";
 import FeedbacksSection from "./FeedbacksSection";
 import FaqSection from "./FaqSection";
 import SolutionsSection from "./SolutionsSection";
+import WebsitesSection from "./WebsitesSection";
 export default function LandingPage() {
   return (
     <div className="w-full flex flex-col gap-10">
@@ -11,6 +12,7 @@ export default function LandingPage() {
       <SolutionsSection />
       <ProjectsSection />
       {/* <ProjectRoadmap /> */}
+      <WebsitesSection />
       <FeedbacksSection />
       <FaqSection />
     </div>

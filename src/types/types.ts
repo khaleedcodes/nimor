@@ -14,7 +14,7 @@ type LinkType = {
 type NavLinkProp = LinkType;
 type ButtonProp = {
   children: React.ReactNode;
-  classes? : string;
+  classes?: string;
 };
 type SectionHeaderProp = {
   children: React.ReactNode;
@@ -42,6 +42,10 @@ type SolutionCardType = {
   cardImage?: string;
 };
 type SolutionCardProp = SolutionCardType;
+type WebsiteType = {
+  websiteTypeName: string;
+};
+type WebsiteItemProp = WebsiteType;
 export type {
   PageLayoutProp,
   HamBurgerProps,
@@ -55,4 +59,6 @@ export type {
   FaqType,
   SolutionCardType,
   SolutionCardProp,
+  WebsiteType,
+  WebsiteItemProp,
 };
