@@ -41,7 +41,7 @@ const faqs: FaqType[] = [
     question:
       "What platform or technologies do you use for website development?",
     answer:
-      "We utilize a variety of platforms and technologies, including HTML/CSS, JavaScript, and other industry-standard tools and frameworks, to create custom solutions tailored to each client's needs.",
+      "At Nimor, we believe in empowering you with full control over your website. That's why we harness the core languages like HTML, CSS, JavaScript, React and other industry-standard tools and frameworks to craft tailored solutions that put you in the driver's seat of customization and power.",
   },
   {
     question: "Do you provide ongoing support after the website is launched?",
