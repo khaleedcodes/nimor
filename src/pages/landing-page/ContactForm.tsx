@@ -17,7 +17,7 @@ function ContactForm() {
         </h1>
       </div>
       <form
-        name="Contact Nimor"
+        name="contact"
         className="flex flex-col gap-4 w-full items-center "
         method="POST"
         action="/"
