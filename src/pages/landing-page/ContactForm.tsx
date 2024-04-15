@@ -5,7 +5,9 @@ function ContactForm() {
   const navigate = useNavigate();
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const myForm = document.getElementById("contact-form") as HTMLFormElement | null;
+    const myForm = document.getElementById(
+      "contact-form"
+    ) as HTMLFormElement | null;
     if (myForm) {
       const formData = new FormData(myForm);
       fetch("/", {
@@ -36,6 +38,7 @@ function ContactForm() {
         </h1>
       </div>
       <form
+        id="contact-form"
         name="contact"
         className="flex flex-col gap-4 w-full items-center "
         method="POST"
