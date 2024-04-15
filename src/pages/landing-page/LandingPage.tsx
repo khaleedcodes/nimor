@@ -3,10 +3,12 @@ import ProjectsSection from "./ProjectsSection";
 // import ProjectRoadmap from "./ProjectRoadmap";
 import FeedbacksSection from "./FeedbacksSection";
 import FaqSection from "./FaqSection";
+import SolutionsSection from "./SolutionsSection";
 export default function LandingPage() {
   return (
     <div className="w-full flex flex-col gap-10">
       <HeroSection />
+      <SolutionsSection />
       <ProjectsSection />
       {/* <ProjectRoadmap /> */}
       <FeedbacksSection />

@@ -1,3 +1,5 @@
+import React from "react";
+
 type PageLayoutProp = {
   children: React.ReactNode;
 };
@@ -32,6 +34,13 @@ type FaqType = {
   answer: string;
 };
 type FaqItemProp = FaqType;
+type SolutionCardType = {
+  problem: string;
+  solution: string;
+  cardIcon?: React.FC;
+  cardImage?: string;
+};
+type SolutionCardProp = SolutionCardType;
 export type {
   PageLayoutProp,
   HamBurgerProps,
@@ -43,4 +52,6 @@ export type {
   ArrowProp,
   FaqItemProp,
   FaqType,
+  SolutionCardType,
+  SolutionCardProp,
 };

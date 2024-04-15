@@ -14,7 +14,7 @@ function FeedbacksSection() {
         <div className="feedback-body">
           <main className="testimonial-grid">
             <article className="testimonial grid-col-span-2 flow quote text-neutral-100 bg-first-accent">
-              <div className="flex">
+              <div className="flex-feedback">
                 <div>
                   <img src={photo1} alt="Khaleed Opeloyeru" />
                 </div>
@@ -31,7 +31,7 @@ function FeedbacksSection() {
               </p>
             </article>
             <article className="testimonial flow bg-secondary-400 text-neutral-100">
-              <div className="flex">
+              <div className="flex-feedback">
                 <div>
                   <img src={photo2} alt="Jonathan Walters" />
                 </div>
@@ -48,7 +48,7 @@ function FeedbacksSection() {
               </p>
             </article>
             <article className="testimonial flow bg-neutral-100 text-secondary-400">
-              <div className="flex">
+              <div className="flex-feedback">
                 <div>
                   <img src={photo3} alt="₦airaupdatesng" />
                 </div>
@@ -66,7 +66,7 @@ function FeedbacksSection() {
               </p>
             </article>
             <article className="testimonial grid-col-span-2 flow bg-secondary-500 text-neutral-100">
-              <div className="flex">
+              <div className="flex-feedback">
                 <div>
                   <img
                     className="border-primary-400"
@@ -87,7 +87,7 @@ function FeedbacksSection() {
               </p>
             </article>
             <article className="testimonial flow bg-neutral-100 text-secondary-400">
-              <div className="flex">
+              <div className="flex-feedback">
                 <div>
                   <img src={photo5} alt="Kira Whittle" />
                 </div>

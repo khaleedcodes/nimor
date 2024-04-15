@@ -44,7 +44,7 @@ picture {
 }
 
 /* utilities */
-.flex {
+.flex-feedback {
   display: flex;
   gap: var(--gap, 1rem);
 }
