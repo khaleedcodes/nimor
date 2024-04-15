@@ -37,7 +37,7 @@ function ContactForm() {
         name="contact"
         className="flex flex-col gap-4 w-full items-center "
         method="POST"
-        action="/"
+        action="/submitted"
         // onSubmit={(e) => {
         //   e.preventDefault();
         //   navigate("/submitted");
