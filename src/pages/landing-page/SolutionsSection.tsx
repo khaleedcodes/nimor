@@ -10,7 +10,7 @@ function SolutionsSection() {
         </SectionHeader>
         <SolutionList />
         <Button classes="text-2xl pt-8 pb-8 pl-20 pr-20 max-sm:text-lg">
-          Make your mark on the web with Nimor
+          Make your mark on the web 🕸️ with Nimor
         </Button>
       </div>
     </div>
