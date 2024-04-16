@@ -4,7 +4,7 @@ function Logo() {
       <p className=" text-white text-9xl font-bold">
         nimor<span className="text-first-accent">.</span>
       </p>
-      <h1 className="text-xl max-lg:text-lg text-center text-white">
+      <h1 className="text-xl max-lg:text-lg text-center text-black">
         Make your mark on the web 🕸️.
       </h1>
     </div>
