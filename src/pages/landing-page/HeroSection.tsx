@@ -14,7 +14,7 @@ function HeroSection() {
         </h1>
         <h1 className="text-xl max-lg:text-lg text-center">
           Make your mark on the web 🕸️ with{" "}
-          <span className="text-first-accent">Nimor</span>
+          <span className="text-first-accent">Nimor</span>.
         </h1>
         <Button classes="pt-3 pb-3 pl-10 pr-10">Start a project with us</Button>
       </div>
