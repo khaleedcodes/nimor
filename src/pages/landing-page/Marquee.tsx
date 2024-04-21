@@ -10,7 +10,7 @@ const marqueeVariants = {
       x: {
         repeat: Infinity,
         repeatType: "loop",
-        duration: 10,
+        duration: 15,
         ease: "linear",
       },
     },
@@ -19,7 +19,8 @@ const marqueeVariants = {
 
 const Marquee = () => {
   return (
-    <div className="marquee">
+    <div className="marquee flex">
+      <div className="shadow-blend-left left-0 z-10"></div>
       <motion.div
         className="track"
         variants={marqueeVariants}
@@ -125,6 +126,7 @@ const Marquee = () => {
           <NairaupdatesngWordMark />
         </div>
       </motion.div>
+      <div className="shadow-blend-right right-0 z-10"></div>
     </div>
   );
 };

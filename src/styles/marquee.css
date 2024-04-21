@@ -1,6 +1,7 @@
 .marquee {
   position: relative;
   width: 100%;
+  max-width: 800px;
   height: 35px;
   overflow-x: hidden;
 }
@@ -8,4 +9,26 @@
 .track {
   position: absolute;
   white-space: nowrap;
+}
+.shadow-blend-left {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  background: linear-gradient(
+    to right,
+    white,
+    transparent
+  );
+}
+.shadow-blend-right {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  background: linear-gradient(
+    to left,
+    white,
+    transparent
+  );
 }
