@@ -3,7 +3,6 @@ import type { ProjectCardProps } from "../../types/types";
 function ProjectCard({
   projectImage,
   projectTitle,
-  overlayProjectDescription,
   link,
   linkName,
 }: ProjectCardProps) {
@@ -29,7 +28,7 @@ function ProjectCard({
       </div>
       <div className="flex flex-col gap-2">
         <div className="flex justify-between">
-          <p className="font-bold">{projectTitle}</p>
+          <p className="font-semibold">{projectTitle}</p>
           <a
             href={link}
             className="text-first-accent hover:text-second-accent duration-300 transition-all border-b border-b-transparent hover:border-b-second-accent"
@@ -37,7 +36,6 @@ function ProjectCard({
             {linkName}
           </a>
         </div>
-        <p>{overlayProjectDescription}</p>
       </div>
     </div>
   );

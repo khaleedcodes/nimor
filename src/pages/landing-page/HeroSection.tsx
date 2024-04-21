@@ -17,6 +17,13 @@ function HeroSection() {
           <span className="text-first-accent">Nimor</span>.
         </h1>
         <Button classes="pt-3 pb-3 pl-10 pr-10">Start a project with us</Button>
+        <div className="flex items-center justify-center gap-2">
+          <div className="bg-green-400 h-3 w-3 rounded-full"></div>
+          <p className="flex items-center justify-center text-sm">
+            Accepting projects for{" "}
+            {new Date().toLocaleString("default", { month: "long" })}
+          </p>
+        </div>
       </div>
       {/* <ClientCarousel /> */}
     </div>

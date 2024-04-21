@@ -22,7 +22,6 @@ type SectionHeaderProp = {
 type ProjectCardProps = {
   projectImage: string;
   projectTitle: string;
-  overlayProjectDescription: string;
   link: string;
   technologies: string;
   linkName: string;
@@ -45,6 +44,9 @@ type SolutionCardProp = SolutionCardType;
 type WebsiteType = {
   websiteTypeName: string;
 };
+type WordMarkProp = {
+  classes: string;
+};
 type WebsiteItemProp = WebsiteType;
 export type {
   PageLayoutProp,
@@ -61,4 +63,5 @@ export type {
   SolutionCardProp,
   WebsiteType,
   WebsiteItemProp,
+  WordMarkProp,
 };

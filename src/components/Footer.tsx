@@ -5,10 +5,10 @@ import X from "../assets/icons/X";
 import WordMark from "./WordMark";
 function Footer() {
   return (
-    <div className="flex justify-center">
-      <div className="max-w-screen-xl w-full pr-4 pl-4 pt-10 pb-10 flex justify-between items-center gap-10 border-t mt-12">
+    <div className="flex justify-center bg-black mt-14">
+      <div className="max-w-screen-xl w-full pr-4 pl-4 pt-10 pb-10 flex justify-between items-center gap-1">
         <div>
-          <WordMark />
+          <WordMark classes="text-white" />
         </div>
         <div className="flex gap-3">
           <Mail />

@@ -1,15 +1,15 @@
 function X() {
   return (
-    <div className="">
+    <div className="mt-1">
       <a href="https://twitter.com/nimorcreative" className="">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0,0,256,256"
-          width="28px"
-          height="28px"
+          width="27px"
+          height="27px"
         >
           <g
-            fill="#604cc7"
+            fill="#fff"
             fillRule="nonzero"
             stroke="none"
             strokeWidth="1"
