@@ -1,5 +1,5 @@
 import Button from "../../components/Button";
-// import ClientCarousel from "./ClientCarousel";
+import Marquee from "./Marquee";
 function HeroSection() {
   return (
     <div
@@ -25,7 +25,7 @@ function HeroSection() {
           </p>
         </div>
       </div>
-      {/* <ClientCarousel /> */}
+      <Marquee />
     </div>
   );
 }
