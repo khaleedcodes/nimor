@@ -1,6 +1,7 @@
-.title-gradient{
+.title-gradient {
   background: linear-gradient(90deg, #604cc7, #44327b);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  min-height: 55px;
 }
