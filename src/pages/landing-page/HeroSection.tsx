@@ -1,31 +1,71 @@
+import { motion } from "framer-motion";
 import Button from "../../components/Button";
 import Marquee from "./Marquee";
+
 function HeroSection() {
+  const variants = {
+    hidden: { y: 0 },
+    visible: { y: 0, transition: { staggerChildren: 0.15 } },
+  };
+  const itemVariants = {
+    hidden: { opacity: 0, y: 100 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+  const MarqueeVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1, delay: 0.5 } },
+  };
+
   return (
     <div
       className=" flex justify-center gap-20 flex-col items-center"
       style={{ minHeight: "calc(100vh - 80px)" }}
     >
-      <div className="max-w-screen-xl w-full p-4 flex flex-col justify-center items-center gap-6">
-        <h1 className="font-bold text-7xl max-lg:text-6xl max-md:5xl max-sm:text-4xl text-center">
+      <motion.div
+        className="max-w-screen-xl w-full p-4 flex flex-col justify-center items-center gap-6"
+        variants={variants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.h1
+          variants={itemVariants}
+          className="font-bold text-7xl max-lg:text-6xl max-md:5xl max-sm:text-4xl text-center"
+        >
           Your <span className="text-first-accent">Vision</span>, Our{" "}
           <span className="text-first-accent">Expertise</span>: Let's build
           something amazing together!
-        </h1>
-        <h1 className="text-xl max-lg:text-lg text-center">
+        </motion.h1>
+        <motion.h1
+          variants={itemVariants}
+          className="text-xl max-lg:text-lg text-center"
+        >
           Make your mark on the web 🕸️ with{" "}
           <span className="text-first-accent">Nimor</span>.
-        </h1>
-        <Button classes="pt-3 pb-3 pl-10 pr-10">Start a project with us</Button>
-        <div className="flex items-center justify-center gap-2">
+        </motion.h1>
+        <motion.div variants={itemVariants}>
+          <Button classes="pt-3 pb-3 pl-10 pr-10">
+            Start a project with us
+          </Button>
+        </motion.div>
+        <motion.div
+          variants={itemVariants}
+          className="flex items-center justify-center gap-2"
+        >
           <div className="bg-green-400 h-3 w-3 rounded-full"></div>
           <p className="flex items-center justify-center text-sm">
             Accepting projects for{" "}
             {new Date().toLocaleString("default", { month: "long" })}
           </p>
-        </div>
-      </div>
-      <Marquee />
+        </motion.div>
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={MarqueeVariants}
+        className="w-full flex items-center justify-center"
+      >
+        <Marquee />
+      </motion.div>
     </div>
   );
 }
