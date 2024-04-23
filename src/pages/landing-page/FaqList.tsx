@@ -38,11 +38,6 @@ const faqs: FaqType[] = [
     answer:
       "Absolutely! we offer ongoing support and maintenance services to ensure your website stays current with the latest trends and technologies. Our support packages include bug fixes and technical assistance as needed.",
   },
-  {
-    question: "What is your process for website design and development?",
-    answer:
-      "Our website design and development process typically involves initial consultation and discovery, followed by wire-framing and design mockups, development and testing, client feedback and revisions, and finally, launch and ongoing support.",
-  },
 ];
 
 function FaqList() {
