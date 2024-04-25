@@ -28,15 +28,15 @@ const faqs: FaqType[] = [
       "We strive to deliver exceptional service and results to every client. If you're not satisfied with our service, we'll work closely with you to address any concerns and find a solution that meets your needs. While we don't offer refunds for services rendered, we are committed to ensuring your satisfaction and will do our best to make things right.",
   },
   {
+    question: "Do you provide ongoing support after the website is launched?",
+    answer:
+      "Absolutely! we offer ongoing support and maintenance services to ensure your website stays current with the latest trends and technologies. Our support packages include bug fixes and technical assistance as needed.",
+  },
+  {
     question:
       "What platform or technologies do you use for website development?",
     answer:
       "At Nimor, we believe in empowering you with full control over your website. That's why we harness the core languages like HTML, CSS, JavaScript, React and other industry-standard tools and frameworks to craft tailored solutions that put you in the driver's seat of customization and power.",
-  },
-  {
-    question: "Do you provide ongoing support after the website is launched?",
-    answer:
-      "Absolutely! we offer ongoing support and maintenance services to ensure your website stays current with the latest trends and technologies. Our support packages include bug fixes and technical assistance as needed.",
   },
 ];
 
