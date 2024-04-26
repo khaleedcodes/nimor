@@ -65,18 +65,11 @@ function ContactForm() {
           required
           className="min-h-12 rounded-md p-4 focus:outline-none w-full bg-[rgb(96,76,199,0.03)]"
         />
-        {/* <input
-          type="text"
-          placeholder="subject"
-          name="subject"
-          required
-          className="min-h-12 rounded-md p-4 focus:outline-none w-full bg-[rgb(96,76,199,0.03)]"
-        /> */}
         <textarea
           placeholder="Message"
           name="message"
           required
-          className="rounded-md p-4 focus:outline-none w-full min-h-48 bg-[rgb(96,76,199,0.03)]"
+          className="rounded-md p-4 focus:outline-none w-full min-h-44 bg-[rgb(96,76,199,0.03)]"
         ></textarea>
         <button
           className={`border transition-colors duration-300 bg-first-accent text-white rounded-md hover:bg-second-accent pt-3 pb-3 pl-10 pr-10`}
