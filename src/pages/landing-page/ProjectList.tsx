@@ -8,7 +8,7 @@ function ProjectList() {
   const projectData = [
     {
       projectImage: khaleedPortfolio,
-      projectTitle: "Khaleed portfolio",
+      projectTitle: "Portfolio",
       cardID: 1,
       link: "https://khaleed.co/",
       linkName: "khaleed.co",
