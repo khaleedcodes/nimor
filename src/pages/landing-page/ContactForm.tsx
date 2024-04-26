@@ -65,13 +65,13 @@ function ContactForm() {
           required
           className="min-h-12 rounded-md p-4 focus:outline-none w-full bg-[rgb(96,76,199,0.03)]"
         />
-        <input
+        {/* <input
           type="text"
           placeholder="subject"
           name="subject"
           required
           className="min-h-12 rounded-md p-4 focus:outline-none w-full bg-[rgb(96,76,199,0.03)]"
-        />
+        /> */}
         <textarea
           placeholder="Message"
           name="message"
