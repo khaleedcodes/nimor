@@ -18,7 +18,7 @@ function ProjectList() {
       projectImage: nairaupdatesng,
       projectTitle: "₦airaupdatesng",
       cardID: 2,
-      link: "https://nairaupdatesng.netlify.app/bot",
+      link: "https://nairaupdatesng.co",
       linkName: "nairaupdatesng.co",
       technologies: "Python, React & Tailwind",
     },
