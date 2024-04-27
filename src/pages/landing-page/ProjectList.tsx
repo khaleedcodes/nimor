@@ -18,7 +18,7 @@ function ProjectList() {
       projectImage: nairaupdatesng,
       projectTitle: "₦airaupdatesng",
       cardID: 2,
-      link: "https://nairaupdatesng.co",
+      link: "https://nairaupdatesng.co/bot",
       linkName: "nairaupdatesng.co",
       technologies: "Python, React & Tailwind",
     },
