@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Button from "../../components/Button";
 import Marquee from "./Marquee";
+import ActiveDot from "../../components/ActiveDot";
 
 function HeroSection() {
   const variants = {
@@ -49,9 +50,9 @@ function HeroSection() {
         </motion.div>
         <motion.div
           variants={itemVariants}
-          className="flex items-center justify-center gap-2"
+          className="flex items-center justify-center gap-1"
         >
-          <div className="bg-green-400 h-3 w-3 rounded-full"></div>
+          <ActiveDot />
           <p className="flex items-center justify-center text-sm">
             Accepting projects for{" "}
             {new Date().toLocaleString("default", { month: "long" })}
