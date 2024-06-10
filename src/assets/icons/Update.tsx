@@ -15,7 +15,7 @@ function Update() {
           d="M5.07,8A8,8,0,0,1,20,12"
           style={{
             fill: "none",
-            stroke: "rgb(0, 0, 0)",
+            stroke: "#fff",
             strokeLinecap: "round",
             strokeLinejoin: "round",
             strokeWidth: "1.3",
@@ -27,7 +27,7 @@ function Update() {
           d="M18.93,16A8,8,0,0,1,4,12"
           style={{
             fill: "none",
-            stroke: "rgb(0, 0, 0)",
+            stroke: "#fff",
             strokeLinecap: "round",
             strokeLinejoin: "round",
             strokeWidth: "1.3",
@@ -39,7 +39,7 @@ function Update() {
           points="5 3 5 8 10 8"
           style={{
             fill: "none",
-            stroke: "rgb(0, 0, 0)",
+            stroke: "#fff",
             strokeLinecap: "round",
             strokeLinejoin: "round",
             strokeWidth: "1.3",
@@ -51,7 +51,7 @@ function Update() {
           points="19 21 19 16 14 16"
           style={{
             fill: "none",
-            stroke: "rgb(0, 0, 0)",
+            stroke: "#fff",
             strokeLinecap: "round",
             strokeLinejoin: "round",
             strokeWidth: "1.3",

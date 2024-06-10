@@ -30,7 +30,7 @@ function FeedbacksSection() {
                 services! "
               </p>
             </article>
-            <article className="testimonial flow bg-secondary-400 text-neutral-100">
+            <article className="testimonial flow bg-card-bg text-neutral-100">
               <div className="flex-feedback">
                 <div>
                   <img src={photo2} alt="Jonathan Walters" />
@@ -47,7 +47,7 @@ function FeedbacksSection() {
                 captures the essence of my brand. Highly recommended! "
               </p>
             </article>
-            <article className="testimonial flow bg-neutral-100 text-secondary-400">
+            <article className="testimonial flow bg-card-bg">
               <div className="flex-feedback">
                 <div>
                   <img src={photo3} alt="₦airaupdatesng" />
@@ -65,7 +65,7 @@ function FeedbacksSection() {
                 their hard work. "
               </p>
             </article>
-            <article className="testimonial grid-col-span-2 flow bg-secondary-500 text-neutral-100">
+            <article className="testimonial grid-col-span-2 flow bg-card-bg">
               <div className="flex-feedback">
                 <div>
                   <img
@@ -86,7 +86,7 @@ function FeedbacksSection() {
                 definitely work with them again. "
               </p>
             </article>
-            <article className="testimonial flow bg-neutral-100 text-secondary-400">
+            <article className="testimonial flow bg-card-bg">
               <div className="flex-feedback">
                 <div>
                   <img src={photo5} alt="Kira Whittle" />

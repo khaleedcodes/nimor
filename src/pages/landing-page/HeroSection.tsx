@@ -32,31 +32,22 @@ function HeroSection() {
           variants={itemVariants}
           className="font-bold text-7xl max-lg:text-6xl max-md:5xl max-sm:text-4xl text-center"
         >
-          Your <span className="text-first-accent">Vision</span>, Our{" "}
-          <span className="text-first-accent">Expertise</span>: Let's build
-          something amazing together!
+          Make your <span className="text-first-accent">mark</span> on the web
         </motion.h1>
-        <motion.h1
-          variants={itemVariants}
-          className="text-xl max-lg:text-lg text-center"
-        >
-          Make your mark on the web 🕸️ with{" "}
-          <span className="text-first-accent">Nimor</span>.
-        </motion.h1>
-        <motion.div variants={itemVariants}>
-          <Button classes="pt-3 pb-3 pl-10 pr-10">
-            Start a project with us
-          </Button>
-        </motion.div>
         <motion.div
           variants={itemVariants}
           className="flex items-center justify-center gap-1"
         >
           <ActiveDot />
-          <p className="flex items-center justify-center text-sm">
+          <p className="flex items-center justify-center text">
             Accepting projects for{" "}
             {new Date().toLocaleString("default", { month: "long" })}
           </p>
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <Button classes="pt-3 pb-3 pl-10 pr-10">
+            Start a project with us
+          </Button>
         </motion.div>
       </motion.div>
       <motion.div

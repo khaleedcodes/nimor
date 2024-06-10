@@ -12,7 +12,7 @@ function FaqItem({ question, answer }: FaqItemProp) {
       onClick={() => {
         toggleIsActive();
       }}
-      className={`cursor-pointer rounded-md transition-all duration-300 bg-[rgb(96,76,199,0.03)] ${
+      className={`cursor-pointer rounded-md transition-all duration-300 bg-card-bg )] ${
         isActive ? "" : "h-16 max-sm:h-20 max-smallest:h-24"
       } overflow-hidden`}
     >

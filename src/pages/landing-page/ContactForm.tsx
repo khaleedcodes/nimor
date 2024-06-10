@@ -31,7 +31,7 @@ function ContactForm() {
       className="basis-[422px] grow flex rounded-md flex-col justify-start items-center gap-8"
       id="contact"
     >
-      <div className="flex flex-col items-center gap-2 bg-[rgb(96,76,199,0.03)] p-4 w-full rounded-md">
+      <div className="flex flex-col items-center gap-2 bg-card-bg p-4 w-full rounded-md">
         <div className="flex">
           <QuestionMark />
           <QuestionMark />
@@ -56,23 +56,23 @@ function ContactForm() {
           placeholder="Name"
           name="name"
           required
-          className="min-h-12 rounded-md p-4 focus:outline-none w-full bg-[rgb(96,76,199,0.03)]"
+          className="min-h-12 rounded-md p-4 focus:outline-none w-full bg-card-bg"
         />
         <input
           type="email"
           placeholder="Email address"
           name="email"
           required
-          className="min-h-12 rounded-md p-4 focus:outline-none w-full bg-[rgb(96,76,199,0.03)]"
+          className="min-h-12 rounded-md p-4 focus:outline-none w-full bg-card-bg"
         />
         <textarea
           placeholder="Message"
           name="message"
           required
-          className="rounded-md p-4 focus:outline-none w-full min-h-44 bg-[rgb(96,76,199,0.03)]"
+          className="rounded-md p-4 focus:outline-none w-full min-h-44 bg-card-bg"
         ></textarea>
         <button
-          className={`border transition-colors duration-300 bg-first-accent text-white rounded-md hover:bg-second-accent pt-3 pb-3 pl-10 pr-10`}
+          className={`transition-colors duration-300 bg-first-accent text-white rounded-md hover:bg-second-accent pt-3 pb-3 pl-10 pr-10`}
         >
           Submit
         </button>

@@ -5,7 +5,7 @@ function WordMark({ classes }: WordMarkProp) {
   return (
     <div className={`flex items-center justify-center ${classes}`}>
       <Link to="/" className="">
-        <p className="text-2xl font-bold">
+        <p className="text-2xl font-bold text-white">
           nimor<span className="text-first-accent">.</span>
         </p>
       </Link>

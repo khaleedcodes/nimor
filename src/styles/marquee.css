@@ -15,20 +15,12 @@
   width: 50px;
   height: 100%;
   top: 0;
-  background: linear-gradient(
-    to right,
-    white,
-    transparent
-  );
+  background: linear-gradient(to right, black, transparent);
 }
 .shadow-blend-right {
   position: absolute;
   width: 50px;
   height: 100%;
   top: 0;
-  background: linear-gradient(
-    to left,
-    white,
-    transparent
-  );
+  background: linear-gradient(to left, black, transparent);
 }

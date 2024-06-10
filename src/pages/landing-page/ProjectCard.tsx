@@ -18,7 +18,7 @@ function ProjectCard({
       onMouseLeave={toggleOverLay}
       className="flex flex-col gap-4 basis-[600px]"
     >
-      <div className="flex flex-col justify-center w-full items-center rounded-lg overflow-hidden border">
+      <div className="flex flex-col justify-center w-full items-center rounded-lg overflow-hidden border border-card-bg">
         <a className="" href={link}>
           <img
             className="w-full h-full hover:scale-105 transition duration-300"

@@ -6,9 +6,7 @@ function SolutionsSection() {
     <div className="flex justify-center min-h-lvh">
       <div className="max-w-screen-xl w-full p-4 flex flex-col justify-center items-center gap-20">
         <div>
-          <SectionHeader>
-            Solutions for your online success with Nimor.
-          </SectionHeader>
+          <SectionHeader>Elevate your online presence.</SectionHeader>
         </div>
         <div>
           <SolutionList />

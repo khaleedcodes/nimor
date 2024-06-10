@@ -11,12 +11,12 @@ function NavBar() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
   return (
-    <div className="sticky top-0 flex justify-center bg-white z-20">
+    <div className="sticky top-0 flex justify-center bg-primary z-20 border-b border-b-[#333333]">
       <motion.nav
         variants={parentVariants}
         initial="hidden"
         animate="visible"
-        className="justify-between items-center flex p-4 w-full"
+        className="justify-between items-center flex p-4 w-full max-w-7xl"
       >
         <motion.div variants={childVariants}>
           <WordMark classes="text-black" />
@@ -25,7 +25,7 @@ function NavBar() {
           variants={childVariants}
           className="flex items-center gap-8"
         >
-          <Button classes="pt-3 pb-3 pl-10 pr-10">Start a Project</Button>
+          <Button classes="pt-3 pb-3 pl-10 pr-10">Say hello</Button>
         </motion.div>
       </motion.nav>
     </div>

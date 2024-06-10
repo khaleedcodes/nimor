@@ -7,8 +7,8 @@ function DesignIcon() {
         viewBox="-0.5 0 17 17"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
-        fill="#000000"
-        stroke="#000000"
+        fill="#fff"
+        stroke="#fff"
       >
         <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
@@ -24,7 +24,7 @@ function DesignIcon() {
           <title>1199</title>
           <defs></defs>
           <g strokeWidth="0.00017" fill="none" fillRule="evenodd">
-            <g fill="#000000">
+            <g fill="#fff">
               <path d="M12.953,12.938 L3.046,12.938 L3.046,3.022 L12.953,3.022 L12.953,12.938 L12.953,12.938 Z M3.963,12.062 L12.098,12.062 L12.098,3.833 L3.963,3.833 L3.963,12.062 L3.963,12.062 Z"></path>
               <rect x="12" y="0" width="0.959" height="1.943"></rect>
               <rect x="3" y="0" width="0.959" height="1.984"></rect>
