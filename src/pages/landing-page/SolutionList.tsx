@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import SolutionCard from "./SolutionCard";
 import { SolutionCardType } from "../../types/types";
 import megaphone from "../../assets/images/megaphone.png";
@@ -26,8 +27,18 @@ const solutions: SolutionCardType[] = [
 ];
 
 function SolutionList() {
+  // const parentVariants = {
+  //   hidden: { y: 0 },
+  //   visible: { y: 0, transition: { staggerChildren: 0.15 } },
+  // };
+
   return (
-    <div className="flex gap-10 flex-wrap">
+    <motion.div
+      // variants={parentVariants}
+      initial="hidden"
+      whileInView={"visible"}
+      className="flex gap-10 flex-wrap"
+    >
       {solutions.map(({ problem, solution, cardIcon, cardImage }, index) => {
         return (
           <SolutionCard
@@ -39,7 +50,7 @@ function SolutionList() {
           />
         );
       })}
-    </div>
+    </motion.div>
   );
 }
 
