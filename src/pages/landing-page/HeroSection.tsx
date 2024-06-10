@@ -32,7 +32,7 @@ function HeroSection() {
           variants={itemVariants}
           className="font-bold text-7xl max-lg:text-6xl max-md:5xl max-sm:text-4xl text-center"
         >
-          Make your <span className="text-first-accent">mark</span> on the web
+          Make your <span className="title-gradient">mark</span> on the web
         </motion.h1>
         <motion.div
           variants={itemVariants}
