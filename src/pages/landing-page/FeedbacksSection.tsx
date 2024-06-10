@@ -5,6 +5,7 @@ import photo2 from "../../assets/images/profile2.jpeg";
 import photo3 from "../../assets/images/profile3.png";
 import photo4 from "../../assets/images/profile5.png";
 import photo5 from "../../assets/images/profile4.png";
+import quizwave from "../../assets/images/q.png";
 
 function FeedbacksSection() {
   return (
@@ -70,8 +71,8 @@ function FeedbacksSection() {
                 <div>
                   <img
                     className="border-primary-400"
-                    src={photo4}
-                    alt="Patrick Abrams"
+                    src={quizwave}
+                    alt="Rentease"
                   />
                 </div>
                 <div>
@@ -89,10 +90,10 @@ function FeedbacksSection() {
             <article className="testimonial flow bg-card-bg">
               <div className="flex-feedback">
                 <div>
-                  <img src={photo5} alt="Kira Whittle" />
+                  <img src={photo5} alt="Quizwave" />
                 </div>
                 <div>
-                  <h2 className="name">Bundleup</h2>
+                  <h2 className="name">Quizwave</h2>
                   <p className="position">Verified Client</p>
                 </div>
               </div>

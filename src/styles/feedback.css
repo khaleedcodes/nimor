@@ -72,9 +72,7 @@ picture {
 .text-secondary-400 {
   color: hsl(var(--clr-secondary-400));
 }
-.border-primary-400 {
-  border: 2px solid #a775f1;
-}
+
 
 /* components */
 .testimonial-grid {
