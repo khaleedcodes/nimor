@@ -88,7 +88,7 @@ picture {
     "four"
     "five";
 
-  padding-block: 2rem;
+  /* padding-block: 2rem; */
   width: min(95%, 70rem);
   margin-inline: auto;
 }

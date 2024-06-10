@@ -7,7 +7,7 @@ import SolutionsSection from "./SolutionsSection";
 import WebsitesSection from "./WebsitesSection";
 export default function LandingPage() {
   return (
-    <div className="w-full flex flex-col gap-5">
+    <div className="w-full flex flex-col gap-10">
       <HeroSection />
       <SolutionsSection />
       <ProjectsSection />

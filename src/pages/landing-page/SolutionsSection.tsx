@@ -4,7 +4,7 @@ import SolutionList from "./SolutionList";
 function SolutionsSection() {
   return (
     <div className="flex justify-center min-h-lvh">
-      <div className="max-w-screen-xl w-full p-4 flex flex-col justify-center items-center gap-20">
+      <div className="max-w-screen-xl w-full p-4 flex flex-col justify-center items-center gap-20 max-sm:gap-8">
         <div>
           <SectionHeader>Elevate your online presence.</SectionHeader>
         </div>

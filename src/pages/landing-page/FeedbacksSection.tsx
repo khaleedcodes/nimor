@@ -9,7 +9,7 @@ import photo5 from "../../assets/images/profile4.png";
 function FeedbacksSection() {
   return (
     <div className=" flex justify-center">
-      <div className="max-w-screen-xl w-full p-4 flex flex-col justify-center items-center">
+      <div className="max-w-screen-xl w-full p-4 flex flex-col justify-center items-center gap-16 max-sm:gap-6">
         <SectionHeader>Feedbacks</SectionHeader>
         <div className="feedback-body">
           <main className="testimonial-grid">
