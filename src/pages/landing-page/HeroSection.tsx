@@ -19,9 +19,10 @@ function HeroSection() {
 
   return (
     <div
-      className=" flex justify-center gap-20 flex-col items-center"
+      className=" flex justify-center gap-20 flex-col items-center bg-gradient"
       style={{ minHeight: "calc(100vh - 80px)" }}
     >
+      {/* <div className="bg-gradient min-h-lvh absolute z-40 top-0 left-0 h-full w-full"></div> */}
       <motion.div
         className="max-w-screen-xl w-full p-4 flex flex-col justify-center items-center gap-6"
         variants={variants}

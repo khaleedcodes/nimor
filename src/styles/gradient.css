@@ -5,3 +5,11 @@
   -webkit-text-fill-color: transparent;
   min-height: 55px;
 }
+/* .bg-gradient {
+  background: rgb(96, 76, 199);
+  background: linear-gradient(
+    266deg,
+    rgba(96, 76, 199, 1) 0%,
+    rgba(0, 0, 0, 1) 10%
+  );
+} */

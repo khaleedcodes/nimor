@@ -11,7 +11,7 @@ function NavBar() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
   return (
-    <div className="sticky top-0 flex justify-center bg-primary z-20 border-b border-b-[#333333]">
+    <div className="sticky top-0 flex justify-center bg-primary z-20 border-b border-b-card-bg">
       <motion.nav
         variants={parentVariants}
         initial="hidden"
