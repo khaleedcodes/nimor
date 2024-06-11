@@ -2,8 +2,8 @@ import BackIcon from "../../assets/icons/BackIcon";
 
 function FormSubmittedPage() {
   return (
-    <div className="min-h-lvh flex items-center justify-center bg-[rgb(96,76,199,0.03)]">
-      <div className="bg-white rounded-md p-6 flex flex-col gap-4 max-w-[460px]">
+    <div className="min-h-lvh flex items-center justify-center bg-card-bg">
+      <div className="bg-card-bg rounded-md p-6 flex flex-col gap-4 max-w-[460px]">
         <p className="font-bold text-first-accent text-lg">
           Thank you for getting in touch!
         </p>
