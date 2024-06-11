@@ -1,7 +1,7 @@
 function Mail() {
   return (
     <div className="">
-      <a href="mailto:khaleedopeloyerudev@gmail.com" className="">
+      <a href="mailto:nimorcreative@gmail.com" className="">
         <svg
           width="32px"
           height="32px"

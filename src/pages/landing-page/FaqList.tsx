@@ -10,7 +10,7 @@ const faqs: FaqType[] = [
   {
     question: "What services do you offer?",
     answer:
-      "We offer a comprehensive range of web design and development services, including custom website design, front-end development, website maintenance, and more.",
+      "We offer a comprehensive range of web design and development services, including custom website design, web development, website maintenance, and more.",
   },
   {
     question: "How much does a website cost?",
