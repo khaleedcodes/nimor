@@ -3,7 +3,7 @@ import LandingPage from "./pages/landing-page/LandingPage";
 import PageLayout from "./pages/layout-page/LayoutPage";
 import ErrorPage from "./pages/error-page/ErrorPage";
 import FormSubmittedPage from "./pages/form-submitted-page/FormSubmittedPage";
-// import Logo from "./pages/landing-page/Logo";
+import Logo from "./pages/landing-page/Logo";
 
 const router = createBrowserRouter([
   {
@@ -19,10 +19,10 @@ const router = createBrowserRouter([
     path: "/submitted",
     element: <FormSubmittedPage />,
   },
-  // {
-  //   path: "/logo",
-  //   element: <Logo />,
-  // },
+  {
+    path: "/logo",
+    element: <Logo />,
+  },
 ]);
 
 function App() {
