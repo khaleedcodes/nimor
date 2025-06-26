@@ -19,7 +19,7 @@ function HeroSection() {
 
   return (
     <div
-      className=" flex justify-center gap-20 flex-col items-center bg-gradient"
+      className=" flex justify-center gap-20 flex-col items-center bg-gradient border"
       style={{ minHeight: "calc(100vh - 80px)" }}
     >
       {/* <div className="bg-gradient min-h-lvh absolute z-40 top-0 left-0 h-full w-full"></div> */}
