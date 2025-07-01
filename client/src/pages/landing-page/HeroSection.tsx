@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Button from "../../components/Button";
 import Marquee from "./Marquee";
 import ActiveDot from "../../components/ActiveDot";
+import HeroCarousel from "./HeroCarousel";
 
 function HeroSection() {
   const variants = {
@@ -19,7 +20,7 @@ function HeroSection() {
 
   return (
     <div
-      className=" flex justify-center gap-20 flex-col items-center bg-gradient border"
+      className=" flex justify-center gap-20 flex-col items-center bg-gradient mt-28"
       style={{ minHeight: "calc(100vh - 80px)" }}
     >
       {/* <div className="bg-gradient min-h-lvh absolute z-40 top-0 left-0 h-full w-full"></div> */}
@@ -51,6 +52,7 @@ function HeroSection() {
           </Button>
         </motion.div>
       </motion.div>
+      <HeroCarousel />
       <motion.div
         initial="hidden"
         animate="visible"
