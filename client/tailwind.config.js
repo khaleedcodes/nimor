@@ -51,6 +51,7 @@ export default {
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        sevillana: ["Sevillana", "cursive"],
       },
       borderRadius: {
         lg: "var(--radius)",

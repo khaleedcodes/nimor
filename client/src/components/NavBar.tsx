@@ -25,7 +25,7 @@ function NavBar() {
           variants={childVariants}
           className="flex items-center gap-8"
         >
-          <Button classes="pt-3 pb-3 pl-10 pr-10">Say hello</Button>
+          <Button classes="pt-2 pb-2 pl-8 pr-8">Let's talk!</Button>
         </motion.div>
       </motion.nav>
     </div>

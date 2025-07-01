@@ -20,7 +20,7 @@ function HeroSection() {
 
   return (
     <div
-      className=" flex justify-center gap-20 flex-col items-center bg-gradient mt-28"
+      className=" flex justify-center gap-20 flex-col items-center bg-gradient mt-24"
       style={{ minHeight: "calc(100vh - 80px)" }}
     >
       {/* <div className="bg-gradient min-h-lvh absolute z-40 top-0 left-0 h-full w-full"></div> */}
@@ -32,25 +32,37 @@ function HeroSection() {
       >
         <motion.h1
           variants={itemVariants}
-          className="font-bold text-7xl max-lg:text-6xl max-md:5xl max-sm:text-4xl text-center"
+          className="font-bold text-7xl max-lg:text-6xl max-md:text-5xl max-sm:text-4xl text-center"
         >
-          Make your <span className="title-gradient">mark</span> on the web
+          Make your <span className="title-gradient font-sevillana">mark</span>{" "}
+          on the web
         </motion.h1>
-        <motion.div
+        <motion.h2
           variants={itemVariants}
-          className="flex items-center justify-center gap-1"
+          className="text-sm max-lg:text-sm max-md:text-sm max-sm:text-sm text-center max-w-[600px]"
         >
-          <ActiveDot />
-          <p className="flex items-center justify-center text">
-            Accepting projects for{" "}
-            {new Date().toLocaleString("default", { month: "long" })}
-          </p>
-        </motion.div>
-        <motion.div variants={itemVariants}>
-          <Button classes="pt-3 pb-3 pl-10 pr-10">
-            Start a project with us
-          </Button>
-        </motion.div>
+          At Nimor, we create websites that help you make your mark online. Our
+          engaging, user-friendly designs elevate your brand, connect with your
+          audience, and drive real results—Whether you're launching something
+          new or refreshing your existing presence
+        </motion.h2>
+        <div className="flex gap-6 mt-8">
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center justify-center gap-1 bg-card-bg pt-3 pb-3 pl-10 pr-10"
+          >
+            <ActiveDot />
+            <p className="flex items-center justify-center text text-first-accent">
+              Accepting projects for{" "}
+              {new Date().toLocaleString("default", { month: "long" })}
+            </p>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <Button classes="pt-3 pb-3 pl-10 pr-10">
+              Start a project with us
+            </Button>
+          </motion.div>
+        </div>
       </motion.div>
       <HeroCarousel />
       <motion.div
