@@ -14,31 +14,22 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index }) => {
     console.log(`Navigate to ${id} service details`);
   };
 
-  // Adjusted grid classes for the new 3x2 layout:
   const getGridClasses = (index: number) => {
     switch (index) {
       case 0:
-        return "md:col-span-2 md:row-span-1"; // 1st item spans 2 columns on top-left
+        return "md:col-span-2 md:row-span-1"; // top-left, spans 2 columns
       case 1:
-        return "md:col-span-1 md:row-span-1"; // 2nd item top-right
+        return "md:col-span-1 md:row-span-1"; // top-right
       case 2:
-        return "md:col-span-1 md:row-span-1"; // 3rd item bottom-left
+        return "md:col-span-1 md:row-span-1"; // bottom-left
       case 3:
-        return "md:col-span-2 md:row-span-1"; // 4th item spans 2 columns bottom-right
+        return "md:col-span-2 md:row-span-1"; // bottom-right
       default:
         return "";
     }
   };
 
-  const getCardHeight = (index: number) => {
-    switch (index) {
-      case 0:
-      case 3:
-        return "h-full min-h-[280px]"; // Make tall cards same height
-      default:
-        return "h-full min-h-[280px]";
-    }
-  };
+  const getCardHeight = () => "h-full min-h-[280px]";
 
   return (
     <motion.div
@@ -46,31 +37,36 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index }) => {
       variants={itemVariants}
     >
       <motion.div
-        className={`rounded-2xl p-8 shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl text-black ${
-          service.hoverShadowColor
-        } cursor-pointer ${getCardHeight(
-          index
-        )} flex flex-col justify-between ${service.bgColor}`}
-        whileHover={{ scale: 1.02, y: -4 }}
+        className={`rounded-2xl p-8 shadow-sm border border-gray-100 transition-shadow duration-200 hover:shadow-xl text-black cursor-pointer ${getCardHeight()} flex flex-col justify-between ${
+          service.bgColor
+        } ${service.hoverShadowColor}`}
+        whileHover={{
+          scale: 1.02,
+          y: -4,
+          transition: { type: "spring", stiffness: 300, damping: 20 },
+        }}
         whileTap={{ scale: 0.98 }}
       >
         <div>
           <div
-            className={`w-14 h-14 ${service.iconBgColor} rounded-xl flex items-center justify-center mb-6 transition-colors duration-300`}
+            className={`w-14 h-14 ${service.iconBgColor} rounded-xl flex items-center justify-center mb-6 transition-colors duration-200`}
           >
             <Icon className={`w-7 h-7 ${service.iconColor}`} />
           </div>
 
-          <h3 className={"font-bold mb-4  text-2xl"}>{service.title}</h3>
-          <p className={"leading-relaxed mb-8  text-base"}>
+          <h3 className="font-bold mb-4 text-2xl">{service.title}</h3>
+          <p className="leading-relaxed mb-8 text-base">
             {service.description}
           </p>
         </div>
 
         <motion.button
           onClick={() => handleLearnMore(service.id)}
-          className={`flex items-center ${service.ctaColor} font-semibold transition-colors duration-300 mt-auto`}
-          whileHover={{ x: 4 }}
+          className={`flex items-center ${service.ctaColor} font-semibold transition-colors duration-200 mt-auto`}
+          whileHover={{
+            x: 4,
+            transition: { type: "tween", duration: 0.3 },
+          }}
         >
           <span>Learn More</span>
           <motion.svg
