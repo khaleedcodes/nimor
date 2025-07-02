@@ -23,7 +23,7 @@ function HeroCarousel() {
   return (
     <>
       {/* <EmblaCarousel slides={SLIDES} options={OPTIONS} /> */}
-      <Carousel className=" p-10 w-full">
+      <Carousel className="w-full">
         <CarouselContent>
           {clients.map((client, index) => {
             return (

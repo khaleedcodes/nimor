@@ -28,7 +28,7 @@ function SolutionsSection() {
           <SolutionList />
         </motion.div>
         <motion.div variants={childVariants}>
-          <Button classes="text-2xl pt-8 pb-8 pl-20 pr-20 max-sm:text-lg">
+          <Button className="text-2xl pt-8 pb-8 pl-20 pr-20 max-sm:text-lg">
             Make your mark on the web 🕸️ with Nimor
           </Button>
         </motion.div>

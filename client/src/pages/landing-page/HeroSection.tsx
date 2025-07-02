@@ -3,6 +3,7 @@ import Button from "../../components/Button";
 import Marquee from "./Marquee";
 import ActiveDot from "../../components/ActiveDot";
 import HeroCarousel from "./HeroCarousel";
+import { ChevronRight } from "lucide-react";
 
 function HeroSection() {
   const variants = {
@@ -20,12 +21,12 @@ function HeroSection() {
 
   return (
     <div
-      className=" flex justify-center gap-20 flex-col items-center bg-gradient mt-24"
+      className=" flex justify-center gap-20 flex-col items-center bg-gradient mt-32"
       style={{ minHeight: "calc(100vh - 80px)" }}
     >
       {/* <div className="bg-gradient min-h-lvh absolute z-40 top-0 left-0 h-full w-full"></div> */}
       <motion.div
-        className="max-w-screen-xl w-full p-4 flex flex-col justify-center items-center gap-6"
+        className="w-full flex flex-col justify-center items-center gap-6"
         variants={variants}
         initial="hidden"
         animate="visible"
@@ -44,27 +45,29 @@ function HeroSection() {
           At Nimor, we create websites that help you make your mark online. Our
           engaging, user-friendly designs elevate your brand, connect with your
           audience, and drive real results—Whether you're launching something
-          new or refreshing your existing presence
+          new or refreshing your existing presence.
         </motion.h2>
-        <div className="flex gap-6 mt-8">
-          <motion.div
-            variants={itemVariants}
-            className="flex items-center justify-center gap-1 bg-card-bg pt-3 pb-3 pl-10 pr-10"
-          >
+        <motion.div variants={itemVariants} className="flex gap-6 mt-4 mb-4">
+          <div className="flex items-center justify-center gap-1 bg-card-bg pt-3 pb-3 pl-10 pr-10 rounded-md border-first-accent border">
             <ActiveDot />
             <p className="flex items-center justify-center text text-first-accent">
-              Accepting projects for{" "}
-              {new Date().toLocaleString("default", { month: "long" })}
+              {/* Accepting projects for{" "}
+              {new Date().toLocaleString("default", { month: "long" })} */}
+              View our works
+              <ChevronRight className="" strokeWidth={1.5} />
             </p>
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <Button classes="pt-3 pb-3 pl-10 pr-10">
+          </div>
+          <div>
+            <Button className="pt-3 pb-3 pl-10 pr-10 flex">
               Start a project with us
+              <ChevronRight className="" strokeWidth={1.5} />
             </Button>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
+        <motion.div className="w-full" variants={itemVariants}>
+          <HeroCarousel />
+        </motion.div>
       </motion.div>
-      <HeroCarousel />
       <motion.div
         initial="hidden"
         animate="visible"

@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import WordMark from "./WordMark";
 import Button from "./Button";
+import {
+  ChevronRight,
+} from "lucide-react";
 function NavBar() {
   const parentVariants = {
     hidden: { y: 0 },
@@ -25,7 +28,9 @@ function NavBar() {
           variants={childVariants}
           className="flex items-center gap-8"
         >
-          <Button classes="pt-2 pb-2 pl-8 pr-8">Let's talk!</Button>
+          <Button className="pt-2 pb-2 pl-6 pr-6 flex">
+            Let's talk! <ChevronRight className="" strokeWidth={1.5} />
+          </Button>
         </motion.div>
       </motion.nav>
     </div>

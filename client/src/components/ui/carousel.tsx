@@ -60,6 +60,7 @@ const Carousel = React.forwardRef<
       {
         ...opts,
         axis: orientation === "horizontal" ? "x" : "y",
+        loop: true, // <--- Add this here for infinite loop
       },
       plugins
     );
@@ -103,6 +104,16 @@ const Carousel = React.forwardRef<
 
       setApi(api);
     }, [api, setApi]);
+
+    React.useEffect(() => {
+      if (!api) return;
+
+      const interval = setInterval(() => {
+        api.scrollNext();
+      }, 4000);
+
+      return () => clearInterval(interval);
+    }, [api]);
 
     React.useEffect(() => {
       if (!api) {
