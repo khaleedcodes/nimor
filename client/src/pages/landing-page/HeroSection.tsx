@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Button from "../../components/Button";
 import Marquee from "./Marquee";
-import ActiveDot from "../../components/ActiveDot";
+// import ActiveDot from "../../components/ActiveDot";
 import HeroCarousel from "./HeroCarousel";
 import { ChevronRight } from "lucide-react";
 
@@ -40,7 +40,7 @@ function HeroSection() {
         </motion.h1>
         <motion.h2
           variants={itemVariants}
-          className="text-sm max-lg:text-sm max-md:text-sm max-sm:text-sm text-center max-w-[600px]"
+          className="text-sm max-lg:text-sm max-md:text-sm max-sm:text-sm text-center max-w-[800px]"
         >
           At Nimor, we create websites that help you make your mark online. Our
           engaging, user-friendly designs elevate your brand, connect with your
@@ -49,7 +49,7 @@ function HeroSection() {
         </motion.h2>
         <motion.div variants={itemVariants} className="flex gap-6 mt-4 mb-4">
           <div className="flex items-center justify-center gap-1 bg-card-bg pt-3 pb-3 pl-10 pr-10 rounded-md border-first-accent border">
-            <ActiveDot />
+            {/* <ActiveDot /> */}
             <p className="flex items-center justify-center text text-first-accent">
               {/* Accepting projects for{" "}
               {new Date().toLocaleString("default", { month: "long" })} */}

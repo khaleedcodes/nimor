@@ -1,16 +1,12 @@
-import SectionHeader from "../../components/SectionHeader";
-import WebsiteList from "./WebsiteList";
-import Button from "../../components/Button";
+import Services from "./services-section/Services";
+// import WebsiteList from "./WebsiteList";
 
 function WebsitesSection() {
   return (
-    <div className="flex justify-center min-h-lvh">
-      <div className="max-w-screen-xl w-full p-4 flex flex-col justify-center items-center gap-20 max-sm:gap-8">
-        <SectionHeader>You name it, we build it.</SectionHeader>
-        <WebsiteList />
-        <Button className="pt-4 pb-4 pl-14 pr-14">
-          Ready to build your dream website? Let's get started!
-        </Button>
+    <div className="flex justify-center min-h-lvh bg-[rgb(96,76,199,0.2)]  mt-20 rounded-xl">
+      <div className="max-w-screen-xl w-full  flex flex-col justify-center items-center gap-20 max-sm:gap-8">
+        {/* <WebsiteList/> */}
+        <Services />
       </div>
     </div>
   );
