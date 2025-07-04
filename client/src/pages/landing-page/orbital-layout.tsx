@@ -206,7 +206,7 @@ const Orbital = () => {
                 whileHover={{ scale: 1.05 }}
               >
                 {/* Hover Bubble */}
-                <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-3 py-2 bg-black text-white text-xs rounded-md opacity-0 scale-95 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:scale-100 shadow-lg z-50 border">
+                <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-3 py-2 bg-black text-white text-xs rounded-md opacity-0 scale-95 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:scale-100 shadow-lg z-50 border min-w-[200px]">
                   {item.description}
                 </div>
 
