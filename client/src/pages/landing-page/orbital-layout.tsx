@@ -6,7 +6,15 @@ import {
   animate,
   useSpring,
 } from "framer-motion";
-import { Circle, Square, Triangle, Star, Hexagon, Heart } from "lucide-react";
+import {
+  Circle,
+  Square,
+  Triangle,
+  Star,
+  Hexagon,
+  Heart,
+  ArrowRight,
+} from "lucide-react";
 import ActiveDot from "@/components/ActiveDot";
 
 interface WebsiteType {
@@ -15,6 +23,7 @@ interface WebsiteType {
   angle: number;
   color: string;
   Icon: React.ElementType;
+  description: string;
 }
 
 const websiteTypes: WebsiteType[] = [
@@ -24,6 +33,7 @@ const websiteTypes: WebsiteType[] = [
     angle: 0,
     color: "#F87171",
     Icon: Square,
+    description: "Solutions for companies to grow online.",
   },
   {
     name: "E-commerce Websites",
@@ -31,6 +41,7 @@ const websiteTypes: WebsiteType[] = [
     angle: 36,
     color: "#60A5FA",
     Icon: Circle,
+    description: "Online stores with seamless checkout.",
   },
   {
     name: "Portfolio Websites",
@@ -38,14 +49,23 @@ const websiteTypes: WebsiteType[] = [
     angle: 320,
     color: "#34D399",
     Icon: Triangle,
+    description: "Showcase your creative work beautifully.",
   },
-  { name: "Landing Pages", ring: 1, angle: 108, color: "#FBBF24", Icon: Star },
+  {
+    name: "Landing Pages",
+    ring: 1,
+    angle: 108,
+    color: "#FBBF24",
+    Icon: Star,
+    description: "High-converting one-page designs.",
+  },
   {
     name: "Blogs & Content Websites",
     ring: 2,
     angle: 164,
     color: "#A78BFA",
     Icon: Hexagon,
+    description: "Publish articles and grow your audience.",
   },
   {
     name: "Educational Websites",
@@ -53,6 +73,7 @@ const websiteTypes: WebsiteType[] = [
     angle: 180,
     color: "#F472B6",
     Icon: Heart,
+    description: "Platforms for teaching and learning.",
   },
   {
     name: "Non-Profit & Charity Websites",
@@ -60,6 +81,7 @@ const websiteTypes: WebsiteType[] = [
     angle: 216,
     color: "#3B82F6",
     Icon: Circle,
+    description: "Raise awareness and collect donations.",
   },
   {
     name: "Personal Websites",
@@ -67,6 +89,7 @@ const websiteTypes: WebsiteType[] = [
     angle: 252,
     color: "#22D3EE",
     Icon: Square,
+    description: "Express yourself and your passions.",
   },
   {
     name: "Event Websites",
@@ -74,6 +97,7 @@ const websiteTypes: WebsiteType[] = [
     angle: 88,
     color: "#F59E0B",
     Icon: Triangle,
+    description: "Promote events and manage registrations.",
   },
   {
     name: "Membership/Subscription Websites",
@@ -81,6 +105,7 @@ const websiteTypes: WebsiteType[] = [
     angle: 310,
     color: "#EC4899",
     Icon: Star,
+    description: "Offer exclusive content to subscribers.",
   },
 ];
 
@@ -91,10 +116,10 @@ const ringRadii = {
 
 const Orbital = () => {
   const baseRotation = useMotionValue(0);
-  const hoverProgress = useMotionValue(0); // 0 = rotating, 1 = fixed position
+  const hoverProgress = useMotionValue(0);
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    // Always animate baseRotation continuously
     const controls = animate(baseRotation, 360, {
       duration: 20,
       repeat: Infinity,
@@ -103,8 +128,6 @@ const Orbital = () => {
     return () => controls.stop();
   }, [baseRotation]);
 
-  // Animate hoverProgress on hover state changes
-  const [isHovering, setIsHovering] = useState(false);
   useEffect(() => {
     animate(hoverProgress, isHovering ? 1 : 0, {
       stiffness: 100,
@@ -114,7 +137,7 @@ const Orbital = () => {
   }, [isHovering, hoverProgress]);
 
   return (
-    <div className=" text-white flex items-center justify-center p-4 w-full">
+    <div className="text-white flex items-center justify-center p-4 w-full">
       <motion.div
         className="relative w-full max-w-4xl aspect-square flex items-center justify-center"
         initial={{ opacity: 0 }}
@@ -137,30 +160,14 @@ const Orbital = () => {
           />
         ))}
 
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center z-40">
           {websiteTypes.map((item) => {
             const radius = ringRadii[item.ring as keyof typeof ringRadii];
 
-            // Interpolate angle between rotating and fixed on hoverProgress
-            // angle = baseRotation + item.angle when hoverProgress=0 (no hover)
-            // angle = item.angle when hoverProgress=1 (hovered)
-            const rotatingAngle = useTransform(
-              baseRotation,
-              (r) => (r + item.angle) % 360
-            );
-            const angle = useTransform(
-              hoverProgress,
-              [0, 1],
-              [rotatingAngle.get(), item.angle]
-            );
-
-            // Since rotatingAngle.get() might be stale on first render, better to combine with useTransform as below:
-            // So let's create a combined angle transform properly:
             const combinedAngle = useTransform(
               [baseRotation, hoverProgress],
               ([rot, hover]) => {
                 const currentRot = (rot + item.angle) % 360;
-                // Linear interpolate between rotating angle and fixed angle based on hoverProgress:
                 return currentRot * (1 - hover) + item.angle * hover;
               }
             );
@@ -184,7 +191,7 @@ const Orbital = () => {
             return (
               <motion.div
                 key={item.name}
-                className="absolute"
+                className="absolute group"
                 style={{
                   left: "50%",
                   top: "50%",
@@ -195,22 +202,33 @@ const Orbital = () => {
                 }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 0.3,
-                  ease: "easeOut",
-                }}
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.2, ease: "easeOut" },
-                }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                whileHover={{ scale: 1.05 }}
               >
-                <div className="relative flex items-center gap-3 bg-black border-2 border-purple-600 rounded-lg cursor-pointer px-3 py-2 min-w-[140px] shadow-sm">
-                  <Icon
-                    size={20}
-                    stroke="none"
-                    fill={item.color}
-                    style={{ minWidth: 20, minHeight: 20 }}
-                  />
+                {/* Hover Bubble */}
+                <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-3 py-2 bg-black text-white text-xs rounded-md opacity-0 scale-95 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:scale-100 shadow-lg z-50 border">
+                  {item.description}
+                </div>
+
+                <div className="relative flex items-center gap-3 bg-black border-2 border-purple-600 rounded-lg cursor-pointer px-3 py-2 min-w-[140px] shadow-sm transition-all duration-300 ease-out group-hover:shadow-lg">
+                  <div className="relative w-5 h-5 overflow-hidden">
+                    <div className="absolute inset-0 transition-all duration-300 ease-out group-hover:translate-x-[-100%] group-hover:opacity-0">
+                      <Icon
+                        size={20}
+                        stroke="none"
+                        fill={item.color}
+                        style={{ minWidth: 20, minHeight: 20 }}
+                      />
+                    </div>
+                    <div className="absolute inset-0 transition-all duration-300 ease-out translate-x-[100%] opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
+                      <ArrowRight
+                        size={20}
+                        stroke="white"
+                        fill="none"
+                        style={{ minWidth: 20, minHeight: 20 }}
+                      />
+                    </div>
+                  </div>
                   <div
                     className="text-sm font-medium whitespace-nowrap"
                     style={{ userSelect: "none" }}
@@ -218,6 +236,14 @@ const Orbital = () => {
                     {item.name}
                   </div>
                 </div>
+
+                <div
+                  className="absolute inset-0 rounded-lg opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 pointer-events-none"
+                  style={{
+                    boxShadow: `0 0 20px ${item.color}`,
+                    filter: "blur(2px)",
+                  }}
+                />
               </motion.div>
             );
           })}
