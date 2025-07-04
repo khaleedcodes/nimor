@@ -148,7 +148,6 @@ const WebsiteOrbit = () => {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
-  // Responsive scale factor
   const scaleFactor =
     windowWidth === null
       ? 1
@@ -163,46 +162,45 @@ const WebsiteOrbit = () => {
     2: baseRingRadii[2] * scaleFactor,
   };
 
+  const maxRadius = Math.max(...Object.values(ringRadii));
+  const orbitHeight = maxRadius * 2 + 120; // Add some vertical padding
+
   return (
     <div className="text-white flex items-center justify-center p-4 w-full overflow-hidden">
       <motion.div
-        className="relative w-full max-w-4xl aspect-square flex items-center justify-center"
+        className="relative w-full max-w-4xl flex items-center justify-center"
+        style={{ height: orbitHeight }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
-        {/* Horizontal dashed line across the circles, wider than largest ring */}
         <div
           className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 border-b-2 border-dashed border-white"
           style={{
-            width: ringRadii[2] * 2 + 650, // extend 80px each side beyond circle
+            width: ringRadii[2] * 2 + 650,
             zIndex: 5,
           }}
         />
-
-        {/* Left small filled circle */}
         <div
           className="absolute bg-white rounded-full"
           style={{
             width: 12,
             height: 12,
             top: "50%",
-            left: `calc(50% - ${(ringRadii[2] * 2 + 650) / 2}px - 1px)`, // 16px offset from line end
+            left: `calc(50% - ${(ringRadii[2] * 2 + 650) / 2}px - 1px)`,
             transform: "translateY(-50%)",
             zIndex: 10,
           }}
         />
-
-        {/* Right small filled circle */}
         <div
           className="absolute bg-white rounded-full"
           style={{
             width: 12,
             height: 12,
             top: "50%",
-            left: `calc(50% + ${(ringRadii[2] * 2 + 650) / 2}px + 1px)`, // 16px offset from line end
+            left: `calc(50% + ${(ringRadii[2] * 2 + 650) / 2}px + 1px)`,
             transform: "translateY(-50%)",
             zIndex: 10,
           }}
@@ -270,7 +268,6 @@ const WebsiteOrbit = () => {
                 onHoverStart={() => setIsHoveringItem(item.name)}
                 onHoverEnd={() => setIsHoveringItem(null)}
               >
-                {/* Hover Tooltip */}
                 <div
                   className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-black text-white rounded-md opacity-0 scale-95 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:scale-100 shadow-lg z-50 border"
                   style={{
