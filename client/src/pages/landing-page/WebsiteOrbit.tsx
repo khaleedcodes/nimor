@@ -14,8 +14,11 @@ import {
   Hexagon,
   Heart,
   ArrowRight,
+  ChevronRight,
 } from "lucide-react";
 import ActiveDot from "@/components/ActiveDot";
+import { Link } from "react-router-dom";
+import Button from "@/components/Button";
 
 interface WebsiteType {
   name: string;
@@ -123,7 +126,7 @@ const WebsiteOrbit = () => {
 
   useEffect(() => {
     const controls = animate(baseRotation, 360, {
-      duration: 20,
+      duration: 25,
       repeat: Infinity,
       ease: "linear",
     });
@@ -297,12 +300,17 @@ const WebsiteOrbit = () => {
         </div>
 
         <motion.div
-          className="relative z-10 text-center"
+          className="relative z-10 text-center flex flex-col gap-2 items-center max-w-[200px]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
         >
-          <ActiveDot />
+          <div className="text-sm font-semibold text-white text-center">
+            Need something different?
+          </div>
+          <Button className="pt-[6px] pb-[6px] pl-4 pr-4 flex text-sm items-center gap-1">
+            Reach Out <ChevronRight className="h-4 w-4" strokeWidth={1.5} />
+          </Button>
         </motion.div>
       </motion.div>
     </div>
