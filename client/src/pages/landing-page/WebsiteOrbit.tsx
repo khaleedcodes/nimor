@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import {
   motion,
   useMotionValue,
   useTransform,
   animate,
   useSpring,
+  MotionValue,
 } from "framer-motion";
 import {
   Circle,
@@ -16,8 +17,6 @@ import {
   ArrowRight,
   ChevronRight,
 } from "lucide-react";
-import ActiveDot from "@/components/ActiveDot";
-import { Link } from "react-router-dom";
 import Button from "@/components/Button";
 
 interface WebsiteType {
@@ -117,24 +116,166 @@ const baseRingRadii: Record<1 | 2, number> = {
   2: 280,
 };
 
+const OrbitItem = ({
+  item,
+  radius,
+  baseRotation,
+  hoverProgress,
+  scaleFactor,
+  isHoveringItem,
+  setIsHoveringItem,
+}: {
+  item: WebsiteType;
+  radius: number;
+  baseRotation: MotionValue<number>;
+  hoverProgress: MotionValue<number>;
+  scaleFactor: number;
+  isHoveringItem: string | null;
+  setIsHoveringItem: (name: string | null) => void;
+}) => {
+  const combinedAngle = useTransform(
+    [baseRotation, hoverProgress],
+    (values: number[]) => {
+      const rot = values[0] as number;
+      const hover = values[1] as number;
+      const continuousAngle = rot + item.angle;
+      const fixedAngle = item.angle;
+      return continuousAngle * (1 - hover) + fixedAngle * hover;
+    }
+  );
+
+  const springAngle = useSpring(combinedAngle, {
+    stiffness: 150,
+    damping: 30,
+  });
+
+  const x = useTransform(
+    springAngle,
+    (a: number) => Math.cos((a * Math.PI) / 180) * radius
+  );
+  const y = useTransform(
+    springAngle,
+    (a: number) => Math.sin((a * Math.PI) / 180) * radius
+  );
+
+  const Icon = item.Icon;
+
+  return (
+    <motion.div
+      className="absolute group"
+      style={{
+        left: "50%",
+        top: "50%",
+        x,
+        y,
+        translateX: scaleFactor < 0.7 ? "-50px" : "-70px",
+        translateY: scaleFactor < 0.7 ? "-16px" : "-22px",
+        zIndex: isHoveringItem === item.name ? 100 : 10,
+      }}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      whileHover={{ scale: 1.05 }}
+      onHoverStart={() => setIsHoveringItem(item.name)}
+      onHoverEnd={() => setIsHoveringItem(null)}
+    >
+      <div
+        className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-black text-white rounded-md opacity-0 scale-95 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:scale-100 shadow-lg z-50 border"
+        style={{
+          padding: scaleFactor < 0.7 ? "6px 10px" : "8px 12px",
+          minWidth: scaleFactor < 0.7 ? 140 : 200,
+          fontSize: scaleFactor < 0.7 ? "0.65rem" : "0.75rem",
+        }}
+      >
+        {item.description}
+      </div>
+
+      <div
+        className="relative flex items-center gap-2 bg-black border-2 border-purple-600 rounded-lg cursor-pointer shadow-sm transition-all duration-300 ease-out group-hover:shadow-lg"
+        style={{
+          padding: scaleFactor < 0.7 ? "6px 8px" : "8px 12px",
+          minWidth: scaleFactor < 0.7 ? 110 : 140,
+        }}
+      >
+        <div
+          className="relative overflow-hidden"
+          style={{
+            width: scaleFactor < 0.7 ? 16 : 20,
+            height: scaleFactor < 0.7 ? 16 : 20,
+          }}
+        >
+          <div className="absolute inset-0 transition-all duration-300 ease-out group-hover:translate-x-[-100%] group-hover:opacity-0">
+            <Icon
+              size={scaleFactor < 0.7 ? 16 : 20}
+              stroke="none"
+              fill={item.color}
+            />
+          </div>
+          <div className="absolute inset-0 transition-all duration-300 ease-out translate-x-[100%] opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
+            <ArrowRight
+              size={scaleFactor < 0.7 ? 16 : 20}
+              stroke="white"
+              fill="none"
+            />
+          </div>
+        </div>
+        <div
+          className="font-medium whitespace-nowrap"
+          style={{
+            userSelect: "none",
+            fontSize: scaleFactor < 0.7 ? "0.7rem" : "0.875rem",
+          }}
+        >
+          {item.name}
+        </div>
+      </div>
+
+      <div
+        className="absolute inset-0 rounded-lg opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 pointer-events-none"
+        style={{
+          boxShadow: `0 0 20px ${item.color}`,
+          filter: "blur(2px)",
+        }}
+      />
+    </motion.div>
+  );
+};
+
 const WebsiteOrbit = () => {
   const baseRotation = useMotionValue(0);
   const hoverProgress = useMotionValue(0);
   const [isHovering, setIsHovering] = useState(false);
   const [windowWidth, setWindowWidth] = useState<number | null>(null);
   const [isHoveringItem, setIsHoveringItem] = useState<string | null>(null);
+  
+  // Use ref to track continuous rotation without modulo operations
+  const continuousRotation = useRef(0);
+  const animationRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const controls = animate(baseRotation, 360, {
-      duration: 25,
-      repeat: Infinity,
-      ease: "linear",
-    });
-    return () => controls.stop();
-  }, [baseRotation]);
+    const startContinuousRotation = () => {
+      const animate = () => {
+        if (!isHovering) {
+          continuousRotation.current += 0.3; // Smooth rotation speed
+          baseRotation.set(continuousRotation.current);
+        }
+        animationRef.current = requestAnimationFrame(animate);
+      };
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    startContinuousRotation();
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [baseRotation, isHovering]);
 
   useEffect(() => {
     animate(hoverProgress, isHovering ? 1 : 0, {
+      type: "spring",
       stiffness: 100,
       damping: 30,
       duration: 0.3,
@@ -221,114 +362,18 @@ const WebsiteOrbit = () => {
         ))}
 
         <div className="absolute inset-0 flex items-center justify-center z-40">
-          {websiteTypes.map((item) => {
-            const radius = ringRadii[item.ring];
-
-            const combinedAngle = useTransform(
-              [baseRotation, hoverProgress],
-              ([rot, hover]) => {
-                const currentRot = (rot + item.angle) % 360;
-                return currentRot * (1 - hover) + item.angle * hover;
-              }
-            );
-
-            const springAngle = useSpring(combinedAngle, {
-              stiffness: 150,
-              damping: 30,
-            });
-
-            const x = useTransform(
-              springAngle,
-              (a) => Math.cos((a * Math.PI) / 180) * radius
-            );
-            const y = useTransform(
-              springAngle,
-              (a) => Math.sin((a * Math.PI) / 180) * radius
-            );
-
-            const Icon = item.Icon;
-
-            return (
-              <motion.div
-                key={item.name}
-                className="absolute group"
-                style={{
-                  left: "50%",
-                  top: "50%",
-                  x,
-                  y,
-                  translateX: scaleFactor < 0.7 ? "-50px" : "-70px",
-                  translateY: scaleFactor < 0.7 ? "-16px" : "-22px",
-                  zIndex: isHoveringItem === item.name ? 100 : 10,
-                }}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                whileHover={{ scale: 1.05 }}
-                onHoverStart={() => setIsHoveringItem(item.name)}
-                onHoverEnd={() => setIsHoveringItem(null)}
-              >
-                <div
-                  className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-black text-white rounded-md opacity-0 scale-95 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:scale-100 shadow-lg z-50 border"
-                  style={{
-                    padding: scaleFactor < 0.7 ? "6px 10px" : "8px 12px",
-                    minWidth: scaleFactor < 0.7 ? 140 : 200,
-                    fontSize: scaleFactor < 0.7 ? "0.65rem" : "0.75rem",
-                  }}
-                >
-                  {item.description}
-                </div>
-
-                <div
-                  className="relative flex items-center gap-2 bg-black border-2 border-purple-600 rounded-lg cursor-pointer shadow-sm transition-all duration-300 ease-out group-hover:shadow-lg"
-                  style={{
-                    padding: scaleFactor < 0.7 ? "6px 8px" : "8px 12px",
-                    minWidth: scaleFactor < 0.7 ? 110 : 140,
-                  }}
-                >
-                  <div
-                    className="relative overflow-hidden"
-                    style={{
-                      width: scaleFactor < 0.7 ? 16 : 20,
-                      height: scaleFactor < 0.7 ? 16 : 20,
-                    }}
-                  >
-                    <div className="absolute inset-0 transition-all duration-300 ease-out group-hover:translate-x-[-100%] group-hover:opacity-0">
-                      <Icon
-                        size={scaleFactor < 0.7 ? 16 : 20}
-                        stroke="none"
-                        fill={item.color}
-                      />
-                    </div>
-                    <div className="absolute inset-0 transition-all duration-300 ease-out translate-x-[100%] opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
-                      <ArrowRight
-                        size={scaleFactor < 0.7 ? 16 : 20}
-                        stroke="white"
-                        fill="none"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className="font-medium whitespace-nowrap"
-                    style={{
-                      userSelect: "none",
-                      fontSize: scaleFactor < 0.7 ? "0.7rem" : "0.875rem",
-                    }}
-                  >
-                    {item.name}
-                  </div>
-                </div>
-
-                <div
-                  className="absolute inset-0 rounded-lg opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 pointer-events-none"
-                  style={{
-                    boxShadow: `0 0 20px ${item.color}`,
-                    filter: "blur(2px)",
-                  }}
-                />
-              </motion.div>
-            );
-          })}
+          {websiteTypes.map((item) => (
+            <OrbitItem
+              key={item.name}
+              item={item}
+              radius={ringRadii[item.ring]}
+              baseRotation={baseRotation}
+              hoverProgress={hoverProgress}
+              scaleFactor={scaleFactor}
+              isHoveringItem={isHoveringItem}
+              setIsHoveringItem={setIsHoveringItem}
+            />
+          ))}
         </div>
 
         <motion.div
