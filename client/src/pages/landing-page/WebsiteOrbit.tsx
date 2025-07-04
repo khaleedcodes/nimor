@@ -247,7 +247,7 @@ const WebsiteOrbit = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [windowWidth, setWindowWidth] = useState<number | null>(null);
   const [isHoveringItem, setIsHoveringItem] = useState<string | null>(null);
-  
+
   // Use ref to track continuous rotation without modulo operations
   const continuousRotation = useRef(0);
   const animationRef = useRef<number | null>(null);
