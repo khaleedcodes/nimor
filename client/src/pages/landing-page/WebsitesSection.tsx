@@ -22,7 +22,7 @@ function WebsitesSection() {
           {/* Right side: Description */}
           <div className="w-full lg:w-7/12">
             <p className="text-sm leading-relaxed max-w-2xl">
-              Whether you’re looking to establish your brand, sell products
+              Whether you're looking to establish your brand, sell products
               online, or showcase your creative work, we design websites that
               deliver results and delight your audience.
             </p>
