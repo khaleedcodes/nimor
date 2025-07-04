@@ -19,7 +19,7 @@ import ActiveDot from "@/components/ActiveDot";
 
 interface WebsiteType {
   name: string;
-  ring: number;
+  ring: 1 | 2;
   angle: number;
   color: string;
   Icon: React.ElementType;
@@ -109,12 +109,12 @@ const websiteTypes: WebsiteType[] = [
   },
 ];
 
-const baseRingRadii = {
+const baseRingRadii: Record<1 | 2, number> = {
   1: 180,
   2: 280,
 };
 
-const Orbital = () => {
+const WebsiteOrbit = () => {
   const baseRotation = useMotionValue(0);
   const hoverProgress = useMotionValue(0);
   const [isHovering, setIsHovering] = useState(false);
@@ -155,7 +155,7 @@ const Orbital = () => {
       ? 0.8
       : 1;
 
-  const ringRadii = {
+  const ringRadii: Record<1 | 2, number> = {
     1: baseRingRadii[1] * scaleFactor,
     2: baseRingRadii[2] * scaleFactor,
   };
@@ -175,8 +175,8 @@ const Orbital = () => {
             key={ring}
             className="absolute rounded-full border-2 border-dashed border-white"
             style={{
-              width: ringRadii[ring] * 2,
-              height: ringRadii[ring] * 2,
+              width: ringRadii[ring as 1 | 2] * 2,
+              height: ringRadii[ring as 1 | 2] * 2,
             }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -309,4 +309,4 @@ const Orbital = () => {
   );
 };
 
-export default Orbital;
+export default WebsiteOrbit;
