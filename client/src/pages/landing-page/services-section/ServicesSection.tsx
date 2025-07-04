@@ -5,9 +5,9 @@ import { headerVariants, itemVariants } from "./variants";
 import { services } from "./servicesData";
 import Button from "@/components/Button";
 
-const Services: React.FC = () => {
+const ServicesSection: React.FC = () => {
   return (
-    <section className="py-10">
+    <section className="py-10 min-h-lvh bg-[rgb(96,76,199,0.2)]  mt-20 rounded-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <motion.div
           className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-16 text-left"
@@ -49,4 +49,4 @@ const Services: React.FC = () => {
   );
 };
 
-export default Services;
+export default ServicesSection;
