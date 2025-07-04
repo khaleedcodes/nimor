@@ -173,6 +173,41 @@ const WebsiteOrbit = () => {
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
+        {/* Horizontal dashed line across the circles, wider than largest ring */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 border-b-2 border-dashed border-white"
+          style={{
+            width: ringRadii[2] * 2 + 650, // extend 80px each side beyond circle
+            zIndex: 5,
+          }}
+        />
+
+        {/* Left small filled circle */}
+        <div
+          className="absolute bg-white rounded-full"
+          style={{
+            width: 12,
+            height: 12,
+            top: "50%",
+            left: `calc(50% - ${(ringRadii[2] * 2 + 650) / 2}px - 1px)`, // 16px offset from line end
+            transform: "translateY(-50%)",
+            zIndex: 10,
+          }}
+        />
+
+        {/* Right small filled circle */}
+        <div
+          className="absolute bg-white rounded-full"
+          style={{
+            width: 12,
+            height: 12,
+            top: "50%",
+            left: `calc(50% + ${(ringRadii[2] * 2 + 650) / 2}px + 1px)`, // 16px offset from line end
+            transform: "translateY(-50%)",
+            zIndex: 10,
+          }}
+        />
+
         {[1, 2].map((ring) => (
           <motion.div
             key={ring}
@@ -300,7 +335,7 @@ const WebsiteOrbit = () => {
         </div>
 
         <motion.div
-          className="relative z-10 text-center flex flex-col gap-2 items-center max-w-[200px]"
+          className="relative z-10 text-center flex flex-col gap-6 items-center max-w-[200px]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
