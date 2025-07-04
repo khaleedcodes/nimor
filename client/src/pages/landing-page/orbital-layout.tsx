@@ -136,6 +136,8 @@ const Orbital = () => {
     });
   }, [isHovering, hoverProgress]);
 
+  const [isHoveringItem, setIsHoveringItem] = useState<string | null>(null);
+
   return (
     <div className="text-white flex items-center justify-center p-4 w-full">
       <motion.div
@@ -199,11 +201,14 @@ const Orbital = () => {
                   y,
                   translateX: "-70px",
                   translateY: "-22px",
+                  zIndex: isHoveringItem === item.name ? 100 : 10, // new
                 }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 whileHover={{ scale: 1.05 }}
+                onHoverStart={() => setIsHoveringItem(item.name)} // new
+                onHoverEnd={() => setIsHoveringItem(null)} // new
               >
                 {/* Hover Bubble */}
                 <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-3 py-2 bg-black text-white text-xs rounded-md opacity-0 scale-95 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:scale-100 shadow-lg z-50 border min-w-[200px]">
