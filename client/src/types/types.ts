@@ -1,4 +1,5 @@
 import React from "react";
+import { LucideIcon } from "lucide-react";
 
 type PageLayoutProp = {
   children: React.ReactNode;
@@ -37,8 +38,7 @@ type FaqItemProp = FaqType;
 type SolutionCardType = {
   problem: string;
   solution: string;
-  cardIcon?: React.FC;
-  cardImage?: string;
+  cardIcon: LucideIcon;
 };
 type SolutionCardProp = SolutionCardType;
 type WebsiteType = {
