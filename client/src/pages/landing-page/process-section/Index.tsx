@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import ProcessCard from "./ProcessCard";
 import { processCards } from "./types";
-import SectionHeader from "@/components/SectionHeader";
+// import SectionHeader from "@/components/SectionHeader";
 
 export default function Process() {
   return (

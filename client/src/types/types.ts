@@ -38,7 +38,8 @@ type FaqItemProp = FaqType;
 type SolutionCardType = {
   problem: string;
   solution: string;
-  cardIcon: LucideIcon;
+  cardIcon?: LucideIcon;
+  cardImage?: string;
 };
 type SolutionCardProp = SolutionCardType;
 type WebsiteType = {

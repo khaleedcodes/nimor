@@ -107,16 +107,16 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
     0,
     Math.ceil(testimonials.length / 2)
   );
-  const bottomRowTestimonials = testimonials.slice(
-    Math.ceil(testimonials.length / 2)
-  );
+  // const bottomRowTestimonials = testimonials.slice(
+  //   Math.ceil(testimonials.length / 2)
+  // );
 
   // Duplicate testimonials for infinite scroll
   const duplicatedTopRow = [...topRowTestimonials, ...topRowTestimonials];
-  const duplicatedBottomRow = [
-    ...bottomRowTestimonials,
-    ...bottomRowTestimonials,
-  ];
+  // const duplicatedBottomRow = [
+  //   ...bottomRowTestimonials,
+  //   ...bottomRowTestimonials,
+  // ];
 
   return (
     <section
