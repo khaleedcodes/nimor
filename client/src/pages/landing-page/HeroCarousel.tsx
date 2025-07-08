@@ -6,11 +6,13 @@ import {
   // CarouselPrevious,
 } from "@/components/ui/carousel";
 import bundlebit from "../../assets/images/clients/bundlebit.png";
-import khaleed from "../../assets/images/clients/khaleed.png";
-import nairaupdatesng from "../../assets/images/clients/nairaupdatesng.png";
-import quizwave from "../../assets/images/clients/quizwave.png";
+import ecoglow from "../../assets/images/clients/ecoglow.png";
+import ember from "../../assets/images/clients/ember.png";
+import maplefix from "../../assets/images/clients/maplefix.png";
+import pawtastic from "../../assets/images/clients/pawtastic.png";
+import truenorth from "../../assets/images/clients/truenorth.png";
 
-const clients = [bundlebit, nairaupdatesng, khaleed, quizwave];
+const clients = [truenorth, bundlebit, ecoglow, ember, maplefix, pawtastic];
 
 // import EmblaCarousel from "./EmblaCarousel";
 // import { EmblaOptionsType } from "embla-carousel";
