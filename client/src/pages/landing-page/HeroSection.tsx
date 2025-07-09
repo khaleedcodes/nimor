@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import Button from "../../components/Button";
 import Marquee from "./Marquee";
-// import ActiveDot from "../../components/ActiveDot";
 import HeroCarousel from "./HeroCarousel";
 import { ChevronRight } from "lucide-react";
 
@@ -21,7 +19,7 @@ function HeroSection() {
 
   return (
     <div
-      className=" flex justify-center gap-20 flex-col items-center bg-gradient mt-32"
+      className=" flex justify-center gap-20 flex-col items-center bg-gradient mt-32 px-2"
       style={{ minHeight: "calc(100vh - 80px)" }}
     >
       {/* <div className="bg-gradient min-h-lvh absolute z-40 top-0 left-0 h-full w-full"></div> */}
@@ -47,23 +45,26 @@ function HeroSection() {
           audience, and drive real results—Whether you're launching something
           new or refreshing your existing presence.
         </motion.h2>
-        <motion.div variants={itemVariants} className="flex gap-6 mt-4 mb-4">
-          <div className="flex items-center justify-center gap-1 bg-card-bg pt-3 pb-3 pl-10 pr-10 rounded-md border-first-accent border">
-            {/* <ActiveDot /> */}
-            <p className="flex items-center justify-center text text-first-accent">
-              {/* Accepting projects for{" "}
-              {new Date().toLocaleString("default", { month: "long" })} */}
-              View our works
-              <ChevronRight className="" strokeWidth={1.5} />
-            </p>
-          </div>
-          <div>
-            <Button className="pt-3 pb-3 pl-10 pr-10 flex">
-              Start a project with us
-              <ChevronRight className="" strokeWidth={1.5} />
-            </Button>
-          </div>
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 mb-4 w-full max-w-lg justify-center"
+        >
+          <a
+            href="#" // change to your actual route
+            className="flex items-center justify-center gap-1 bg-card-bg pt-3 pb-3 px-8 rounded-md border-first-accent border text-first-accent text-center transition hover:bg-first-accent hover:text-white"
+          >
+            View our works
+            <ChevronRight strokeWidth={1.5} />
+          </a>
+          <a
+            href="#" // change to your actual route
+            className="flex items-center justify-center gap-1 pt-3 pb-3 px-8 rounded-md border border-transparent bg-first-accent text-white text-center transition hover:bg-first-accent/90"
+          >
+            Start a project with us
+            <ChevronRight strokeWidth={1.5} />
+          </a>
         </motion.div>
+
         <motion.div className="w-full" variants={itemVariants}>
           <HeroCarousel />
         </motion.div>
