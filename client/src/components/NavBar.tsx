@@ -99,7 +99,7 @@ function NavBar() {
         <button
           aria-label="Close menu"
           onClick={() => setMenuOpen(false)}
-          className="self-end mb-4 text-black"
+          className="self-end mb-4 text-white"
         >
           <X size={28} />
         </button>

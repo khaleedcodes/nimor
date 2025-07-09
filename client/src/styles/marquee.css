@@ -1,8 +1,8 @@
 .marquee {
   position: relative;
   width: 100%;
-  max-width: 800px;
-  height: 35px;
+  /* max-width: 1200px; */
+  height: 60px;
   overflow-x: hidden;
 }
 
