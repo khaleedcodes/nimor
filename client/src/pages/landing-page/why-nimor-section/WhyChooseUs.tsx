@@ -202,7 +202,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
   return (
     <section
       ref={sectionRef}
-      className={`bg-black text-white py-20 px-6 sm:px-8 lg:px-16 relative overflow-hidden ${className}`}
+      className={`bg-black mt-20 mx-2 rounded-xl text-white py-20 px-6 sm:px-8 lg:px-16 relative overflow-hidden ${className}`}
     >
       {/* Animated background gradient */}
       <motion.div

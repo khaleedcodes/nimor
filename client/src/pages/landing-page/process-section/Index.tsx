@@ -5,7 +5,7 @@ import { processCards } from "./types";
 
 export default function Process() {
   return (
-    <div className="min-h-screen bg-gray-950 relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden">
       {/* Enhanced background decorations */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -49,9 +49,9 @@ export default function Process() {
         />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-12">
+      <div className="relative z-10 container mx-auto px-8 py-12">
         {/* Custom layout for cards */}
-        <div className="max-w-6xl mx-auto space-y-8">
+        <div className="mx-auto space-y-8">
           {/* First row: cards 1, 2, 3 side by side */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {processCards.slice(0, 3).map((card) => (

@@ -34,8 +34,7 @@ const Marquee = () => {
   return (
     <div className="flex flex-col gap-4 w-full  max-w-[1200px]">
       <p className="font-bold text-sm sm:text-base">
-        Trusted by emerging businesses and fast-growing brands shaping the
-        future.
+        Trusted by emerging businesses and fast-growing brands.
       </p>
 
       <div className="marquee flex">

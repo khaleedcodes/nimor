@@ -30,7 +30,7 @@ function NavBar() {
   ];
 
   return (
-    <div className="sticky top-0 z-20 bg-primary border-b border-b-card-bg">
+    <div className="sticky top-0 z-[60] bg-primary border-b border-b-card-bg">
       <motion.nav
         variants={parentVariants}
         initial="hidden"

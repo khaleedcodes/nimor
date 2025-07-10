@@ -318,14 +318,14 @@ const WebsiteOrbit = () => {
         onMouseLeave={() => setIsHovering(false)}
       >
         <div
-          className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 border-b-2 border-dashed border-white"
+          className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 border-b-2 border-dashed border-black"
           style={{
             width: ringRadii[2] * 2 + 650,
             zIndex: 5,
           }}
         />
         <div
-          className="absolute bg-white rounded-full"
+          className="absolute bg-black rounded-full"
           style={{
             width: 12,
             height: 12,
@@ -336,7 +336,7 @@ const WebsiteOrbit = () => {
           }}
         />
         <div
-          className="absolute bg-white rounded-full"
+          className="absolute bg-black rounded-full"
           style={{
             width: 12,
             height: 12,
@@ -350,7 +350,7 @@ const WebsiteOrbit = () => {
         {[1, 2].map((ring) => (
           <motion.div
             key={ring}
-            className="absolute rounded-full border-2 border-dashed border-white"
+            className="absolute rounded-full border-2 border-dashed border-black"
             style={{
               width: ringRadii[ring as 1 | 2] * 2,
               height: ringRadii[ring as 1 | 2] * 2,
@@ -382,7 +382,7 @@ const WebsiteOrbit = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
         >
-          <div className="text-sm font-semibold text-white text-center">
+          <div className="text-sm font-semibold text-black text-center">
             Need something different?
           </div>
           <Button className="pt-[6px] pb-[6px] pl-4 pr-4 flex text-sm items-center gap-1">

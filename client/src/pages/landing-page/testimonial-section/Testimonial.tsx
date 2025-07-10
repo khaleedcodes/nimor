@@ -120,7 +120,7 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
 
   return (
     <section
-      className={`py-20 px-4 sm:px-6 lg:px-8  relative overflow-hidden ${className}`}
+      className={`py-20 px-4 sm:px-6 lg:px-8 bg-[rgb(96,76,199,0.2)] rounded-xl mx-2 relative overflow-hidden ${className}`}
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -142,11 +142,8 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
           </motion.div>
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
-            Words of praise from others
+            Words of praise from others about our presence.
           </h2>
-          <h3 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
-            about our presence.
-          </h3>
         </motion.div>
 
         {/* Testimonial Cards */}
