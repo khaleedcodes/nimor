@@ -10,6 +10,7 @@ export default {
         smallest: "440px",
       },
       colors: {
+        "new-accent" : "#140f28",
         primary: "#000",
         secondary: "#0B0B0C",
         "card-text": "hsl(217 19% 35%)",
