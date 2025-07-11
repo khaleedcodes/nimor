@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
-import wordMark1 from "../../assets/images/wordmarks/wordmark (1).png";
-import wordMark2 from "../../assets/images/wordmarks/wordmark (2).png";
-import wordMark3 from "../../assets/images/wordmarks/wordmark (3).png";
-import wordMark4 from "../../assets/images/wordmarks/wordmark (4).png";
-import wordMark5 from "../../assets/images/wordmarks/wordmark (5).png";
-import wordMark6 from "../../assets/images/wordmarks/wordmark (6).png";
+import wordMark1 from "../../../assets/images/wordmarks/wordmark (1).png";
+import wordMark2 from "../../../assets/images/wordmarks/wordmark (2).png";
+import wordMark3 from "../../../assets/images/wordmarks/wordmark (3).png";
+import wordMark4 from "../../../assets/images/wordmarks/wordmark (4).png";
+import wordMark5 from "../../../assets/images/wordmarks/wordmark (5).png";
+import wordMark6 from "../../../assets/images/wordmarks/wordmark (6).png";
 
 const wordMarks = [
   wordMark1,

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Arrow from "../../assets/icons/Arrow";
-import { FaqItemProp } from "../../types/types";
+import Arrow from "../../../assets/icons/Arrow";
+import { FaqItemProp } from "../../../types/types";
 
 function FaqItem({ question, answer }: FaqItemProp) {
   const [isActive, setIsActive] = useState(false);

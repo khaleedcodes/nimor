@@ -1,6 +1,6 @@
 import WebsiteOrbit from "./WebsiteOrbit";
 import { motion } from "framer-motion";
-import { headerVariants } from "../landing-page/services-section/variants";
+import { headerVariants } from "../services-section/variants";
 import SectionHeader from "@/components/SectionHeader";
 
 function WebsitesSection() {

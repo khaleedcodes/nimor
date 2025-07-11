@@ -1,4 +1,4 @@
-import QuestionMark from "../../assets/icons/QuestionMark";
+import QuestionMark from "../../../assets/icons/QuestionMark";
 import { useNavigate } from "react-router-dom";
 
 function ContactForm() {

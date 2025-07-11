@@ -1,4 +1,4 @@
-import SectionHeader from "../../components/SectionHeader";
+import SectionHeader from "../../../components/SectionHeader";
 // import ContactForm from "./ContactForm";
 import FaqList from "./FaqList";
 

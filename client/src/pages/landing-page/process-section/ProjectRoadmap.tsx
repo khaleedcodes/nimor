@@ -1,7 +1,7 @@
-import SectionHeader from "../../components/SectionHeader";
-import Process from "./process-section/Index";
+import SectionHeader from "../../../components/SectionHeader";
+import Process from "./Index";
 import { motion } from "framer-motion";
-import { headerVariants } from "../landing-page/services-section/variants";
+import { headerVariants } from "../services-section/variants";
 
 function ProjectRoadmap() {
   return (

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Marquee from "./Marquee";
+import Marquee from "./HeroMarquee";
 import HeroCarousel from "./HeroCarousel";
 import { ChevronRight } from "lucide-react";
 
