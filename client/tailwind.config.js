@@ -10,14 +10,16 @@ export default {
         smallest: "440px",
       },
       colors: {
-        "new-accent" : "#140f28",
+        "new-accent": "#140f28",
+        "first-accent": "#604cc7",
+        "second-accent": "#261F50",
+
         primary: "#000",
         secondary: "#0B0B0C",
         "card-text": "hsl(217 19% 35%)",
         "card-bg": "rgb(96,76,199,0.1)",
-        "first-accent": "#604cc7",
-        "second-accent": "#604cc766",
-        extra : "#140f28",
+
+        extra: "#140f28",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

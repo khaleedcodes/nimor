@@ -4,11 +4,17 @@ import ServicesGrid from "./ServicesGrid";
 import { headerVariants, itemVariants } from "./variants";
 import { services } from "./servicesData";
 import Button from "@/components/Button";
+import { ChevronRight } from "lucide-react";
+
+const arrowVariants = {
+  initial: { x: 0 },
+  hover: { x: 5 },
+};
 
 const ServicesSection: React.FC = () => {
   return (
     <div className="w-full px-2">
-      <section className="py-10 min-h-lvh bg-[rgb(96,76,199,0.2)]  mt-20 rounded-xl">
+      <section className="py-10 min-h-lvh bg-new-accent mt-20 rounded-xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <motion.div
             className="flex flex-col lg:flex-row items-center justify-between lg:gap-8 gap-4 mb-16 text-left"
@@ -41,9 +47,18 @@ const ServicesSection: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
           >
-            <Button className="pt-4 pb-4 pl-14 pr-14">
-              Ready to build your dream website? Let's get started!
-            </Button>
+            <motion.div
+              initial="initial"
+              whileHover="hover"
+              className="inline-block"
+            >
+              <Button className="py-3 px-6 sm:py-4 sm:px-10 md:px-14 text-sm sm:text-base md:text-lg flex items-center justify-center gap-2">
+                Ready to build your dream website? Let's get started!
+                <motion.div variants={arrowVariants}>
+                  <ChevronRight strokeWidth={1.5} />
+                </motion.div>
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
       </section>

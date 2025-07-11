@@ -62,7 +62,7 @@ function HeroSection() {
             href="#"
             initial="initial"
             whileHover="hover"
-            className="flex items-center justify-center gap-1 bg-new-accent pt-3 pb-3 px-8 rounded-md border-first-accent border text-first-accent text-center transition hover:bg-first-accent hover:text-white max-md:text-sm"
+            className="flex items-center justify-center gap-1 bg-new-accent pt-3 pb-3 px-8 rounded-md border-first-accent border text-first-accent text-center transition hover:bg-first-accent hover:text-white text-sm"
           >
             See what we've built
             <motion.div variants={arrowVariants}>
@@ -75,7 +75,7 @@ function HeroSection() {
             href="#"
             initial="initial"
             whileHover="hover"
-            className="flex items-center justify-center gap-1 pt-3 pb-3 px-8 rounded-md border border-transparent bg-first-accent text-white text-center transition hover:bg-first-accent/90 max-md:text-sm"
+            className="flex items-center justify-center gap-1 pt-3 pb-3 px-8 rounded-md border border-transparent bg-first-accent text-white text-center transition hover:bg-second-accent text-sm"
           >
             Launch your project
             <motion.div variants={arrowVariants}>
