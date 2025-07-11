@@ -16,6 +16,7 @@ export default {
         "card-bg": "rgb(96,76,199,0.1)",
         "first-accent": "#604cc7",
         "second-accent": "#604cc766",
+        extra : "#140f28",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

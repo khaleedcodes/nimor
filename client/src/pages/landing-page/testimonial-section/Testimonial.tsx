@@ -38,7 +38,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
 }) => {
   return (
     <section
-      className={`w-full flex justify-center px-4 sm:px-6 lg:px-8 bg-[rgb(96,76,199,0.2)] rounded-xl relative overflow-hidden py-20 ${className}`}
+      className={`w-full mx-2 flex justify-center px-4 sm:px-6 lg:px-8 bg-[rgb(96,76,199,0.2)] rounded-xl relative overflow-hidden py-20 ${className}`}
     >
       <div className="max-w-7xl w-full flex flex-col items-center ">
         {/* Header */}

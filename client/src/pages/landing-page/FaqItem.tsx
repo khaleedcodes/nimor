@@ -21,7 +21,7 @@ function FaqItem({ question, answer }: FaqItemProp) {
         <Arrow isActive={isActive} />
       </div>
       <p
-        className={`pb-4 pl-4 pr-4  text-second-accent ${
+        className={`pb-4 pl-4 pr-4  text-white ${
           isActive ? "" : "max-sm:pt-4 max-smallest:pt-7"
         }`}
       >

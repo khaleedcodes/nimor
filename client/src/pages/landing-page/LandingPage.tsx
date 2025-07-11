@@ -22,8 +22,8 @@ export default function LandingPage() {
       <WhyChooseUs />
       <TestimonialSection />
       {/* <FeedbacksSection /> */}
-      <FaqSection />
       <ContactForm />
+      <FaqSection />
     </div>
   );
 }
