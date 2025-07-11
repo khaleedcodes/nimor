@@ -5,10 +5,10 @@ import SectionHeader from "@/components/SectionHeader";
 
 function WebsitesSection() {
   return (
-    <div className="flex justify-center mt-20 ">
+    <div className="flex justify-center mt-20 px-2 bg-white py-8 rounded-xl mx-2">
       <div className="max-w-screen-xl w-full  flex flex-col justify-center items-center ">
         <motion.div
-          className="flex flex-col lg:flex-row items-center justify-between gap-8 text-left"
+          className="flex flex-col lg:flex-row items-center justify-between lg:gap-8 gap-4 text-left"
           variants={headerVariants}
           initial="hidden"
           whileInView="visible"
@@ -21,7 +21,7 @@ function WebsitesSection() {
 
           {/* Right side: Description */}
           <div className="w-full lg:w-7/12">
-            <p className="text-sm leading-relaxed max-w-2xl">
+            <p className="text-sm leading-relaxed max-w-2xl text-black">
               Whether you're looking to establish your brand, sell products
               online, or showcase your creative work, we design websites that
               deliver results and delight your audience.

@@ -1,5 +1,5 @@
 import SectionHeader from "../../components/SectionHeader";
-import ContactForm from "./ContactForm";
+// import ContactForm from "./ContactForm";
 import FaqList from "./FaqList";
 
 function FaqSection() {
@@ -9,7 +9,7 @@ function FaqSection() {
         <SectionHeader>Questions?</SectionHeader>
         <div className="flex items-stretch gap-10 flex-wrap">
           <FaqList />
-          <ContactForm />
+          {/* <ContactForm /> */}
         </div>
       </div>
     </div>
