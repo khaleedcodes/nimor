@@ -1,4 +1,5 @@
 import React from "react";
+import { LucideIcon } from "lucide-react";
 
 type PageLayoutProp = {
   children: React.ReactNode;
@@ -37,7 +38,7 @@ type FaqItemProp = FaqType;
 type SolutionCardType = {
   problem: string;
   solution: string;
-  cardIcon?: React.FC;
+  cardIcon?: LucideIcon;
   cardImage?: string;
 };
 type SolutionCardProp = SolutionCardType;
@@ -48,6 +49,15 @@ type WordMarkProp = {
   classes: string;
 };
 type WebsiteItemProp = WebsiteType;
+type Testimonial = {
+  id: string;
+  text: string;
+  author: string;
+  position: string;
+  company: string;
+  avatar: string;
+};
+
 export type {
   PageLayoutProp,
   HamBurgerProps,
@@ -64,4 +74,5 @@ export type {
   WebsiteType,
   WebsiteItemProp,
   WordMarkProp,
+  Testimonial
 };

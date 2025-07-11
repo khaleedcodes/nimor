@@ -3,7 +3,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  min-height: 55px;
+  /* min-height: 55px; */
 }
 /* .bg-gradient {
   background: rgb(96, 76, 199);
