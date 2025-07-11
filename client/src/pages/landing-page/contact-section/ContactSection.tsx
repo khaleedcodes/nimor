@@ -1,20 +1,22 @@
-import React from "react";
-
 const ContactSection = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here (e.g., send data to backend)
-    alert("Form submitted");
-  };
+  const handleSubmit = () => {};
 
   return (
-    <section className="py-16 bg-gray-100 rounded-xl mt-20">
+    <section className="py-16 bg-[rgb(96,76,199,0.2)] rounded-xl mt-20 mx-2">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold mb-8 text-center">Start Your Project</h2>
+        <h2 className="text-2xl font-bold mb-8 text-center text-[rgb(96,76,199)]">
+          Start Your Project
+        </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-xl shadow-md">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-6 bg-[rgb(96,76,199)] p-8 rounded-xl shadow-md text-white"
+        >
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-white"
+            >
               Full Name
             </label>
             <input
@@ -22,12 +24,16 @@ const ContactSection = () => {
               id="name"
               name="name"
               required
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full bg-[#140f28] text-white border border-white/30 rounded-md shadow-sm p-3 placeholder:text-white/60 focus:ring-white focus:border-white focus:outline-none"
+              placeholder="Your name"
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-white"
+            >
               Email Address
             </label>
             <input
@@ -35,19 +41,23 @@ const ContactSection = () => {
               id="email"
               name="email"
               required
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full bg-[#140f28] text-white border border-white/30 rounded-md shadow-sm p-3 placeholder:text-white/60 focus:ring-white focus:border-white focus:outline-none"
+              placeholder="you@example.com"
             />
           </div>
 
           <div>
-            <label htmlFor="projectType" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="projectType"
+              className="block text-sm font-medium text-white"
+            >
               Project Type
             </label>
             <select
               id="projectType"
               name="projectType"
               required
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 bg-white focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full bg-[#140f28] text-white border border-white/30 rounded-md shadow-sm p-3 focus:ring-white focus:border-white focus:outline-none"
             >
               <option value="">Select a type</option>
               <option value="website">Website</option>
@@ -59,22 +69,25 @@ const ContactSection = () => {
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-white"
+            >
               Project Details
             </label>
             <textarea
               id="message"
               name="message"
-              rows="5"
+              rows={5}
               required
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full bg-[#140f28] text-white border border-white/30 rounded-md shadow-sm p-3 placeholder:text-white/60 focus:ring-white focus:border-white focus:outline-none"
               placeholder="Tell us a bit about your project goals..."
             ></textarea>
           </div>
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-md hover:bg-blue-700 transition duration-300"
+            className="w-full bg-white text-[rgb(96,76,199)] font-semibold py-3 px-6 rounded-md hover:bg-white/90 transition duration-300"
           >
             Submit Project Request
           </button>

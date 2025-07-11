@@ -49,7 +49,7 @@ export default function Process() {
         />
       </div>
 
-      <div className="relative z-10 container mx-auto px-8 py-12">
+      <div className="relative z-10 container mx-auto py-12">
         {/* Custom layout for cards */}
         <div className="mx-auto space-y-8">
           {/* First row: cards 1, 2, 3 side by side */}

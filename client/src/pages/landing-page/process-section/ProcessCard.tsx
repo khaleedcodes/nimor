@@ -85,9 +85,9 @@ export default function ProcessCard({
 
       {/* Main card */}
       <motion.div
-        className="relative bg-gray-900/90 backdrop-blur-xl rounded-2xl p-8 border border-gray-800/50 shadow-2xl group-hover:shadow-3xl transition-all duration-300 overflow-hidden"
+        className="relative bg-[#140f28] backdrop-blur-xl rounded-2xl p-8 border border-gray-800/50 shadow-2xl group-hover:shadow-3xl transition-all duration-300 overflow-hidden"
         whileHover={{
-          borderColor: "rgba(59, 130, 246, 0.5)",
+          borderColor: "#604cc7",
         }}
       >
         {/* Background shimmer */}
@@ -137,12 +137,12 @@ export default function ProcessCard({
         {/* Icon + Text */}
         <div className="relative space-y-4 flex flex-col items-start">
           {Icon && (
-            <div className="text-blue-400 group-hover:text-white transition-colors duration-300">
+            <div className="text-first-accent group-hover:text-white transition-colors duration-300">
               <Icon size={32} strokeWidth={2.2} />
             </div>
           )}
           <motion.h3
-            className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors duration-300"
+            className="text-xl font-semibold text-white group-hover:text-first-accent transition-colors duration-300"
             whileHover={{
               scale: 1.02,
               x: 5,

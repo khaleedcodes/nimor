@@ -49,6 +49,15 @@ type WordMarkProp = {
   classes: string;
 };
 type WebsiteItemProp = WebsiteType;
+type Testimonial = {
+  id: string;
+  text: string;
+  author: string;
+  position: string;
+  company: string;
+  avatar: string;
+};
+
 export type {
   PageLayoutProp,
   HamBurgerProps,
@@ -65,4 +74,5 @@ export type {
   WebsiteType,
   WebsiteItemProp,
   WordMarkProp,
+  Testimonial
 };

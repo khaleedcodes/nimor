@@ -7,7 +7,7 @@ import FaqSection from "./FaqSection";
 import WebsitesSection from "./WebsitesSection";
 import ServicesSection from "./services-section/ServicesSection";
 import WhyChooseUs from "./why-nimor-section/WhyChooseUs";
-import TestimonialCarousel from "./testimonial-section/Testimonial";
+import TestimonialSection from "./testimonial-section/Testimonial";
 import ContactForm from "./contact-section/ContactSection";
 // import ProjectSlider from "./projects-section/ProjectSlider";
 export default function LandingPage() {
@@ -20,7 +20,7 @@ export default function LandingPage() {
       <ProjectsSection /> */}
       <ProjectRoadmap />
       <WhyChooseUs />
-      <TestimonialCarousel />
+      <TestimonialSection />
       {/* <FeedbacksSection /> */}
       <FaqSection />
       <ContactForm />

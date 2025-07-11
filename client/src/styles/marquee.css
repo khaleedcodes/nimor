@@ -5,7 +5,6 @@
   height: 60px;
   overflow-x: hidden;
 }
-
 .track {
   position: absolute;
   white-space: nowrap;
@@ -23,4 +22,25 @@
   height: 100%;
   top: 0;
   background: linear-gradient(to left, black, transparent);
+}
+.testimonial-marquee {
+  position: relative;
+  width: 100%;
+  /* max-width: 1200px; */
+  height: 200px;
+  overflow-x: hidden;
+}
+.testimonial-shadow-blend-left {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  background: linear-gradient(to right, #140f28, transparent);
+}
+.testimonial-shadow-blend-right {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  background: linear-gradient(to left, #140f28, transparent);
 }
