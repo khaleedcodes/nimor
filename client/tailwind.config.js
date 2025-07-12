@@ -10,9 +10,9 @@ export default {
         smallest: "440px",
       },
       colors: {
-        "new-accent": "#140f28",
-        "first-accent": "#604cc7",
-        "second-accent": "#261F50",
+        "new-accent": "#140f28", //section background color
+        "first-accent": "#604cc7", //main accent
+        "second-accent": "#261F50", //card and hover colors
 
         primary: "#000",
         secondary: "#0B0B0C",

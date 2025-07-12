@@ -7,7 +7,7 @@ const ContactSection = () => {
 
   return (
     <section className="py-16 bg-[rgb(96,76,199,0.2)] rounded-xl mt-20 mx-2">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 gap-10 flex flex-col">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 gap-10 flex flex-col">
         <motion.div
           className="flex flex-col lg:flex-row items-center justify-between lg:gap-8 gap-4 text-left"
           variants={headerVariants}

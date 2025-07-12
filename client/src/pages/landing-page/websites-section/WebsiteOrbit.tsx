@@ -15,9 +15,13 @@ import {
   Hexagon,
   Heart,
   ArrowRight,
-  ChevronRight,
+  // ChevronRight,
 } from "lucide-react";
-import Button from "@/components/Button";
+// import Button from "@/components/Button";
+// const arrowVariants = {
+//   initial: { x: 0 },
+//   hover: { x: 5 },
+// };
 
 interface WebsiteType {
   name: string;
@@ -376,7 +380,7 @@ const WebsiteOrbit = () => {
           ))}
         </div>
 
-        <motion.div
+        {/* <motion.div
           className="relative z-10 text-center flex flex-col gap-6 items-center max-w-[200px]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -385,10 +389,19 @@ const WebsiteOrbit = () => {
           <div className="text-sm font-semibold text-black text-center">
             Need something different?
           </div>
-          <Button className="pt-[6px] pb-[6px] pl-4 pr-4 flex text-sm items-center gap-1">
-            Reach Out <ChevronRight className="h-4 w-4" strokeWidth={1.5} />
-          </Button>
-        </motion.div>
+          <motion.div
+            initial="initial"
+            whileHover="hover"
+            className="inline-block cursor-pointer"
+          >
+            <Button className="pt-[6px] pb-[6px] pl-4 pr-4 flex text-sm items-center gap-1">
+              Reach Out{" "}
+              <motion.span variants={arrowVariants}>
+                <ChevronRight className="h-4 w-4" strokeWidth={1.5} />
+              </motion.span>
+            </Button>
+          </motion.div>
+        </motion.div> */}
       </motion.div>
     </div>
   );
