@@ -1,7 +1,14 @@
 import WebsiteOrbit from "./WebsiteOrbit";
 import { motion } from "framer-motion";
-import { headerVariants } from "../landing-page/services-section/variants";
+import { headerVariants, itemVariants } from "../services-section/variants";
 import SectionHeader from "@/components/SectionHeader";
+import Button from "@/components/Button";
+import { ChevronRight } from "lucide-react";
+
+const arrowVariants = {
+  initial: { x: 0 },
+  hover: { x: 5 },
+};
 
 function WebsitesSection() {
   return (
@@ -29,6 +36,26 @@ function WebsitesSection() {
           </div>
         </motion.div>
         <WebsiteOrbit />
+        <motion.div
+          className="text-center mt-20"
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          <motion.div
+            initial="initial"
+            whileHover="hover"
+            className="inline-block"
+          >
+            <Button className="py-3 px-6 sm:py-4 sm:px-10 md:px-14 text-sm sm:text-base md:text-lg flex items-center justify-center gap-2">
+              Start your custom build today
+              <motion.div variants={arrowVariants}>
+                <ChevronRight strokeWidth={1.5} />
+              </motion.div>
+            </Button>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

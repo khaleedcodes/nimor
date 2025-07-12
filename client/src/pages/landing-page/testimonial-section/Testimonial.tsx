@@ -40,7 +40,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
     <section
       className={`w-full flex justify-center px-4 sm:px-6 lg:px-8 bg-[rgb(96,76,199,0.2)] rounded-xl relative overflow-hidden py-20 ${className}`}
     >
-      <div className="max-w-7xl w-full flex flex-col items-center ">
+      <div className="max-w-screen-xl w-full flex flex-col items-center ">
         {/* Header */}
         <motion.div
           className="flex flex-col items-center text-center gap-6"
@@ -50,7 +50,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
         >
           {/* Rating Badge */}
           <motion.div
-            className="inline-flex items-center bg-black text-white px-4 py-2 rounded-full border text-sm"
+            className="inline-flex items-center bg-second-accent text-white px-4 py-2 rounded-full  text-sm"
             variants={badgeVariants}
           >
             <span className="text-yellow-400 mr-2 text-base">★</span>

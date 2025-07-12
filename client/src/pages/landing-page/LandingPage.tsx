@@ -1,10 +1,10 @@
-import HeroSection from "./HeroSection";
+import HeroSection from "./hero-section/HeroSection";
 // import ProjectsSection from "./ProjectsSection";
-import ProjectRoadmap from "./ProjectRoadmap";
+import ProjectRoadmap from "./process-section/ProjectRoadmap";
 // import FeedbacksSection from "./FeedbacksSection";
-import FaqSection from "./FaqSection";
+import FaqSection from "./faq-section/FaqSection";
 // import SolutionsSection from "./SolutionsSection";
-import WebsitesSection from "./WebsitesSection";
+import WebsitesSection from "./websites-section/WebsitesSection";
 import ServicesSection from "./services-section/ServicesSection";
 import WhyChooseUs from "./why-nimor-section/WhyChooseUs";
 import TestimonialSection from "./testimonial-section/Testimonial";
@@ -22,8 +22,8 @@ export default function LandingPage() {
       <WhyChooseUs />
       <TestimonialSection />
       {/* <FeedbacksSection /> */}
-      <FaqSection />
       <ContactForm />
+      <FaqSection />
     </div>
   );
 }

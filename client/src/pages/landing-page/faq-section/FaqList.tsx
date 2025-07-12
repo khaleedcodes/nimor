@@ -1,5 +1,5 @@
 import FaqItem from "./FaqItem";
-import { FaqType } from "../../types/types";
+import { FaqType } from "../../../types/types";
 
 const faqs: FaqType[] = [
   {
