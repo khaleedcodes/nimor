@@ -2,7 +2,7 @@ import { Testimonial } from "@/types/types";
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <div className="flex-shrink-0 w-80 max-w-[90vw] bg-[#140f28] border-gray-800/50 rounded-2xl p-6 shadow-lg overflow-hidden">
+    <div className="flex-shrink-0 w-80 max-w-[90vw] bg-second-accent border-gray-800/50 rounded-2xl p-6 shadow-lg overflow-hidden">
       {/* Quote Icon */}
       <div className="mb-4">
         <svg

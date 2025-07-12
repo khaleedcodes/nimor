@@ -1,4 +1,4 @@
-import QuestionMark from "../../assets/icons/QuestionMark";
+// import QuestionMark from "../../../assets/icons/QuestionMark";
 import { useNavigate } from "react-router-dom";
 
 function ContactForm() {
@@ -32,11 +32,11 @@ function ContactForm() {
       id="contact"
     >
       <div className="flex flex-col items-center gap-2 bg-card-bg p-4 w-full rounded-md">
-        <div className="flex">
+        {/* <div className="flex">
           <QuestionMark />
           <QuestionMark />
           <QuestionMark />
-        </div>
+        </div> */}
         <h1 className="text-first-accent font-bold text-2xl text-center">
           More Questions? Reach out!!
         </h1>

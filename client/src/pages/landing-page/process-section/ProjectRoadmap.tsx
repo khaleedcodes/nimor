@@ -1,12 +1,12 @@
-import SectionHeader from "../../components/SectionHeader";
-import Process from "./process-section/Index";
+import SectionHeader from "../../../components/SectionHeader";
+import Process from "./Index";
 import { motion } from "framer-motion";
-import { headerVariants } from "../landing-page/services-section/variants";
+import { headerVariants } from "../services-section/variants";
 
 function ProjectRoadmap() {
   return (
     <div className="flex justify-center min-h-lvh  bg-[rgb(96,76,199,0.2)] rounded-xl mx-2 mt-20 py-8">
-      <div className="max-w-screen-xl w-full p-4 flex flex-col justify-center items-center ">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="flex flex-col lg:flex-row items-center justify-between lg:gap-8 gap-4 text-left"
           variants={headerVariants}

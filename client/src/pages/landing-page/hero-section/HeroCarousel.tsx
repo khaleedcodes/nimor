@@ -7,28 +7,28 @@ import {
 } from "@/components/ui/carousel";
 
 // AVIF format
-import bundlebitAvif from "../../assets/images/clients/bundlebit.avif";
-import ecoglowAvif from "../../assets/images/clients/ecoglow.avif";
-import emberAvif from "../../assets/images/clients/ember.avif";
-import maplefixAvif from "../../assets/images/clients/maplefix.avif";
-import pawtasticAvif from "../../assets/images/clients/pawtastic.avif";
-import truenorthAvif from "../../assets/images/clients/truenorth.avif";
+import bundlebitAvif from "../../../assets/images/clients/bundlebit.avif";
+import ecoglowAvif from "../../../assets/images/clients/ecoglow.avif";
+import emberAvif from "../../../assets/images/clients/ember.avif";
+import maplefixAvif from "../../../assets/images/clients/maplefix.avif";
+import pawtasticAvif from "../../../assets/images/clients/pawtastic.avif";
+import truenorthAvif from "../../../assets/images/clients/truenorth.avif";
 
 // WebP format
-import bundlebitWebp from "../../assets/images/clients/bundlebit.webp";
-import ecoglowWebp from "../../assets/images/clients/ecoglow.webp";
-import emberWebp from "../../assets/images/clients/ember.webp";
-import maplefixWebp from "../../assets/images/clients/maplefix.webp";
-import pawtasticWebp from "../../assets/images/clients/pawtastic.webp";
-import truenorthWebp from "../../assets/images/clients/truenorth.webp";
+import bundlebitWebp from "../../../assets/images/clients/bundlebit.webp";
+import ecoglowWebp from "../../../assets/images/clients/ecoglow.webp";
+import emberWebp from "../../../assets/images/clients/ember.webp";
+import maplefixWebp from "../../../assets/images/clients/maplefix.webp";
+import pawtasticWebp from "../../../assets/images/clients/pawtastic.webp";
+import truenorthWebp from "../../../assets/images/clients/truenorth.webp";
 
 // PNG format (fallback)
-import bundlebitPng from "../../assets/images/clients/bundlebit.png";
-import ecoglowPng from "../../assets/images/clients/ecoglow.png";
-import emberPng from "../../assets/images/clients/ember.png";
-import maplefixPng from "../../assets/images/clients/maplefix.png";
-import pawtasticPng from "../../assets/images/clients/pawtastic.png";
-import truenorthPng from "../../assets/images/clients/truenorth.png";
+import bundlebitPng from "../../../assets/images/clients/bundlebit.png";
+import ecoglowPng from "../../../assets/images/clients/ecoglow.png";
+import emberPng from "../../../assets/images/clients/ember.png";
+import maplefixPng from "../../../assets/images/clients/maplefix.png";
+import pawtasticPng from "../../../assets/images/clients/pawtastic.png";
+import truenorthPng from "../../../assets/images/clients/truenorth.png";
 
 const clients = [
   { avif: bundlebitAvif, webp: bundlebitWebp, png: bundlebitPng },

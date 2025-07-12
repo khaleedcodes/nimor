@@ -1,5 +1,13 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { itemVariants } from "../services-section/variants";
+import Button from "@/components/Button";
+import { ChevronRight } from "lucide-react";
+
+const arrowVariants = {
+  initial: { x: 0 },
+  hover: { x: 5 },
+};
 
 interface Feature {
   title: string;
@@ -16,21 +24,21 @@ interface WhyChooseUsProps {
 const defaultFeatures: Feature[] = [
   {
     id: "1",
-    title: "Deep Industry Experience and Client-Centric Approach",
+    title: "Strategic Design That Converts",
     description:
-      "At Nimor, we leverage our deep industry expertise to build tailored digital experiences. Every project is carefully aligned with your goals to maximize value and distinction.",
+      "We don't just make pretty websites—we build high-performing digital experiences that turn visitors into customers. Every page is optimized to convert and aligned with your business goals.",
   },
   {
     id: "2",
-    title: "Award-Winning, Senior-Level Expertise at Every Step",
+    title: "Senior Expertise at Every Step",
     description:
-      "Our team includes seasoned professionals in branding, UI/UX, and web development. We deliver premium solutions that exceed expectations at every phase.",
+      "From strategy to launch, you'll work directly with experienced designers and developers. No hand-offs. No fluff. Just real talent delivering real results.",
   },
   {
     id: "3",
-    title: "Trend-Driven and Custom Designed",
+    title: "Make Your Mark on the Web",
     description:
-      "We stay ahead of the curve with design trends to keep your brand both modern and timeless. Each site is crafted to fit your identity, audience, and business goals.",
+      "Your brand deserves to stand out. We help you own your space online with bold, modern designs that feel uniquely you—backed by rock-solid performance and purpose.",
   },
 ];
 
@@ -115,7 +123,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
     },
     hover: {
       scale: 1.05,
-      boxShadow: "0 10px 30px rgba(255, 255, 255, 0.3)",
+      boxShadow: "0 10px 30px ",
       transition: {
         duration: 0.3,
         ease: "easeOut",
@@ -233,7 +241,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
         ))}
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-screen-xl mx-auto relative z-10">
         <motion.div
           className="flex flex-col lg:flex-row gap-10"
           initial="hidden"
@@ -278,7 +286,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
 
               {/* Animated underline */}
               <motion.div
-                className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-white to-gray-400"
+                className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r to-new-accent from-second-accent"
                 initial={{ width: 0 }}
                 animate={isTitleInView ? { width: "60%" } : { width: 0 }}
                 transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
@@ -292,16 +300,15 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
                   behavior: "smooth",
                 })
               }
-              className="mt-6 px-5 py-2 bg-white text-black rounded-full text-xs font-medium shadow-md relative overflow-hidden group"
+              className="mt-6 px-5 py-2 bg-new-accent text-first-accent rounded-full text-xs font-medium shadow-md relative overflow-hidden group"
               variants={buttonVariants}
               initial="hidden"
               animate={isTitleInView ? "visible" : "hidden"}
               whileHover="hover"
               whileTap="tap"
             >
-              {/* Button shine effect */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20"
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-first-accent to-transparent opacity-0 group-hover:opacity-20"
                 animate={{
                   x: ["-100%", "100%"],
                 }}
@@ -311,7 +318,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
                   ease: "easeInOut",
                 }}
               />
-              <span className="relative z-10">Our Excellence</span>
+              <span className="relative z-10">What Sets Us Apart</span>
             </motion.button>
           </motion.div>
 
@@ -367,13 +374,34 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
 
                 {/* Hover glow effect */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-5 rounded-lg"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-first-accent to-transparent opacity-0 group-hover:opacity-5 rounded-lg"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: "100%" }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
                 />
               </motion.div>
             ))}
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          className="text-center mt-20"
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          <motion.div
+            initial="initial"
+            whileHover="hover"
+            className="inline-block"
+          >
+            <Button className="py-3 px-6 sm:py-4 sm:px-10 md:px-14 text-sm sm:text-base md:text-lg flex items-center justify-center gap-2">
+              See what makes us different
+              <motion.div variants={arrowVariants}>
+                <ChevronRight strokeWidth={1.5} />
+              </motion.div>
+            </Button>
           </motion.div>
         </motion.div>
       </div>

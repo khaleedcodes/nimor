@@ -1,13 +1,21 @@
 import { motion } from "framer-motion";
 import ProcessCard from "./ProcessCard";
 import { processCards } from "./types";
+import Button from "@/components/Button";
+import { ChevronRight } from "lucide-react";
+import { itemVariants } from "../services-section/variants";
 // import SectionHeader from "@/components/SectionHeader";
+
+const arrowVariants = {
+  initial: { x: 0 },
+  hover: { x: 5 },
+};
 
 export default function Process() {
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative">
       {/* Enhanced background decorations */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+      <div className="fixed inset-0  pointer-events-none">
         <motion.div
           animate={{
             x: [0, 100, 0],
@@ -85,37 +93,25 @@ export default function Process() {
           </div>
         </div>
 
-        {/* Enhanced CTA section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
           className="text-center mt-20"
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
         >
-          <motion.button
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)",
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-4 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg text-lg font-semibold"
+          <motion.div
+            initial="initial"
+            whileHover="hover"
+            className="inline-block"
           >
-            <span>Start Your Project</span>
-            <motion.svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </motion.svg>
-          </motion.button>
+            <Button className="py-3 px-6 sm:py-4 sm:px-10 md:px-14 text-sm sm:text-base md:text-lg flex items-center justify-center gap-2">
+              Start Your Project
+              <motion.div variants={arrowVariants}>
+                <ChevronRight strokeWidth={1.5} />
+              </motion.div>
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
     </div>

@@ -64,7 +64,7 @@ const TestimonialMarquee = () => {
   const marqueeTestimonials = [...defaultTestimonials, ...defaultTestimonials];
 
   return (
-    <div className="w-full overflow-hidden max-w-[1200px] py-12">
+    <div className="w-full overflow-hidden max-w-screen-xl py-12">
       <motion.div
         className="flex gap-4 w-max"
         animate={{ x: ["0%", "-50%"] }}
