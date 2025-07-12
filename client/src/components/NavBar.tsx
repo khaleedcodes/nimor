@@ -1,17 +1,39 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import WordMark from "./WordMark";
 import Button from "./Button";
 import { ChevronRight, Menu, X } from "lucide-react";
+import { itemVariants } from "@/pages/landing-page/services-section/variants";
+
+const arrowVariants = {
+  initial: { x: 0 },
+  hover: { x: 5 },
+};
 
 function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showNav, setShowNav] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (menuOpen) setMenuOpen(false);
+      setShowNav(currentScrollY < lastScrollY || currentScrollY < 50);
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY, menuOpen]);
 
   const parentVariants = {
     hidden: { y: 0 },
     visible: { y: 0, transition: { staggerChildren: 0.15 } },
   };
+
   const childVariants = {
     hidden: { opacity: 0, y: -100 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -30,12 +52,16 @@ function NavBar() {
   ];
 
   return (
-    <div className="sticky top-0 z-[60] bg-primary border-b border-b-card-bg">
+    <div
+      className={`top-0 z-[60] bg-primary border-b border-b-card-bg fixed w-full transition-transform duration-300 ${
+        showNav ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <motion.nav
         variants={parentVariants}
         initial="hidden"
         animate="visible"
-        className="flex justify-between items-center p-4 max-w-7xl mx-auto"
+        className="flex justify-between items-center p-4 max-w-screen-xl mx-auto"
       >
         <motion.div variants={childVariants}>
           <WordMark classes="text-black" />
@@ -48,38 +74,56 @@ function NavBar() {
         >
           {navLinks.map(({ to, label }) => (
             <li key={to}>
-              <Link
+              <NavLink
                 to={to}
-                className="text-black hover:text-accent transition-colors"
+                className={({ isActive }) =>
+                  `transition-colors hover:text-first-accent border-b-2 ${
+                    isActive
+                      ? "text-first-accent border-first-accent"
+                      : "text-white border-transparent"
+                  }`
+                }
               >
                 {label}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </motion.ul>
 
-        {/* Desktop button */}
-        <motion.div variants={childVariants} className="hidden md:flex">
-          <Link to="/contact">
-            <Button className="pt-2 pb-2 pl-6 pr-6 flex items-center gap-2">
-              Let's talk! <ChevronRight strokeWidth={1.5} />
+        <motion.div
+          className="text-center hidden md:flex"
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          <motion.div
+            initial="initial"
+            whileHover="hover"
+            className="inline-block"
+          >
+            <Button className="pt-2 pb-2 pl-6 pr-6 flex items-center justify-center gap-1">
+              Let's talk!
+              <motion.div variants={arrowVariants}>
+                <ChevronRight strokeWidth={1.5} />
+              </motion.div>
             </Button>
-          </Link>
+          </motion.div>
         </motion.div>
 
-        {/* Mobile menu toggle (always hamburger) */}
+        {/* Mobile menu toggle */}
         <div className="md:hidden flex items-center">
           <button
             aria-label="Open menu"
             onClick={() => setMenuOpen(true)}
             className="text-white"
           >
-            <Menu size={28} className="text-white" />
+            <Menu size={28} />
           </button>
         </div>
       </motion.nav>
 
-      {/* Backdrop (click to close menu) */}
+      {/* Click-outside overlay */}
       {menuOpen && (
         <div
           onClick={() => setMenuOpen(false)}
@@ -93,9 +137,8 @@ function NavBar() {
         initial="closed"
         animate={menuOpen ? "open" : "closed"}
         variants={mobileMenuVariants}
-        className="fixed top-0 right-0 h-full w-64 bg-primary shadow-lg p-8 flex flex-col gap-6 md:hidden z-30"
+        className="fixed top-0 right-0 h-screen w-64 bg-new-accent shadow-lg p-8 flex flex-col gap-6 md:hidden z-30"
       >
-        {/* Close (X) button inside the menu */}
         <button
           aria-label="Close menu"
           onClick={() => setMenuOpen(false)}
@@ -106,21 +149,35 @@ function NavBar() {
 
         {navLinks.map(({ to, label }) => (
           <li key={to}>
-            <Link
+            <NavLink
               to={to}
               onClick={() => setMenuOpen(false)}
-              className="block text-black text-lg font-semibold"
+              className={({ isActive }) =>
+                `block text-lg font-semibold transition-colors ${
+                  isActive ? "text-accent underline underline-offset-4" : "text-white"
+                }`
+              }
             >
               {label}
-            </Link>
+            </NavLink>
           </li>
         ))}
+
         <li>
-          <Link to="/contact" onClick={() => setMenuOpen(false)}>
-            <Button className="w-full flex justify-center">
-              Let's talk! <ChevronRight strokeWidth={1.5} />
-            </Button>
-          </Link>
+          <motion.div className="text-center w-full" variants={itemVariants}>
+            <motion.div
+              initial="initial"
+              whileHover="hover"
+              className="inline-block w-full"
+            >
+              <Button className="pt-2 pb-2 pl-6 pr-6 flex items-center justify-center gap-1 w-full">
+                Let's talk!
+                <motion.div variants={arrowVariants}>
+                  <ChevronRight strokeWidth={1.5} />
+                </motion.div>
+              </Button>
+            </motion.div>
+          </motion.div>
         </li>
       </motion.ul>
     </div>

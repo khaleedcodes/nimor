@@ -32,7 +32,7 @@ const marqueeVariants = {
 
 const Marquee = () => {
   return (
-    <div className="flex flex-col gap-4 w-full  max-w-[1200px]">
+    <div className="flex flex-col gap-4 w-full max-w-screen-xl">
       <p className="font-bold text-sm sm:text-base">
         Trusted by emerging businesses and fast-growing brands.
       </p>

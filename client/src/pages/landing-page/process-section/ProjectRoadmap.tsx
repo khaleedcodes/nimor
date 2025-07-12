@@ -6,7 +6,7 @@ import { headerVariants } from "../services-section/variants";
 function ProjectRoadmap() {
   return (
     <div className="flex justify-center min-h-lvh  bg-[rgb(96,76,199,0.2)] rounded-xl mx-2 mt-20 py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="flex flex-col lg:flex-row items-center justify-between lg:gap-8 gap-4 text-left"
           variants={headerVariants}
