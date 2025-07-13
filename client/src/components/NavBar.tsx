@@ -81,7 +81,7 @@ function NavBar() {
         className="flex justify-between items-center p-4 max-w-screen-xl mx-auto"
       >
         <motion.div variants={childVariants}>
-          <WordMark classes="text-black" />
+          <WordMark />
         </motion.div>
 
         {/* Desktop nav links */}
