@@ -10,7 +10,7 @@ function Footer() {
       <div className="max-w-screen-xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Column 1: Brand Info */}
         <div className="space-y-4">
-          <WordMark classes="text-white text-2xl" />
+          <WordMark />
           <p className="text-sm text-white/80 leading-relaxed">
             We help brands make their mark on the web with beautiful, fast, and conversion-ready websites.
           </p>

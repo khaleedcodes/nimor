@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Marquee from "./HeroMarquee";
 import HeroCarousel from "./HeroCarousel";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Sparkles } from "lucide-react";
 
 function HeroSection() {
   const variants = {
@@ -39,7 +39,24 @@ function HeroSection() {
           variants={itemVariants}
           className="font-bold text-7xl max-lg:text-6xl max-md:text-5xl max-sm:text-4xl text-center"
         >
-          Make your <span className="title-gradient font-sevillana">mark</span>{" "}
+          Make your{" "}
+          <span className="title-gradient font-sevillana relative">
+            mark
+            <motion.div
+              className="absolute -top-2 -right-1"
+              animate={{
+                rotate: 360,
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <Sparkles className="w-4 h-4 text-yellow-400" />
+            </motion.div>
+          </span>{" "}
           on the web
         </motion.h1>
 
@@ -62,17 +79,34 @@ function HeroSection() {
             href="#"
             initial="initial"
             whileHover="hover"
-            className="flex items-center justify-center gap-1 bg-new-accent pt-3 pb-3 px-8 rounded-md border-first-accent border text-first-accent text-center transition hover:bg-first-accent hover:text-white text-sm"
+            variants={{
+              initial: {},
+              hover: {},
+            }}
+            className="relative overflow-hidden flex items-center justify-center gap-1 pt-3 pb-3 px-8 rounded-md border border-first-accent text-first-accent text-sm z-10 group"
           >
-            See what we've built
-            <motion.div variants={arrowVariants}>
-              <ChevronRight strokeWidth={1.5} />
-            </motion.div>
+            {/* Button Text and Icon */}
+            <span className="relative z-20 flex items-center gap-1 group-hover:text-white transition-colors duration-300">
+              See what we've built
+              <motion.div variants={arrowVariants}>
+                <ChevronRight strokeWidth={1.5} />
+              </motion.div>
+            </span>
+
+            {/* Background Slide on Hover */}
+            <motion.div
+              variants={{
+                initial: { x: "-100%" },
+                hover: { x: "0%" },
+              }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="absolute inset-0 bg-first-accent z-0"
+            />
           </motion.a>
 
           {/* Second Button */}
           <motion.a
-            href="#"
+            href="#contact"
             initial="initial"
             whileHover="hover"
             className="flex items-center justify-center gap-1 pt-3 pb-3 px-8 rounded-md border border-transparent bg-first-accent text-white text-center transition hover:bg-second-accent text-sm"
