@@ -30,9 +30,9 @@ const defaultFeatures: Feature[] = [
   },
   {
     id: "2",
-    title: "Senior Expertise at Every Step",
+    title: "Collaborative, Transparent Process",
     description:
-      "From strategy to launch, you'll work directly with experienced designers and developers. No hand-offs. No fluff. Just real talent delivering real results.",
+      "You're involved at every step—from kickoff to launch. We communicate clearly, move fast, and keep you in the loop so there are no surprises—just momentum.",
   },
   {
     id: "3",
