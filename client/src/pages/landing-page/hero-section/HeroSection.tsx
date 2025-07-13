@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Marquee from "./HeroMarquee";
 import HeroCarousel from "./HeroCarousel";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Sparkles } from "lucide-react";
 
 function HeroSection() {
   const variants = {
@@ -39,7 +39,24 @@ function HeroSection() {
           variants={itemVariants}
           className="font-bold text-7xl max-lg:text-6xl max-md:text-5xl max-sm:text-4xl text-center"
         >
-          Make your <span className="title-gradient font-sevillana">mark</span>{" "}
+          Make your{" "}
+          <span className="title-gradient font-sevillana relative">
+            mark
+            <motion.div
+              className="absolute -top-2 -right-1"
+              animate={{
+                rotate: 360,
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <Sparkles className="w-4 h-4 text-yellow-400" />
+            </motion.div>
+          </span>{" "}
           on the web
         </motion.h1>
 
