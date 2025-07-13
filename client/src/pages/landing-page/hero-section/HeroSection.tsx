@@ -106,7 +106,7 @@ function HeroSection() {
 
           {/* Second Button */}
           <motion.a
-            href="#"
+            href="#contact"
             initial="initial"
             whileHover="hover"
             className="flex items-center justify-center gap-1 pt-3 pb-3 px-8 rounded-md border border-transparent bg-first-accent text-white text-center transition hover:bg-second-accent text-sm"
