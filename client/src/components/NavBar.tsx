@@ -6,9 +6,40 @@ import Button from "./Button";
 import { ChevronRight, Menu, X } from "lucide-react";
 import { itemVariants } from "@/pages/landing-page/services-section/variants";
 
+// Animations
 const arrowVariants = {
   initial: { x: 0 },
   hover: { x: 5 },
+};
+
+const parentVariants = {
+  hidden: { y: 0 },
+  visible: { y: 0, transition: { staggerChildren: 0.15 } },
+};
+
+const childVariants = {
+  hidden: { opacity: 0, y: -100 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const mobileMenuVariants = {
+  closed: { x: "100%" },
+  open: { x: 0, transition: { type: "spring", stiffness: 300, damping: 30 } },
+};
+
+const navLinkVariants = {
+  initial: { x: 0 },
+  hover: { x: 5 },
+};
+
+const dotVariants = {
+  initial: { opacity: 0, x: -8, scale: 0.6 },
+  hover: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: { type: "spring", stiffness: 300 },
+  },
 };
 
 function NavBar() {
@@ -29,27 +60,12 @@ function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY, menuOpen]);
 
-  const parentVariants = {
-    hidden: { y: 0 },
-    visible: { y: 0, transition: { staggerChildren: 0.15 } },
-  };
-
-  const childVariants = {
-    hidden: { opacity: 0, y: -100 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
-  const mobileMenuVariants = {
-    closed: { x: "100%" },
-    open: { x: 0, transition: { type: "spring", stiffness: 300, damping: 30 } },
-  };
-
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "/work", label: "Work" },
     { to: "/about", label: "About" },
     { to: "/services", label: "Services" },
-    // { to: "/contact", label: "Contact" },
+    { to: "/contact", label: "Contact" },
   ];
 
   return (
@@ -75,22 +91,35 @@ function NavBar() {
         >
           {navLinks.map(({ to, label }) => (
             <li key={to}>
-              <NavLink
-                to={to}
-                className={({ isActive }) =>
-                  `transition-colors hover:text-first-accent border-b-2 ${
-                    isActive
-                      ? "text-first-accent border-first-accent"
-                      : "text-white border-transparent"
-                  }`
-                }
-              >
-                {label}
+              <NavLink to={to}>
+                {({ isActive }) => (
+                  <motion.div
+                    initial="initial"
+                    whileHover="hover"
+                    className="flex items-center gap-1"
+                  >
+                    <motion.span
+                      variants={dotVariants}
+                      className="w-2 h-2 bg-first-accent rounded-full"
+                    />
+                    <motion.span
+                      variants={navLinkVariants}
+                      className={`transition-colors border-b-2 ${
+                        isActive
+                          ? "text-first-accent border-first-accent"
+                          : "text-white border-transparent"
+                      }`}
+                    >
+                      {label}
+                    </motion.span>
+                  </motion.div>
+                )}
               </NavLink>
             </li>
           ))}
         </motion.ul>
 
+        {/* CTA Button (Desktop) */}
         <motion.div
           className="text-center hidden md:flex"
           variants={itemVariants}
@@ -155,7 +184,9 @@ function NavBar() {
               onClick={() => setMenuOpen(false)}
               className={({ isActive }) =>
                 `block text-lg font-semibold transition-colors ${
-                  isActive ? "text-first-accent underline underline-offset-4" : "text-white"
+                  isActive
+                    ? "text-first-accent underline underline-offset-4"
+                    : "text-white"
                 }`
               }
             >
