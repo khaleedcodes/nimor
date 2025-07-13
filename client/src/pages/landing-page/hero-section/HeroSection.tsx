@@ -62,12 +62,23 @@ function HeroSection() {
             href="#"
             initial="initial"
             whileHover="hover"
-            className="flex items-center justify-center gap-1 bg-new-accent pt-3 pb-3 px-8 rounded-md border-first-accent border text-first-accent text-center transition hover:bg-first-accent hover:text-white text-sm"
+            className="relative overflow-hidden flex items-center justify-center gap-1 pt-3 pb-3 px-8 rounded-md border border-first-accent text-first-accent text-sm z-10 group"
           >
-            See what we've built
-            <motion.div variants={arrowVariants}>
-              <ChevronRight strokeWidth={1.5} />
-            </motion.div>
+            {/* Button Text and Icon */}
+            <span className="relative z-20 flex items-center gap-1 group-hover:text-white transition-colors duration-300">
+              See what we've built
+              <motion.div variants={arrowVariants}>
+                <ChevronRight strokeWidth={1.5} />
+              </motion.div>
+            </span>
+
+            {/* Background Slide on Hover */}
+            <motion.div
+              className="absolute inset-0 bg-first-accent z-0"
+              initial={{ x: "-100%" }}
+              whileHover={{ x: "0%" }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            />
           </motion.a>
 
           {/* Second Button */}
