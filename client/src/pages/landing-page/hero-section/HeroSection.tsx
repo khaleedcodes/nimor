@@ -79,6 +79,10 @@ function HeroSection() {
             href="#"
             initial="initial"
             whileHover="hover"
+            variants={{
+              initial: {},
+              hover: {},
+            }}
             className="relative overflow-hidden flex items-center justify-center gap-1 pt-3 pb-3 px-8 rounded-md border border-first-accent text-first-accent text-sm z-10 group"
           >
             {/* Button Text and Icon */}
@@ -91,10 +95,12 @@ function HeroSection() {
 
             {/* Background Slide on Hover */}
             <motion.div
-              className="absolute inset-0 bg-first-accent z-0"
-              initial={{ x: "-100%" }}
-              whileHover={{ x: "0%" }}
+              variants={{
+                initial: { x: "-100%" },
+                hover: { x: "0%" },
+              }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="absolute inset-0 bg-first-accent z-0"
             />
           </motion.a>
 
