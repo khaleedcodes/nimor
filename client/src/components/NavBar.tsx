@@ -46,9 +46,10 @@ function NavBar() {
 
   const navLinks = [
     { to: "/", label: "Home" },
+    { to: "/work", label: "Work" },
     { to: "/about", label: "About" },
     { to: "/services", label: "Services" },
-    { to: "/contact", label: "Contact" },
+    // { to: "/contact", label: "Contact" },
   ];
 
   return (
@@ -154,7 +155,7 @@ function NavBar() {
               onClick={() => setMenuOpen(false)}
               className={({ isActive }) =>
                 `block text-lg font-semibold transition-colors ${
-                  isActive ? "text-accent underline underline-offset-4" : "text-white"
+                  isActive ? "text-first-accent underline underline-offset-4" : "text-white"
                 }`
               }
             >

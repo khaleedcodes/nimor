@@ -26,7 +26,7 @@ function HeroSection() {
 
   return (
     <div
-      className="flex justify-center gap-20 flex-col items-center mt-32 px-2"
+      className="flex justify-center gap-20 flex-col items-center mt-52 px-2"
       style={{ minHeight: "calc(100vh - 80px)" }}
     >
       <motion.div
