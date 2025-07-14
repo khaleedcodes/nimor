@@ -62,6 +62,7 @@ export const works: Work[] = [
     color: "purple",
     industry: "landscaping",
     service: "web development",
+    year: "2025",
   },
   {
     id: "pawtastic_pets",
@@ -90,6 +91,7 @@ export const works: Work[] = [
     color: "cyan",
     industry: "startup",
     service: "web development",
+    year: "2025",
   },
   {
     id: "maplefix",
@@ -103,6 +105,7 @@ export const works: Work[] = [
     color: "green",
     industry: "repair",
     service: "web development",
+    year: "2025",
   },
   {
     id: "ecoglow_cleaning",
@@ -116,6 +119,7 @@ export const works: Work[] = [
     color: "blue",
     industry: "cleaning",
     service: "web development",
+    year: "2025",
   },
 
   {
@@ -126,7 +130,7 @@ export const works: Work[] = [
       "A warm, responsive website featuring the Ember Dining brand, showcasing menu items and online reservation forms.",
     image: ember,
     categories: ["Web Design", "Responsive", "UX/UI"],
-    year: "2025",
+    year: "2023",
     featured: true,
     liveUrl: "https://emberdining.netlify.app/",
     color: "orange",
