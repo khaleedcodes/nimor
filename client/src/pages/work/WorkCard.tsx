@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink, Mouse } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Work } from "./works";
 
@@ -104,8 +104,8 @@ export default function WorkCard({ work }: WorkCardProps) {
               transition={{ duration: 10, ease: "easeInOut" }}
               className="w-full object-top object-cover h-auto"
             />
-            <div className="absolute top-2 left-2 text-xs bg-white/80 text-black px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">
-              HOVER TO SCROLL →
+            <div className="absolute top-2 left-2 text-xs flex gap-1 items-center text-first-accent bg-new-accent px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">
+              HOVER TO SCROLL <Mouse className="w-3" />
             </div>
           </div>
         </div>
