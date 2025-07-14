@@ -5,7 +5,7 @@ import ErrorPage from "./pages/error-page/ErrorPage";
 import FormSubmittedPage from "./pages/form-submitted-page/FormSubmittedPage";
 import Logo from "./pages/landing-page/Logo";
 import WorkPage from "./pages/work-page/WorkPage";
-import  CaseStudyPage  from "./pages/work-page/CaseStudyPage";
+import CaseStudyPage from "./pages/work-page/CaseStudyPage";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/work",
+    path: "/works",
     element: (
       <PageLayout>
         <WorkPage />

@@ -23,22 +23,37 @@ export default function CaseStudyPage() {
   const nextProject = works[currentIndex + 1] || works[0];
 
   if (!project) {
+    const itemVariants = {
+      hidden: { opacity: 0, y: 20 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: "easeOut" },
+      },
+    };
+
     return (
-      <div className="min-h-screen bg-primary flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">
-            Project Not Found
-          </h1>
-          <p className="text-gray-400 mb-8">
-            The project you're looking for doesn't exist.
+      <div className="min-h-screen bg-primary flex items-center justify-center px-4">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={itemVariants}
+          className="text-center py-12 text-gray-300 max-w-xl mx-auto"
+        >
+          <p className="text-lg md:text-xl font-medium mb-4">
+            We haven’t built something quite like this — yet.
+          </p>
+          <p className="text-sm md:text-base mb-6 text-gray-400">
+            But we’d love to change that. Be one of the first to bring your idea
+            to life, and we might even feature your project in our collection.
           </p>
           <button
-            onClick={() => navigate("/works")}
+            onClick={() => navigate("/contact")}
             className="bg-first-accent hover:bg-first-accent/80 text-white px-6 py-3 rounded-lg font-medium transition"
           >
-            Back to Works
+            Start Your Project
           </button>
-        </div>
+        </motion.div>
       </div>
     );
   }
@@ -56,7 +71,7 @@ export default function CaseStudyPage() {
   };
 
   return (
-    <div className="min-h-screen bg-primary">
+    <div className="min-h-screen bg-primary mt-20">
       {/* Breadcrumb Navigation */}
       <nav className="pt-8 pb-4 px-4 max-w-7xl mx-auto">
         <div className="flex items-center space-x-2 text-sm text-gray-400">
@@ -168,17 +183,11 @@ export default function CaseStudyPage() {
             Project Overview
           </h2>
           <div className="text-lg text-card-text leading-relaxed space-y-4">
-            <p>
-              {project.overview ||
-                `${project.title} needed a professional web presence that would establish trust with potential clients and showcase their expertise. The challenge was creating a site that felt both professional and approachable, while effectively communicating their range of services.`}
-            </p>
-            <p>
-              Our solution focused on clean, modern design with
-              industry-specific elements that reflect their expertise. We
-              implemented strategic calls-to-action and service showcases to
-              drive lead generation while maintaining excellent user experience
-              across all devices.
-            </p>
+            {project.overviewParagraphs?.length ? (
+              project.overviewParagraphs.map((para, i) => <p key={i}>{para}</p>)
+            ) : (
+              <p>No overview available for this project.</p>
+            )}
           </div>
         </div>
 

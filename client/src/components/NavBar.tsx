@@ -62,7 +62,7 @@ function NavBar() {
 
   const navLinks = [
     { to: "/", label: "Home" },
-    { to: "/work", label: "Work" },
+    { to: "/works", label: "Works" },
     { to: "/about", label: "About" },
     { to: "/services", label: "Services" },
     { to: "/contact", label: "Contact" },

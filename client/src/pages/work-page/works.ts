@@ -84,6 +84,7 @@ export interface Work {
     color: string;
     hex: string;
   }>;
+  overviewParagraphs?: string[];
 }
 export const works: Work[] = [
   {
@@ -145,6 +146,10 @@ export const works: Work[] = [
       { color: "bg-slate-800", hex: "#1E293B" },
       { color: "bg-amber-500", hex: "#F59E0B" },
     ],
+    overviewParagraphs: [
+      "True North Yard required a clean and trustworthy online presence to highlight their expert landscaping and yard maintenance services. The goal was to build local credibility and attract clients seeking seasonal care.",
+      "We crafted a professional, nature-inspired design emphasizing trust and reliability, with seamless mobile responsiveness and SEO optimizations to boost local search rankings.",
+    ],
   },
   {
     id: "pawtastic_pets",
@@ -205,6 +210,10 @@ export const works: Work[] = [
       { color: "bg-white", hex: "#FFFFFF" },
       { color: "bg-rose-600", hex: "#E11D48" },
     ],
+    overviewParagraphs: [
+      "Pawtastic Pets needed a lively and user-friendly e-commerce platform to connect with pet owners and promote their accessories and care tips.",
+      "Our redesign introduced playful UX elements, straightforward navigation, and optimized product displays, making shopping both fun and intuitive for users across devices.",
+    ],
   },
   {
     id: "bundlebit",
@@ -263,6 +272,10 @@ export const works: Work[] = [
       { color: "bg-gray-900", hex: "#111827" },
       { color: "bg-purple-400", hex: "#A78BFA" },
     ],
+    overviewParagraphs: [
+      "BundleBit aimed to attract content creators by clearly showcasing its productivity features and subscription options through a modern, engaging landing page.",
+      "The design focused on clarity, compelling calls-to-action, and smooth animations to improve visitor conversion and provide a seamless user experience on mobile and desktop.",
+    ],
   },
   {
     id: "maplefix",
@@ -320,6 +333,10 @@ export const works: Work[] = [
       { color: "bg-lime-400", hex: "#A3E635" },
       { color: "bg-white", hex: "#FFFFFF" },
       { color: "bg-stone-600", hex: "#78716C" },
+    ],
+    overviewParagraphs: [
+      "MapleFix wanted a nature-themed site that emphasized trust and eco-conscious repair services. It needed to clearly communicate offerings and build client confidence.",
+      "We developed a forest-inspired platform combining simplicity with credibility, facilitating easy customer inquiries while reinforcing MapleFix's expertise and environmental values.",
     ],
   },
   {
@@ -380,6 +397,10 @@ export const works: Work[] = [
       { color: "bg-white", hex: "#FFFFFF" },
       { color: "bg-green-300", hex: "#86EFAC" },
     ],
+    overviewParagraphs: [
+      "EcoGlow Cleaning sought to highlight its commitment to environmentally friendly cleaning services with a modern and accessible website.",
+      "The design balanced clean aesthetics with functionality, enabling effortless booking and service information access, while emphasizing sustainability throughout the user journey.",
+    ],
   },
   {
     id: "ember_dining",
@@ -438,6 +459,10 @@ export const works: Work[] = [
       { color: "bg-yellow-400", hex: "#FACC15" },
       { color: "bg-stone-900", hex: "#1C1917" },
       { color: "bg-white", hex: "#FFFFFF" },
+    ],
+    overviewParagraphs: [
+      "Ember Dining required a warm and elegant website that reflected its cozy restaurant atmosphere while facilitating online menu browsing and table reservations.",
+      "Our approach combined earthy color palettes, refined typography, and conversion-focused UX to enhance the dining experience and improve local SEO performance.",
     ],
   },
 ];
