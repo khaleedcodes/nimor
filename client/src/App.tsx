@@ -4,6 +4,8 @@ import PageLayout from "./pages/layout-page/LayoutPage";
 import ErrorPage from "./pages/error-page/ErrorPage";
 import FormSubmittedPage from "./pages/form-submitted-page/FormSubmittedPage";
 import Logo from "./pages/landing-page/Logo";
+import WorkPage from "./pages/work-page/WorkPage";
+import WorksSection from "./pages/work/WorksSection";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,15 @@ const router = createBrowserRouter([
       </PageLayout>
     ),
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/work",
+    element: (
+      <PageLayout>
+        <WorkPage />
+        <WorksSection/>
+      </PageLayout>
+    ),
   },
   {
     path: "/submitted",
