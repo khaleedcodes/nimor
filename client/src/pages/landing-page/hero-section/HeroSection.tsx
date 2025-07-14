@@ -76,7 +76,7 @@ function HeroSection() {
         >
           {/* First Button */}
           <motion.a
-            href="#"
+            href="/work"
             initial="initial"
             whileHover="hover"
             variants={{

@@ -41,7 +41,7 @@ export default function WorkCard({ work }: WorkCardProps) {
     <motion.div
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3 }}
-      className="bg-new-accent border border-second-accent rounded-2xl overflow-hidden shadow-md transition-shadow group cursor-pointer"
+      className="work-card bg-new-accent border border-second-accent rounded-2xl overflow-hidden shadow-md transition-shadow group cursor-pointer"
       onClick={handleCaseStudyClick}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0 p-6 md:p-10">
@@ -93,7 +93,7 @@ export default function WorkCard({ work }: WorkCardProps) {
 
         {/* Right: Scrolling Screenshot */}
         <div className="rounded-xl overflow-hidden shadow-xl border border-gray-700 bg-black h-[300px] md:h-[360px] mt-6 md:mt-0 md:ml-10">
-          <div className="relative w-full h-full overflow-hidden group-hover:cursor-grab">
+          <div className="relative w-full h-full overflow-hidden group-hover:cursor-pointer">
             <motion.img
               ref={imgRef}
               src={work.image}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import WorkCard from "./WorkCard";
 import { works } from "./works";
 import CustomDropdown from "./CustomDropdown";
@@ -24,24 +24,49 @@ const services = [
 export default function WorksSection() {
   const [selectedIndustry, setSelectedIndustry] = useState<string>("industry");
   const [selectedService, setSelectedService] = useState<string>("service");
+  // const [renderCount, setRenderCount] = useState(0);
 
   const filteredWorks = works.filter((work) => {
-    const industryMatch = selectedIndustry === "industry" || work.industry === selectedIndustry;
-    const serviceMatch = selectedService === "service" || work.service === selectedService;
+    const industryMatch =
+      selectedIndustry === "industry" || work.industry === selectedIndustry;
+    const serviceMatch =
+      selectedService === "service" || work.service === selectedService;
     return industryMatch && serviceMatch;
   });
+
+  const handleIndustryChange = (value: string) => {
+    console.log("Industry filter changed:", value);
+    setSelectedIndustry(value);
+    // setRenderCount((prev) => prev + 1);
+  };
+
+  const handleServiceChange = (value: string) => {
+    console.log("Service filter changed:", value);
+    setSelectedService(value);
+    // setRenderCount((prev) => prev + 1);
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 },
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
     },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -55,7 +80,8 @@ export default function WorksSection() {
           className="mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-200">
-            Case Studies. <span className="text-gray-400">Featured Projects.</span>
+            Case Studies.{" "}
+            <span className="text-gray-400">Featured Projects.</span>
           </h2>
 
           {/* Dropdown Filters */}
@@ -63,37 +89,61 @@ export default function WorksSection() {
             <CustomDropdown
               options={industries}
               value={selectedIndustry}
-              onChange={setSelectedIndustry}
+              onChange={handleIndustryChange}
             />
             <CustomDropdown
               options={services}
               value={selectedService}
-              onChange={setSelectedService}
+              onChange={handleServiceChange}
             />
           </div>
         </motion.div>
 
         {/* Projects */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="space-y-8"
-        >
-          {filteredWorks.map((work) => (
-            <motion.div key={work.id} variants={itemVariants}>
-              <WorkCard work={work} />
-            </motion.div>
-          ))}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`${selectedIndustry}-${selectedService}`}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            className="space-y-8"
+          >
+            {filteredWorks.map((work) => (
+              <motion.div key={work.id} variants={itemVariants}>
+                <WorkCard work={work} />
+              </motion.div>
+            ))}
 
-          {filteredWorks.length === 0 && (
-            <p className="text-gray-500 text-center py-10">No projects found for selected filters.</p>
-          )}
-        </motion.div>
+            {filteredWorks.length === 0 && (
+              <motion.div
+                variants={itemVariants}
+                className="text-center py-12 text-gray-300 max-w-xl mx-auto"
+              >
+                <p className="text-lg md:text-xl font-medium mb-4">
+                  We haven’t built something quite like this — yet.
+                </p>
+                <p className="text-sm md:text-base mb-6 text-gray-400">
+                  But we’d love to change that. Be one of the first to bring
+                  your idea to life, and we might even feature your project in
+                  our collection.
+                </p>
+                <button
+                  onClick={() => {
+                    // Adjust navigation or modal trigger here
+                    window.location.href = "/contact"; // or open modal
+                  }}
+                  className="bg-first-accent hover:bg-first-accent/80 text-white px-6 py-3 rounded-lg font-medium transition"
+                >
+                  Start Your Project
+                </button>
+              </motion.div>
+            )}
+          </motion.div>
+        </AnimatePresence>
 
         {/* Load More */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -103,7 +153,7 @@ export default function WorksSection() {
           <button className="bg-first-accent hover:bg-first-accent/80 text-white px-8 py-3 rounded-lg font-medium transition-colors">
             Load More Projects
           </button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
