@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, X } from "lucide-react";
+import { Search, Sparkles, X } from "lucide-react";
 import WorkCard from "./WorkCard";
 import { works } from "./works";
 import CustomDropdown from "./CustomDropdown";
@@ -85,14 +85,77 @@ export default function WorksSection() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <div className="flex flex-wrap justify-between items-center gap-4 mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-200">
-              Case Studies.{" "}
-              <span className="text-gray-400">Featured Projects.</span>
-            </h2>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-center mb-16 px-4"
+          >
+            <motion.h1
+              variants={itemVariants}
+              className="font-bold text-7xl max-lg:text-6xl max-md:text-5xl max-sm:text-4xl text-gray-100"
+            >
+              Our{" "}
+              <span className="title-gradient font-sevillana relative">
+                work
+                <motion.div
+                  className="absolute -top-2 -right-1"
+                  animate={{
+                    rotate: 360,
+                    scale: [1, 1.2, 1],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <Sparkles className="w-4 h-4 text-yellow-400" />
+                </motion.div>
+              </span>
+            </motion.h1>
 
-            {/* Search Toggle */}
-            {/* Search Toggle */}
+            <motion.h2
+              variants={itemVariants}
+              className="text-base md:text-lg max-w-2xl mx-auto mt-6 text-gray-400"
+            >
+              Explore the real-world results we’ve created for clients across
+              different industries. Each project tells a story of strategy,
+              creativity, and execution — tailored to their goals.
+            </motion.h2>
+          </motion.div>
+
+          {/* Filters */}
+          <div className="flex justify-between gap-4">
+            <div className="flex flex-wrap gap-4 items-center">
+              <CustomDropdown
+                options={industries}
+                value={selectedIndustry}
+                onChange={handleIndustryChange}
+              />
+              <CustomDropdown
+                options={services}
+                value={selectedService}
+                onChange={handleServiceChange}
+              />
+              <AnimatePresence>
+                {(selectedIndustry !== "industry" ||
+                  selectedService !== "service" ||
+                  searchQuery !== "") && (
+                  <motion.button
+                    key="clear-filters"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -10 }}
+                    onClick={clearFilters}
+                    className="text-sm font-medium px-4 py-2 rounded-lg border border-gray-600 text-gray-300 hover:text-white hover:border-white transition"
+                  >
+                    Clear Filters
+                  </motion.button>
+                )}
+              </AnimatePresence>
+            </div>
+
             <div className="flex items-center gap-2 overflow-hidden relative">
               <AnimatePresence initial={false}>
                 {searchOpen && (
@@ -128,36 +191,6 @@ export default function WorksSection() {
                 {searchOpen ? <X size={20} /> : <Search size={20} />}
               </motion.button>
             </div>
-          </div>
-
-          {/* Filters */}
-          <div className="flex flex-wrap gap-4 items-center">
-            <CustomDropdown
-              options={industries}
-              value={selectedIndustry}
-              onChange={handleIndustryChange}
-            />
-            <CustomDropdown
-              options={services}
-              value={selectedService}
-              onChange={handleServiceChange}
-            />
-            <AnimatePresence>
-              {(selectedIndustry !== "industry" ||
-                selectedService !== "service" ||
-                searchQuery !== "") && (
-                <motion.button
-                  key="clear-filters"
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -10 }}
-                  onClick={clearFilters}
-                  className="text-sm font-medium px-4 py-2 rounded-lg border border-gray-600 text-gray-300 hover:text-white hover:border-white transition"
-                >
-                  Clear Filters
-                </motion.button>
-              )}
-            </AnimatePresence>
           </div>
         </motion.div>
 

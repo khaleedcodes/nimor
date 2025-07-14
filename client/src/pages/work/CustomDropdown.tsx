@@ -16,12 +16,15 @@ export default function CustomDropdown({
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
-  const [dropdownWidth, setDropdownWidth] = useState<number | undefined>(undefined);
+  const [dropdownWidth, setDropdownWidth] = useState<number>(120); // default width
 
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -33,12 +36,12 @@ export default function CustomDropdown({
   useEffect(() => {
     if (listRef.current) {
       const items = Array.from(listRef.current.children) as HTMLElement[];
-      const widths = items.map((el) => el.offsetWidth);
+      const widths = items.map((el) => el.offsetWidth + 32); // include padding (px-4)
       setDropdownWidth(Math.max(...widths));
     }
   }, [options]);
 
-  const toggleOpen = () => setIsOpen(!isOpen);
+  const toggleOpen = () => setIsOpen((prev) => !prev);
 
   const handleSelect = (option: string) => {
     onChange(option);
@@ -47,16 +50,28 @@ export default function CustomDropdown({
 
   return (
     <div className="relative inline-block" ref={containerRef}>
-      <button
-        type="button"
-        onClick={toggleOpen}
-        className="inline-flex justify-between items-center bg-new-accent border border-second-accent rounded-lg px-4 py-2 text-white text-left hover:border-first-accent transition min-w-[120px]"
+      {/* Animate width of the button */}
+      <motion.div
+        animate={{ width: dropdownWidth }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="inline-block"
       >
-        <span className="truncate capitalize">{value}</span>
-        <ChevronDown size={20} className={`ml-2 transition-transform ${isOpen ? "rotate-180" : ""}`} />
-      </button>
+        <button
+          type="button"
+          onClick={toggleOpen}
+          className="w-full inline-flex justify-between items-center bg-new-accent border border-second-accent rounded-lg px-4 py-2 text-white text-left hover:border-first-accent transition"
+        >
+          <span className="truncate capitalize">{value}</span>
+          <ChevronDown
+            size={20}
+            className={`ml-2 transition-transform ${
+              isOpen ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+      </motion.div>
 
-      {/* Hidden width-measure list */}
+      {/* Hidden width-measuring list */}
       <ul
         ref={listRef}
         className="absolute left-0 top-0 invisible pointer-events-none whitespace-nowrap"
@@ -69,6 +84,7 @@ export default function CustomDropdown({
         ))}
       </ul>
 
+      {/* Dropdown list */}
       <AnimatePresence>
         {isOpen && (
           <motion.ul

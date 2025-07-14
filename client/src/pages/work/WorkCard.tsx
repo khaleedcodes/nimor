@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink, Mouse } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 import { Work } from "./works";
 
 interface WorkCardProps {
@@ -9,18 +8,24 @@ interface WorkCardProps {
 }
 
 export default function WorkCard({ work }: WorkCardProps) {
-  const navigate = useNavigate();
   const imgRef = useRef<HTMLImageElement>(null);
   const [scrollOffset, setScrollOffset] = useState(0);
 
   const handleCaseStudyClick = () => {
-    navigate(`/case-study/${work.id}`);
+    console.log(`Navigate to case study: ${work.id}`);
   };
 
   const handleLiveWebsiteClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (work.liveUrl)
       window.open(work.liveUrl, "_blank", "noopener,noreferrer");
+  };
+
+  const handleImageClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (work.liveUrl) {
+      window.open(work.liveUrl, "_blank", "noopener,noreferrer");
+    }
   };
 
   const handleCaseStudyButtonClick = (e: React.MouseEvent) => {
@@ -93,7 +98,12 @@ export default function WorkCard({ work }: WorkCardProps) {
 
         {/* Right: Scrolling Screenshot */}
         <div className="rounded-xl overflow-hidden shadow-xl border border-gray-700 bg-black h-[300px] md:h-[360px] mt-6 md:mt-0 md:ml-10">
-          <div className="relative w-full h-full overflow-hidden group-hover:cursor-pointer">
+          <div
+            className={`relative w-full h-full overflow-hidden ${
+              work.liveUrl ? "live-website-cursor" : "cursor-default"
+            }`}
+            onClick={handleImageClick}
+          >
             <motion.img
               ref={imgRef}
               src={work.image}
