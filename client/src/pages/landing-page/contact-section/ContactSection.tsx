@@ -17,7 +17,7 @@ const ContactSection = () => {
   const handleSubmit = () => {};
 
   return (
-    <section className="py-16 rounded-xl mt-20 mx-2 bg-white">
+    <section className="py-16 rounded-xl mt-20 mx-2 bg-white" id="contact">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 gap-10 flex flex-col">
         <div className="flex justify-center flex-col lg:flex-row  gap-4">
           <motion.div
