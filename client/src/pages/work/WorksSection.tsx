@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Search, X } from "lucide-react";
 import WorkCard from "./WorkCard";
 import { works } from "./works";
 import CustomDropdown from "./CustomDropdown";
 
 const industries = [
-  "industry", // acts as "All Industries"
+  "industry",
   "startup",
   "restaurant",
   "repair",
@@ -14,37 +15,42 @@ const industries = [
   "pet care",
 ];
 
-const services = [
-  "service", // acts as "All Services"
-  "redesign",
-  "seo",
-  "web development",
-];
+const services = ["service", "redesign", "seo", "web development"];
 
 export default function WorksSection() {
   const [selectedIndustry, setSelectedIndustry] = useState<string>("industry");
   const [selectedService, setSelectedService] = useState<string>("service");
-  // const [renderCount, setRenderCount] = useState(0);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleIndustryChange = (value: string) => setSelectedIndustry(value);
+  const handleServiceChange = (value: string) => setSelectedService(value);
+  const clearFilters = () => {
+    setSelectedIndustry("industry");
+    setSelectedService("service");
+    setSearchQuery("");
+  };
+
+  const matchesSearch = (text: string) =>
+    text.toLowerCase().includes(searchQuery.toLowerCase());
 
   const filteredWorks = works.filter((work) => {
     const industryMatch =
       selectedIndustry === "industry" || work.industry === selectedIndustry;
     const serviceMatch =
       selectedService === "service" || work.service === selectedService;
-    return industryMatch && serviceMatch;
+
+    const searchMatch =
+      searchQuery.trim() === "" ||
+      matchesSearch(work.title) ||
+      matchesSearch(work.subtitle || "") ||
+      matchesSearch(work.description) ||
+      matchesSearch(work.industry) ||
+      matchesSearch(work.service) ||
+      work.categories.some((cat) => matchesSearch(cat));
+
+    return industryMatch && serviceMatch && searchMatch;
   });
-
-  const handleIndustryChange = (value: string) => {
-    console.log("Industry filter changed:", value);
-    setSelectedIndustry(value);
-    // setRenderCount((prev) => prev + 1);
-  };
-
-  const handleServiceChange = (value: string) => {
-    console.log("Service filter changed:", value);
-    setSelectedService(value);
-    // setRenderCount((prev) => prev + 1);
-  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -79,13 +85,53 @@ export default function WorksSection() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-200">
-            Case Studies.{" "}
-            <span className="text-gray-400">Featured Projects.</span>
-          </h2>
+          <div className="flex flex-wrap justify-between items-center gap-4 mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-200">
+              Case Studies.{" "}
+              <span className="text-gray-400">Featured Projects.</span>
+            </h2>
 
-          {/* Dropdown Filters */}
-          <div className="flex flex-wrap gap-4">
+            {/* Search Toggle */}
+            {/* Search Toggle */}
+            <div className="flex items-center gap-2 overflow-hidden relative">
+              <AnimatePresence initial={false}>
+                {searchOpen && (
+                  <motion.input
+                    key="search-input"
+                    initial={{ width: 0, opacity: 0 }}
+                    animate={{ width: 200, opacity: 1 }}
+                    exit={{ width: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search projects..."
+                    className="bg-transparent border border-gray-600 rounded-lg px-3 py-1 text-white placeholder-gray-400 focus:outline-none focus:border-white"
+                  />
+                )}
+              </AnimatePresence>
+
+              <motion.button
+                key="search-toggle"
+                initial={false}
+                animate={{ marginLeft: searchOpen ? 0 : "0.5rem" }}
+                transition={{ duration: 0.3 }}
+                onClick={() => {
+                  if (searchOpen && searchQuery !== "") {
+                    setSearchQuery("");
+                  } else {
+                    setSearchOpen(!searchOpen);
+                  }
+                }}
+                className="p-2 text-white border border-gray-600 rounded-lg hover:border-white transition"
+              >
+                {searchOpen ? <X size={20} /> : <Search size={20} />}
+              </motion.button>
+            </div>
+          </div>
+
+          {/* Filters */}
+          <div className="flex flex-wrap gap-4 items-center">
             <CustomDropdown
               options={industries}
               value={selectedIndustry}
@@ -96,13 +142,29 @@ export default function WorksSection() {
               value={selectedService}
               onChange={handleServiceChange}
             />
+            <AnimatePresence>
+              {(selectedIndustry !== "industry" ||
+                selectedService !== "service" ||
+                searchQuery !== "") && (
+                <motion.button
+                  key="clear-filters"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -10 }}
+                  onClick={clearFilters}
+                  className="text-sm font-medium px-4 py-2 rounded-lg border border-gray-600 text-gray-300 hover:text-white hover:border-white transition"
+                >
+                  Clear Filters
+                </motion.button>
+              )}
+            </AnimatePresence>
           </div>
         </motion.div>
 
-        {/* Projects */}
+        {/* Project List */}
         <AnimatePresence mode="wait">
           <motion.div
-            key={`${selectedIndustry}-${selectedService}`}
+            key={`${selectedIndustry}-${selectedService}-${searchQuery}`}
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -129,10 +191,7 @@ export default function WorksSection() {
                   our collection.
                 </p>
                 <button
-                  onClick={() => {
-                    // Adjust navigation or modal trigger here
-                    window.location.href = "/contact"; // or open modal
-                  }}
+                  onClick={() => (window.location.href = "/contact")}
                   className="bg-first-accent hover:bg-first-accent/80 text-white px-6 py-3 rounded-lg font-medium transition"
                 >
                   Start Your Project
@@ -141,19 +200,6 @@ export default function WorksSection() {
             )}
           </motion.div>
         </AnimatePresence>
-
-        {/* Load More */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mt-16"
-        >
-          <button className="bg-first-accent hover:bg-first-accent/80 text-white px-8 py-3 rounded-lg font-medium transition-colors">
-            Load More Projects
-          </button>
-        </motion.div> */}
       </div>
     </section>
   );
