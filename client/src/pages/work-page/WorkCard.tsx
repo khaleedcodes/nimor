@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink, Mouse } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Work } from "./works";
 
 interface WorkCardProps {
@@ -8,11 +9,12 @@ interface WorkCardProps {
 }
 
 export default function WorkCard({ work }: WorkCardProps) {
+  const navigate = useNavigate();
   const imgRef = useRef<HTMLImageElement>(null);
   const [scrollOffset, setScrollOffset] = useState(0);
 
   const handleCaseStudyClick = () => {
-    console.log(`Navigate to case study: ${work.id}`);
+    navigate(`/works/${work.id}`);
   };
 
   const handleLiveWebsiteClick = (e: React.MouseEvent) => {
