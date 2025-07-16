@@ -85,6 +85,7 @@ export interface Work {
     hex: string;
   }>;
   overviewParagraphs?: string[];
+  detailedDescription: string;
 }
 export const works: Work[] = [
   {
@@ -104,7 +105,7 @@ export const works: Work[] = [
       "True North Yard needed a clean and trustworthy digital presence for landscaping and seasonal services. We focused on professional appeal and local search optimization.",
     duration: "6 weeks",
     teamSize: "2 developers, 1 designer",
-    platform: "React, TailwindCSS, Netlify",
+    platform: "React, Framer motion",
     role: "Full Stack Development",
     goals: [
       "Establish professional online presence",
@@ -150,6 +151,7 @@ export const works: Work[] = [
       "True North Yard required a clean and trustworthy online presence to highlight their expert landscaping and yard maintenance services. The goal was to build local credibility and attract clients seeking seasonal care.",
       "We crafted a professional, nature-inspired design emphasizing trust and reliability, with seamless mobile responsiveness and SEO optimizations to boost local search rankings.",
     ],
+    detailedDescription: `True North Yard is a landscaping and yard maintenance company focused on providing expert seasonal care to residential clients. They needed a professional and trustworthy online presence that could showcase their services and attract qualified local leads. The goal was to build credibility in a competitive market with clear service highlights and a strong mobile-first design to reach clients on all devices.`,
   },
   {
     id: "pawtastic_pets",
@@ -214,6 +216,7 @@ export const works: Work[] = [
       "Pawtastic Pets needed a lively and user-friendly e-commerce platform to connect with pet owners and promote their accessories and care tips.",
       "Our redesign introduced playful UX elements, straightforward navigation, and optimized product displays, making shopping both fun and intuitive for users across devices.",
     ],
+    detailedDescription: `Pawtastic Pets is a pet care and accessories business aiming to engage pet owners through a vibrant and playful e-commerce platform. They required a redesign to simplify product discovery, improve shopping flow, and build brand trust through friendly and accessible UX/UI. The project emphasized creating a fun yet professional online store that converts visitors into customers.`,
   },
   {
     id: "bundlebit",
@@ -276,69 +279,9 @@ export const works: Work[] = [
       "BundleBit aimed to attract content creators by clearly showcasing its productivity features and subscription options through a modern, engaging landing page.",
       "The design focused on clarity, compelling calls-to-action, and smooth animations to improve visitor conversion and provide a seamless user experience on mobile and desktop.",
     ],
+    detailedDescription: `BundleBit is a startup offering productivity tools for content creators. They needed a modern landing page that clearly communicated product value and subscription options to convert visitors into trial users. The design focused on simplicity and clarity, balancing feature-rich content with smooth animations to engage a broad audience and enhance mobile responsiveness.`,
   },
-  {
-    id: "maplefix",
-    title: "MapleFix",
-    subtitle: "Forest-Inspired Repair Services Platform",
-    description:
-      "A nature-themed site for MapleFix repair services, displaying offerings, team, and contact information.",
-    image: maplefix,
-    categories: ["Branding", "Web Design", "UX/UI"],
-    liveUrl: "https://maplefix.netlify.app/",
-    color: "green",
-    industry: "repair",
-    service: "web development",
-    year: "2025",
-    overview:
-      "MapleFix wanted to emphasize trust and eco-conscious branding. We designed a forest-themed platform with clear services and credibility.",
-    duration: "5 weeks",
-    teamSize: "2 devs",
-    platform: "React, TailwindCSS, Netlify",
-    role: "Frontend Dev",
-    goals: [
-      "Eco-conscious design",
-      "Showcase repair services and reliability",
-      "Simplify customer inquiries",
-    ],
-    challenges: [
-      "Forest-inspired theme without overwhelming",
-      "Simple contact flow",
-      "Highlight local expertise",
-    ],
-    techStack: [
-      { name: "React", category: "Frontend Framework", icon: "fab fa-react" },
-      {
-        name: "TailwindCSS",
-        category: "Styling Framework",
-        icon: "fab fa-css3-alt",
-      },
-      { name: "Framer Motion", category: "Animations", icon: "fas fa-bolt" },
-      { name: "Netlify", category: "Deployment", icon: "fas fa-cloud" },
-    ],
-    results: {
-      metric1: "140%",
-      metric2: "2.2s",
-      metric3: "93%",
-      metric4: "180%",
-    },
-    testimonial:
-      "The site reflects our values. Clients feel more confident now.",
-    client: {
-      name: "James Ford",
-      title: "Lead Technician, MapleFix",
-    },
-    colorPalette: [
-      { color: "bg-green-700", hex: "#047857" },
-      { color: "bg-lime-400", hex: "#A3E635" },
-      { color: "bg-white", hex: "#FFFFFF" },
-      { color: "bg-stone-600", hex: "#78716C" },
-    ],
-    overviewParagraphs: [
-      "MapleFix wanted a nature-themed site that emphasized trust and eco-conscious repair services. It needed to clearly communicate offerings and build client confidence.",
-      "We developed a forest-inspired platform combining simplicity with credibility, facilitating easy customer inquiries while reinforcing MapleFix's expertise and environmental values.",
-    ],
-  },
+
   {
     id: "ecoglow_cleaning",
     title: "EcoGlow Cleaning",
@@ -401,6 +344,70 @@ export const works: Work[] = [
       "EcoGlow Cleaning sought to highlight its commitment to environmentally friendly cleaning services with a modern and accessible website.",
       "The design balanced clean aesthetics with functionality, enabling effortless booking and service information access, while emphasizing sustainability throughout the user journey.",
     ],
+    detailedDescription: `EcoGlow Cleaning provides eco-friendly home and office cleaning services. They required a clean and modern website to emphasize their commitment to sustainability while offering an easy booking and inquiry system. The project balanced aesthetic appeal with functionality to enhance trust, facilitate service discovery, and improve search engine visibility.`,
+  },
+  {
+    id: "maplefix",
+    title: "MapleFix",
+    subtitle: "Forest-Inspired Repair Services Platform",
+    description:
+      "A nature-themed site for MapleFix repair services, displaying offerings, team, and contact information.",
+    image: maplefix,
+    categories: ["Branding", "Web Design", "UX/UI"],
+    liveUrl: "https://maplefix.netlify.app/",
+    color: "green",
+    industry: "repair",
+    service: "web development",
+    year: "2025",
+    overview:
+      "MapleFix wanted to emphasize trust and eco-conscious branding. We designed a forest-themed platform with clear services and credibility.",
+    duration: "5 weeks",
+    teamSize: "2 devs",
+    platform: "React, TailwindCSS, Netlify",
+    role: "Frontend Dev",
+    goals: [
+      "Eco-conscious design",
+      "Showcase repair services and reliability",
+      "Simplify customer inquiries",
+    ],
+    challenges: [
+      "Forest-inspired theme without overwhelming",
+      "Simple contact flow",
+      "Highlight local expertise",
+    ],
+    techStack: [
+      { name: "React", category: "Frontend Framework", icon: "fab fa-react" },
+      {
+        name: "TailwindCSS",
+        category: "Styling Framework",
+        icon: "fab fa-css3-alt",
+      },
+      { name: "Framer Motion", category: "Animations", icon: "fas fa-bolt" },
+      { name: "Netlify", category: "Deployment", icon: "fas fa-cloud" },
+    ],
+    results: {
+      metric1: "140%",
+      metric2: "2.2s",
+      metric3: "93%",
+      metric4: "180%",
+    },
+    testimonial:
+      "The site reflects our values. Clients feel more confident now.",
+    client: {
+      name: "James Ford",
+      title: "Lead Technician, MapleFix",
+    },
+    colorPalette: [
+      { color: "bg-green-700", hex: "#047857" },
+      { color: "bg-lime-400", hex: "#A3E635" },
+      { color: "bg-white", hex: "#FFFFFF" },
+      { color: "bg-stone-600", hex: "#78716C" },
+    ],
+    overviewParagraphs: [
+      "MapleFix wanted a nature-themed site that emphasized trust and eco-conscious repair services. It needed to clearly communicate offerings and build client confidence.",
+      "We developed a forest-inspired platform combining simplicity with credibility, facilitating easy customer inquiries while reinforcing MapleFix's expertise and environmental values.",
+    ],
+    detailedDescription: `MapleFix is a repair service company with a focus on eco-conscious and trustworthy branding. They sought a nature-inspired digital platform to highlight their repair offerings and local expertise. The challenge was to create a forest-themed site that conveyed reliability and environmental values while simplifying customer inquiries and building client confidence.`,
   },
   {
     id: "ember_dining",
@@ -464,5 +471,6 @@ export const works: Work[] = [
       "Ember Dining required a warm and elegant website that reflected its cozy restaurant atmosphere while facilitating online menu browsing and table reservations.",
       "Our approach combined earthy color palettes, refined typography, and conversion-focused UX to enhance the dining experience and improve local SEO performance.",
     ],
+    detailedDescription: `Ember Dining is a cozy restaurant looking to enhance its digital presence with an elegant and warm website. They needed a site that reflected their ambiance, facilitated menu browsing, and simplified reservation bookings. The design aimed to combine earthy tones and refined typography with SEO best practices to attract local diners and improve user experience.`,
   },
 ];
