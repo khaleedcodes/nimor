@@ -6,6 +6,7 @@ import FormSubmittedPage from "./pages/form-submitted-page/FormSubmittedPage";
 import Logo from "./pages/landing-page/Logo";
 import WorkPage from "./pages/work-page/WorkPage";
 import CaseStudyPage from "./pages/work-page/CaseStudyPage";
+import AboutPage from "./pages/about-page/AboutPage";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,22 @@ const router = createBrowserRouter([
     element: (
       <PageLayout>
         <WorkPage />
+      </PageLayout>
+    ),
+  },
+  {
+    path: "/about",
+    element: (
+      <PageLayout>
+        <AboutPage />
+      </PageLayout>
+    ),
+  },
+  {
+    path: "/services/:id",
+    element: (
+      <PageLayout>
+        <CaseStudyPage />
       </PageLayout>
     ),
   },
