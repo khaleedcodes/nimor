@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 
-import { services } from "../landing-page/services-section/servicesData";
+import { services } from "../../data/servicesData";
 import WhyChooseUs from "../landing-page/why-nimor-section/WhyChooseUs";
 import Marquee from "../landing-page/hero-section/HeroMarquee";
 

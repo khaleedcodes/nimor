@@ -30,6 +30,7 @@ import emberPng from "../../../assets/images/clients/ember.png";
 import maplefixPng from "../../../assets/images/clients/maplefix.png";
 import pawtasticPng from "../../../assets/images/clients/pawtastic.png";
 import truenorthPng from "../../../assets/images/clients/truenorth.png";
+import { Link } from "react-router-dom";
 
 const clients = [
   { avif: bundlebitAvif, webp: bundlebitWebp, png: bundlebitPng },
@@ -49,41 +50,38 @@ const clients = [
 
 function HeroCarousel() {
   return (
-    <motion.div
-      className="see-works-cursor"
-      onClick={() => {
-        window.location.href = "/works";
-      }}
-    >
-      {/* <EmblaCarousel slides={SLIDES} options={OPTIONS} /> */}
-      <Carousel className="w-full">
-        <CarouselContent>
-          {clients.map(({ avif, webp, png }, index) => {
-            return (
-              <CarouselItem
-                className="md:basis-1 lg:basis-1/2 rounded-2xl"
-                key={index}
-              >
-                <picture className="rounded-2xl">
-                  <source
-                    srcSet={avif}
-                    type="image/avif"
-                    className="rounded-2xl"
-                  />
-                  <source
-                    srcSet={webp}
-                    type="image/webp"
-                    className="rounded-2xl"
-                  />
-                  <img src={png} loading="lazy" className="rounded-2xl" />
-                </picture>
-              </CarouselItem>
-            );
-          })}
-        </CarouselContent>
-        {/* <CarouselPrevious />
+    <motion.div>
+      <Link to={"/works"} className="see-works-cursor">
+        {/* <EmblaCarousel slides={SLIDES} options={OPTIONS} /> */}
+        <Carousel className="w-full">
+          <CarouselContent>
+            {clients.map(({ avif, webp, png }, index) => {
+              return (
+                <CarouselItem
+                  className="md:basis-1 lg:basis-1/2 rounded-2xl"
+                  key={index}
+                >
+                  <picture className="rounded-2xl">
+                    <source
+                      srcSet={avif}
+                      type="image/avif"
+                      className="rounded-2xl"
+                    />
+                    <source
+                      srcSet={webp}
+                      type="image/webp"
+                      className="rounded-2xl"
+                    />
+                    <img src={png} loading="lazy" className="rounded-2xl" />
+                  </picture>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+          {/* <CarouselPrevious />
         <CarouselNext /> */}
-      </Carousel>
+        </Carousel>
+      </Link>
     </motion.div>
   );
 }

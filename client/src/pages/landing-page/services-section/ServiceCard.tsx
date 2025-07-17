@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { itemVariants } from "./variants";
 import type { Service } from "./types";
+import { Link } from "react-router-dom";
 
 interface ServiceCardProps {
   service: Service;
@@ -9,10 +10,6 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ service, index }) => {
   const Icon = service.icon;
-
-  const handleLearnMore = (id: string) => {
-    console.log(`Navigate to ${id} service details`);
-  };
 
   const getGridClasses = (index: number) => {
     switch (index) {
@@ -60,31 +57,33 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index }) => {
           </p>
         </div>
 
-        <motion.button
-          onClick={() => handleLearnMore(service.id)}
-          className={`flex items-center ${service.ctaColor} font-semibold transition-colors duration-200 mt-auto`}
-          whileHover={{
-            x: 4,
-            transition: { type: "tween", duration: 0.3 },
-          }}
-        >
-          <span>Learn More</span>
-          <motion.svg
-            className="w-5 h-5 ml-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            whileHover={{ x: 4 }}
-            transition={{ duration: 0.3 }}
+        <Link to={`/services/${service.id}`}>
+          <motion.button
+            // onClick={() => handleLearnMore(service.id)}
+            className={`flex items-center ${service.ctaColor} font-semibold transition-colors duration-200 mt-auto`}
+            whileHover={{
+              x: 4,
+              transition: { type: "tween", duration: 0.3 },
+            }}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            />
-          </motion.svg>
-        </motion.button>
+            <span>Learn More</span>
+            <motion.svg
+              className="w-5 h-5 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              whileHover={{ x: 4 }}
+              transition={{ duration: 0.3 }}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </motion.svg>
+          </motion.button>
+        </Link>
       </motion.div>
     </motion.div>
   );

@@ -2,8 +2,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Sparkles, X } from "lucide-react";
 import WorkCard from "./WorkCard";
-import { works } from "./works";
+import { works } from "../../data/worksData";
 import CustomDropdown from "./CustomDropdown";
+import { Link } from "react-router-dom";
 
 const industries = [
   "industry",
@@ -223,12 +224,11 @@ export default function WorkPage() {
                   your idea to life, and we might even feature your project in
                   our collection.
                 </p>
-                <button
-                  onClick={() => (window.location.href = "/contact")}
-                  className="bg-first-accent hover:bg-first-accent/80 text-white px-6 py-3 rounded-lg font-medium transition"
-                >
-                  Start Your Project
-                </button>
+                <Link to={"/contact"}>
+                  <button className="bg-first-accent hover:bg-first-accent/80 text-white px-6 py-3 rounded-lg font-medium transition">
+                    Start Your Project
+                  </button>
+                </Link>
               </motion.div>
             )}
           </motion.div>

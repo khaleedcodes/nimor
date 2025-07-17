@@ -74,5 +74,5 @@ export type {
   WebsiteType,
   WebsiteItemProp,
   WordMarkProp,
-  Testimonial
+  Testimonial,
 };

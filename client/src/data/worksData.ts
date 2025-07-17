@@ -1,9 +1,9 @@
-import trueNorth from "../../assets/images/websites/truenorth.png";
-import bundlebit from "../../assets/images/websites/bundlebit.png";
-import ecoglow from "../../assets/images/websites/ecoglow.png";
-import ember from "../../assets/images/websites/ember.png";
-import maplefix from "../../assets/images/websites/maplefix.png";
-import pawtastic from "../../assets/images/websites/pawtastic.png";
+import trueNorth from "../assets/images/websites/truenorth.png";
+import bundlebit from "../assets/images/websites/bundlebit.png";
+import ecoglow from "../assets/images/websites/ecoglow.png";
+import ember from "../assets/images/websites/ember.png";
+import maplefix from "../assets/images/websites/maplefix.png";
+import pawtastic from "../assets/images/websites/pawtastic.png";
 
 export interface Work {
   id: string;

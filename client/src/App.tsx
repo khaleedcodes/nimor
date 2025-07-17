@@ -8,6 +8,7 @@ import WorkPage from "./pages/work-page/WorkPage";
 import CaseStudyPage from "./pages/work-page/CaseStudyPage";
 import AboutPage from "./pages/about-page/AboutPage";
 import ContactPage from "./pages/contact-page/ContactPage";
+import ServiceDetailPage from "./pages/service-detail-page/ServiceDetailPage";
 
 const router = createBrowserRouter([
   {
@@ -47,7 +48,7 @@ const router = createBrowserRouter([
     path: "/services/:id",
     element: (
       <PageLayout>
-        <CaseStudyPage />
+        <ServiceDetailPage />
       </PageLayout>
     ),
   },

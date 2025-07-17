@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink, Mouse } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { Work } from "./works";
+import { Work } from "../../data/worksData";
 
 interface WorkCardProps {
   work: Work;

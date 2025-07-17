@@ -9,7 +9,7 @@ import {
   Smartphone,
   User,
 } from "lucide-react";
-import { works } from "./works";
+import { works } from "../../data/worksData";
 
 export default function CaseStudyPage() {
   const { id } = useParams<{ id: string }>();
