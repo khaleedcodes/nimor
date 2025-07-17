@@ -5,6 +5,7 @@ import {
   // CarouselNext,
   // CarouselPrevious,
 } from "@/components/ui/carousel";
+import { motion } from "framer-motion";
 
 // AVIF format
 import bundlebitAvif from "../../../assets/images/clients/bundlebit.avif";
@@ -48,7 +49,12 @@ const clients = [
 
 function HeroCarousel() {
   return (
-    <>
+    <motion.div
+      className="see-works-cursor"
+      onClick={() => {
+        window.location.href = "/works";
+      }}
+    >
       {/* <EmblaCarousel slides={SLIDES} options={OPTIONS} /> */}
       <Carousel className="w-full">
         <CarouselContent>
@@ -78,7 +84,7 @@ function HeroCarousel() {
         {/* <CarouselPrevious />
         <CarouselNext /> */}
       </Carousel>
-    </>
+    </motion.div>
   );
 }
 
