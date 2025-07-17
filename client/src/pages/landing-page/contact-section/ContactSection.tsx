@@ -13,11 +13,20 @@ const arrowVariants = {
   hover: { x: 5 },
 };
 
-const ContactSection = () => {
+const ContactSection = ({
+  className,
+  textColor,
+}: {
+  className: string;
+  textColor: string;
+}) => {
   const handleSubmit = () => {};
 
   return (
-    <section className="py-16 rounded-xl mt-20 mx-2 bg-white" id="contact">
+    <section
+      className={`py-16 rounded-xl mt-20 mx-2 ${className}`}
+      id="contact"
+    >
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 gap-10 flex flex-col">
         <div className="flex justify-center flex-col lg:flex-row  gap-4">
           <motion.div
@@ -34,7 +43,7 @@ const ContactSection = () => {
 
             {/* Right side: Description */}
             <div className="w-full flex justify-start">
-              <p className="text-sm leading-relaxed max-w-2xl text-black">
+              <p className={`text-sm leading-relaxed max-w-2xl ${textColor}`}>
                 Let's turn your idea into a rocket ship! Share your vision
                 below, and we'll help you soar beyond the stars.
               </p>

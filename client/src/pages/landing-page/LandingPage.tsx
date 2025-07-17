@@ -22,7 +22,7 @@ export default function LandingPage() {
       <WhyChooseUs />
       <TestimonialSection />
       {/* <FeedbacksSection /> */}
-      <ContactForm />
+      <ContactForm className="bg-white" textColor="text-black"/>
       <FaqSection />
     </div>
   );

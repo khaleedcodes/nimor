@@ -7,6 +7,7 @@ import Logo from "./pages/landing-page/Logo";
 import WorkPage from "./pages/work-page/WorkPage";
 import CaseStudyPage from "./pages/work-page/CaseStudyPage";
 import AboutPage from "./pages/about-page/AboutPage";
+import ContactPage from "./pages/contact-page/ContactPage";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,14 @@ const router = createBrowserRouter([
     element: (
       <PageLayout>
         <AboutPage />
+      </PageLayout>
+    ),
+  },
+  {
+    path: "/contact",
+    element: (
+      <PageLayout>
+        <ContactPage />
       </PageLayout>
     ),
   },
