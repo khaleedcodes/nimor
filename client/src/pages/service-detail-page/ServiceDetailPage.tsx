@@ -1,8 +1,11 @@
 import { useParams } from "react-router-dom";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { services } from "../../data/servicesData";
 import { useRef } from "react";
+import Marquee from "../landing-page/hero-section/HeroMarquee";
+import { works } from "@/data/worksData";
+import WorkCard from "../work-page/WorkCard";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -244,37 +247,45 @@ export default function ServiceDetailPage() {
             </div>
           </div>
         </motion.section>
+        {/* 
+        <motion.section className="py-16 text-white text-7xl font-bold max-w-screen-xl mx-auto" variants={itemVariants}>
+          <h1>We create beautiful websites that drive business growth.</h1>
+        </motion.section> */}
 
         {/* Featured Clients */}
-        <motion.section className="py-16 bg-gray-50" variants={itemVariants}>
+        <motion.section className="py-16" variants={itemVariants}>
           <div className="max-w-7xl mx-auto px-6">
             <motion.div className="text-center mb-12" variants={itemVariants}>
-              <h2 className="text-sm font-medium text-gray-600 mb-8">
+              <h2 className="text-sm font-medium text-white mb-8">
                 Featured clients
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center">
-                {service.clients.map((client, index) => (
-                  <motion.div
-                    key={client}
-                    className="text-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <div className="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center mx-auto mb-2">
-                      <span className="text-xs font-bold text-gray-600">
-                        {client}
-                      </span>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+              <Marquee />
             </motion.div>
           </div>
         </motion.section>
 
+        <motion.section
+          className="py-16 max-w-screen-xl p-4 mx-auto flex gap-4"
+          variants={itemVariants}
+        >
+          <motion.div className="flex gap-4 text-white flex-col">
+            <motion.span>Featured work</motion.span>
+            <motion.p>
+              Our goal is to nurture your vision and provide innovative, custom
+              solutions for all your marketing needs.
+            </motion.p>
+          </motion.div>
+          <motion.div className="space-y-8">
+            {works.map((work) => (
+              <motion.div key={work.id} variants={itemVariants}>
+                <WorkCard work={work} />
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.section>
+
         {/* Capabilities */}
-        <motion.section className="py-20" variants={itemVariants}>
+        {/* <motion.section className="py-20" variants={itemVariants}>
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16">
               <div>
@@ -326,7 +337,7 @@ export default function ServiceDetailPage() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </motion.section> */}
 
         {/* Case Studies */}
         <motion.section className="py-20 bg-gray-50" variants={itemVariants}>
