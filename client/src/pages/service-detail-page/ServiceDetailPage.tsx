@@ -5,6 +5,10 @@ import { services } from "../../data/servicesData";
 import { useRef } from "react";
 import Marquee from "../landing-page/hero-section/HeroMarquee";
 import { works } from "@/data/worksData";
+import IndustriesSection from "./IndustriesSection";
+import Process from "./Process";
+import WhyChooseUs from "../landing-page/why-nimor-section/WhyChooseUs";
+import { StackedCard } from "./StackedCard";
 import WorkCard from "../work-page/WorkCard";
 
 const containerVariants = {
@@ -98,7 +102,7 @@ export default function ServiceDetailPage() {
   };
 
   return (
-    <div className="text-gray-900 min-h-screen">
+    <div className="text-white min-h-screen">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -263,11 +267,7 @@ export default function ServiceDetailPage() {
             </motion.div>
           </div>
         </motion.section>
-
-        <motion.section
-          className="py-16 max-w-screen-xl p-4 mx-auto flex gap-4"
-          variants={itemVariants}
-        >
+        <motion.section>
           <motion.div className="flex gap-4 text-white flex-col">
             <motion.span>Featured work</motion.span>
             <motion.p>
@@ -275,125 +275,29 @@ export default function ServiceDetailPage() {
               solutions for all your marketing needs.
             </motion.p>
           </motion.div>
-          <motion.div className="space-y-8">
+
+          <StackedCard>
             {works.map((work) => (
-              <motion.div key={work.id} variants={itemVariants}>
-                <WorkCard work={work} />
-              </motion.div>
+              <WorkCard key={work.id} work={work} />
             ))}
-          </motion.div>
+          </StackedCard>
         </motion.section>
 
-        {/* Capabilities */}
-        {/* <motion.section className="py-20" variants={itemVariants}>
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-16">
-              <div>
-                <motion.h2
-                  className="text-4xl font-bold mb-8"
-                  variants={itemVariants}
-                >
-                  Capabilities
-                </motion.h2>
-
-                <div className="flex gap-4 mb-8">
-                  <button className="px-4 py-2 bg-gray-900 text-white rounded-full text-sm font-medium">
-                    Process
-                  </button>
-                  <button className="px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium">
-                    Industries
-                  </button>
-                </div>
-
-                <div className="space-y-6">
-                  {service.capabilities.slice(0, 4).map((capability, index) => (
-                    <motion.div
-                      key={index}
-                      className="flex items-start gap-4"
-                      variants={itemVariants}
-                    >
-                      <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0 mt-1">
-                        <CheckCircle className="w-3 h-3 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-semibold mb-2">
-                          {capability.title}
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed">
-                          {capability.description}
-                        </p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="lg:pl-8">
-                <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                  alt="Web development workspace"
-                  className="rounded-xl shadow-lg w-full h-auto"
-                />
-              </div>
-            </div>
-          </div>
-        </motion.section> */}
-
-        {/* Case Studies */}
-        <motion.section className="py-20 bg-gray-50" variants={itemVariants}>
-          <div className="max-w-7xl mx-auto px-6">
-            <motion.div className="text-center mb-16" variants={itemVariants}>
-              <h2 className="text-4xl font-bold mb-4">Recent Projects</h2>
-              <p className="text-xl text-gray-600">
-                Explore our latest work and client success stories
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {service.caseStudies.map((study) => (
-                <motion.div
-                  key={study.id}
-                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group cursor-pointer"
-                  variants={itemVariants}
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img
-                      src={study.image}
-                      alt={study.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">{study.title}</h3>
-                    <p className="text-gray-600 mb-4">{study.description}</p>
-                    <div className="flex gap-2">
-                      <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
-                        React
-                      </span>
-                      <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
-                        Node.js
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
+        <IndustriesSection />
+        <Process />
 
         {/* What Our Partners Say */}
         <motion.section className="py-20" variants={itemVariants}>
           <div className="max-w-4xl mx-auto px-6 text-center">
             <motion.h2
-              className="text-4xl font-bold mb-12"
+              className="text-4xl text-white font-bold mb-12"
               variants={itemVariants}
             >
               What our partners say
             </motion.h2>
 
             <motion.blockquote
-              className="text-xl leading-relaxed mb-8 text-gray-700"
+              className="text-xl leading-relaxed mb-8 text-white"
               variants={itemVariants}
             >
               "{service.testimonial.quote}"
@@ -410,7 +314,7 @@ export default function ServiceDetailPage() {
               />
               <div className="text-left">
                 <p className="font-semibold">{service.testimonial.author}</p>
-                <p className="text-gray-600 text-sm">
+                <p className="text-white text-sm">
                   {service.testimonial.role}, {service.testimonial.company}
                 </p>
               </div>
@@ -419,7 +323,7 @@ export default function ServiceDetailPage() {
         </motion.section>
 
         {/* Benefits */}
-        <motion.section className="py-20 bg-gray-50" variants={itemVariants}>
+        <motion.section className="py-20 " variants={itemVariants}>
           <div className="max-w-7xl mx-auto px-6">
             <motion.div className="text-center mb-16" variants={itemVariants}>
               <h2 className="text-4xl font-bold mb-4">
@@ -446,57 +350,7 @@ export default function ServiceDetailPage() {
             </div>
           </div>
         </motion.section>
-
-        {/* Why Nimor Stats */}
-        <motion.section className="py-20" variants={itemVariants}>
-          <div className="max-w-7xl mx-auto px-6">
-            <motion.div className="text-center mb-16" variants={itemVariants}>
-              <h2 className="text-4xl font-bold mb-4">Why Nimor?</h2>
-            </motion.div>
-
-            <div className="grid md:grid-cols-4 gap-8 text-center">
-              {service.stats.map((stat, index) => (
-                <motion.div key={index} variants={itemVariants}>
-                  <div className="text-4xl font-bold text-gray-900 mb-2">
-                    {stat.value}
-                  </div>
-                  <p className="font-semibold mb-1">{stat.label}</p>
-                  <p className="text-gray-600 text-sm">{stat.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
-
-        {/* Leadership Team */}
-        <motion.section className="py-20 bg-gray-50" variants={itemVariants}>
-          <div className="max-w-7xl mx-auto px-6">
-            <motion.div className="text-center mb-16" variants={itemVariants}>
-              <h2 className="text-4xl font-bold mb-4">Leadership team</h2>
-            </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {service.teamMembers.map((member, index) => (
-                <motion.div
-                  key={index}
-                  className="text-center"
-                  variants={itemVariants}
-                >
-                  <img
-                    src={member.avatar}
-                    alt={member.name}
-                    className="w-20 h-20 rounded-full mx-auto mb-4"
-                  />
-                  <h3 className="font-semibold mb-1">{member.name}</h3>
-                  <p className="text-gray-600 text-sm mb-2">{member.role}</p>
-                  <p className="text-gray-600 text-xs leading-relaxed">
-                    {member.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
+        <WhyChooseUs />
 
         {/* Tools We Use */}
         <motion.section className="py-20" variants={itemVariants}>
@@ -525,7 +379,7 @@ export default function ServiceDetailPage() {
         </motion.section>
 
         {/* Additional Services */}
-        <motion.section className="py-20 bg-gray-50" variants={itemVariants}>
+        <motion.section className="py-20 " variants={itemVariants}>
           <div className="max-w-7xl mx-auto px-6">
             <motion.div className="text-center mb-16" variants={itemVariants}>
               <h2 className="text-4xl font-bold mb-4">Additional services</h2>

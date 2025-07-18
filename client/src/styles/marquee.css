@@ -57,3 +57,18 @@
       16 16,
     pointer;
 }
+
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Better 3D card rendering */
+.card img {
+  backface-visibility: hidden;
+}
