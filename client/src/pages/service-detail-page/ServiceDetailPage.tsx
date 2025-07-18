@@ -10,6 +10,7 @@ import Process from "./Process";
 import WhyChooseUs from "../landing-page/why-nimor-section/WhyChooseUs";
 import { StackedCard } from "./StackedCard";
 import WorkCard from "../work-page/WorkCard";
+import { BenefitsSection } from "./BenefitSection";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -267,7 +268,7 @@ export default function ServiceDetailPage() {
             </motion.div>
           </div>
         </motion.section>
-        <motion.section>
+        <motion.section className="flex mx-auto max-w-screen-xl">
           <motion.div className="flex gap-4 text-white flex-col">
             <motion.span>Featured work</motion.span>
             <motion.p>
@@ -321,6 +322,8 @@ export default function ServiceDetailPage() {
             </motion.div>
           </div>
         </motion.section>
+
+        <BenefitsSection />
 
         {/* Benefits */}
         <motion.section className="py-20 " variants={itemVariants}>

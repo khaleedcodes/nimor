@@ -1,8 +1,6 @@
 import React, { Children, useRef, useEffect, useState } from "react";
 import {
-  motion,
   useMotionValue,
-  useTransform,
   PanInfo,
   animate,
   LazyMotion,
@@ -26,12 +24,13 @@ export const StackedCard: React.FC<StackedCardProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
-  
+  console.log(isDragging);
+
   const length = Children.count(children);
 
   // Create a simple progress value based on current index
   const progress = useMotionValue(currentIndex);
-  
+
   // Update progress when currentIndex changes
   useEffect(() => {
     animate(progress, currentIndex, {
@@ -41,12 +40,15 @@ export const StackedCard: React.FC<StackedCardProps> = ({
     });
   }, [currentIndex, progress]);
 
-  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+  const handleDragEnd = (
+    event: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo
+  ) => {
     setIsDragging(false);
-    
+
     const threshold = 80;
     const { offset } = info;
-    
+
     if (offset.x > threshold && currentIndex > 0) {
       // Swipe right - go to previous card
       setCurrentIndex(currentIndex - 1);
@@ -62,11 +64,11 @@ export const StackedCard: React.FC<StackedCardProps> = ({
 
   return (
     <LazyMotion features={domAnimation}>
-      <div 
+      <div
         ref={containerRef}
-        className="w-screen h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-950 to-gray-900"
+        className="w-full min-h-[600px] max-w-4xl mx-auto flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-950 to-gray-900 rounded-2xl"
       >
-        <div className="relative w-full h-full flex items-center justify-center perspective-1000">
+        <div className="relative w-full h-[600px] flex items-center justify-center perspective-1000">
           {Children.map(children, (child, index) => (
             <Card
               key={index}
@@ -83,20 +85,20 @@ export const StackedCard: React.FC<StackedCardProps> = ({
             </Card>
           ))}
         </div>
-        
+
         {/* Progress indicators */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
           {Array.from({ length }).map((_, index) => (
             <div
               key={index}
               className={`w-2 h-2 rounded-full transition-colors cursor-pointer ${
-                index === currentIndex ? 'bg-white' : 'bg-white/30'
+                index === currentIndex ? "bg-white" : "bg-white/30"
               }`}
               onClick={() => setCurrentIndex(index)}
             />
           ))}
         </div>
-        
+
         {/* Navigation hints */}
         <div className="absolute top-8 left-1/2 transform -translate-x-1/2 text-center">
           <div className="bg-black/20 backdrop-blur-sm rounded-full px-4 py-2 shadow-sm">
