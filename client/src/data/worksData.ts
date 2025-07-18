@@ -25,7 +25,7 @@ export interface Work {
     | "cleaning"
     | "landscaping"
     | "pet care";
-  service: "redesign" | "seo" | "web development";
+  service: "redesign" | "seo" | "web design";
 }
 
 export const categories = [
@@ -55,7 +55,7 @@ export interface Work {
     | "cleaning"
     | "landscaping"
     | "pet care";
-  service: "redesign" | "seo" | "web development";
+  service: "redesign" | "seo" | "web design";
 
   overview?: string;
   duration?: string;
@@ -99,7 +99,7 @@ export const works: Work[] = [
     liveUrl: "https://truenorthyard.netlify.app/",
     color: "purple",
     industry: "landscaping",
-    service: "web development",
+    service: "web design",
     year: "2025",
     overview:
       "True North Yard needed a clean and trustworthy digital presence for landscaping and seasonal services. We focused on professional appeal and local search optimization.",
@@ -229,7 +229,7 @@ export const works: Work[] = [
     liveUrl: "https://bundlebit.me/",
     color: "cyan",
     industry: "startup",
-    service: "web development",
+    service: "web design",
     year: "2025",
     overview:
       "BundleBit was designed to attract content creators seeking productivity tools. The landing page focuses on feature explanation and CTA clarity.",
@@ -293,7 +293,7 @@ export const works: Work[] = [
     liveUrl: "https://ecoglowcleaning.netlify.app/",
     color: "blue",
     industry: "cleaning",
-    service: "web development",
+    service: "web design",
     year: "2025",
     overview:
       "EcoGlow wanted a site that emphasized its commitment to eco-friendly practices while providing a modern, easy-to-navigate interface for clients to learn more about services and book cleanings online.",
@@ -357,7 +357,7 @@ export const works: Work[] = [
     liveUrl: "https://maplefix.netlify.app/",
     color: "green",
     industry: "repair",
-    service: "web development",
+    service: "web design",
     year: "2025",
     overview:
       "MapleFix wanted to emphasize trust and eco-conscious branding. We designed a forest-themed platform with clear services and credibility.",

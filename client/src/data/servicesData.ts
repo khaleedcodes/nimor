@@ -5,7 +5,7 @@ export const services: ServiceDetail[] = [
   {
     id: "web-design",
     title: "Website Design & Development",
-    shortTitle: "Design & Dev",
+    shortTitle: "Web design",
     description:
       "We design and build custom, responsive websites that reflect your brand and engage your audience with intuitive digital experiences.",
     icon: Heart,
@@ -14,7 +14,7 @@ export const services: ServiceDetail[] = [
     hoverShadowColor: "hover:shadow-first-accent/20",
     ctaColor: "text-first-accent group-hover:text-first-accent/80",
     bgColor: "bg-pink-50",
-    heroDescription: "Custom designs. Seamless code.",
+    heroDescription: "We design user‑centered websites that blend UI/UX expertise, strategic SEO, and refined visual storytelling—delivering high-performance platforms built around your brand’s vision.",
     clients: [
       "True North Yard",
       "EcoGlow",
