@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Marquee from "./HeroMarquee";
 import HeroCarousel from "./HeroCarousel";
 import { ChevronRight, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function HeroSection() {
   const variants = {
@@ -75,47 +76,49 @@ function HeroSection() {
           className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 mb-4 w-full max-w-lg justify-center"
         >
           {/* First Button */}
-          <motion.a
-            href="/work"
-            initial="initial"
-            whileHover="hover"
-            variants={{
-              initial: {},
-              hover: {},
-            }}
-            className="relative overflow-hidden flex items-center justify-center gap-1 pt-3 pb-3 px-8 rounded-md border border-first-accent text-first-accent text-sm z-10 group"
-          >
-            {/* Button Text and Icon */}
-            <span className="relative z-20 flex items-center gap-1 group-hover:text-white transition-colors duration-300">
-              See what we've built
+          <Link to={"/works"}>
+            <motion.span
+              initial="initial"
+              whileHover="hover"
+              variants={{
+                initial: {},
+                hover: {},
+              }}
+              className="relative overflow-hidden flex items-center justify-center gap-1 pt-3 pb-3 px-8 rounded-md border border-first-accent text-first-accent text-sm z-10 group"
+            >
+              {/* Button Text and Icon */}
+              <span className="relative z-20 flex items-center gap-1 group-hover:text-white transition-colors duration-300">
+                See what we've built
+                <motion.div variants={arrowVariants}>
+                  <ChevronRight strokeWidth={1.5} />
+                </motion.div>
+              </span>
+
+              {/* Background Slide on Hover */}
+              <motion.div
+                variants={{
+                  initial: { x: "-100%" },
+                  hover: { x: "0%" },
+                }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="absolute inset-0 bg-first-accent z-0"
+              />
+            </motion.span>
+          </Link>
+
+          <Link to={"/contact"}>
+            {/* Second Button */}
+            <motion.span
+              initial="initial"
+              whileHover="hover"
+              className="flex items-center justify-center gap-1 pt-3 pb-3 px-8 rounded-md border border-transparent bg-first-accent text-white text-center transition hover:bg-second-accent text-sm"
+            >
+              Launch your project
               <motion.div variants={arrowVariants}>
                 <ChevronRight strokeWidth={1.5} />
               </motion.div>
-            </span>
-
-            {/* Background Slide on Hover */}
-            <motion.div
-              variants={{
-                initial: { x: "-100%" },
-                hover: { x: "0%" },
-              }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="absolute inset-0 bg-first-accent z-0"
-            />
-          </motion.a>
-
-          {/* Second Button */}
-          <motion.a
-            href="#contact"
-            initial="initial"
-            whileHover="hover"
-            className="flex items-center justify-center gap-1 pt-3 pb-3 px-8 rounded-md border border-transparent bg-first-accent text-white text-center transition hover:bg-second-accent text-sm"
-          >
-            Launch your project
-            <motion.div variants={arrowVariants}>
-              <ChevronRight strokeWidth={1.5} />
-            </motion.div>
-          </motion.a>
+            </motion.span>
+          </Link>
         </motion.div>
 
         <motion.div className="w-full" variants={itemVariants}>

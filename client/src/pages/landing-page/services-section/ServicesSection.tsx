@@ -2,9 +2,10 @@ import { motion } from "framer-motion";
 import SectionHeader from "@/components/SectionHeader";
 import ServicesGrid from "./ServicesGrid";
 import { headerVariants, itemVariants } from "./variants";
-import { services } from "./servicesData";
+import { services } from "../../../data/servicesData";
 import Button from "@/components/Button";
 import { ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const arrowVariants = {
   initial: { x: 0 },
@@ -52,12 +53,14 @@ const ServicesSection: React.FC = () => {
               whileHover="hover"
               className="inline-block"
             >
-              <Button className="py-3 px-6 sm:py-4 sm:px-10 md:px-14 text-sm sm:text-base md:text-lg flex items-center justify-center gap-2">
-                Ready to build your dream website? Let's get started!
-                <motion.div variants={arrowVariants}>
-                  <ChevronRight strokeWidth={1.5} />
-                </motion.div>
-              </Button>
+              <Link to={"/contact"}>
+                <Button className="py-3 px-6 sm:py-4 sm:px-10 md:px-14 text-sm sm:text-base md:text-lg flex items-center justify-center gap-2">
+                  Ready to build your dream website? Let's get started!
+                  <motion.div variants={arrowVariants}>
+                    <ChevronRight strokeWidth={1.5} />
+                  </motion.div>
+                </Button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
