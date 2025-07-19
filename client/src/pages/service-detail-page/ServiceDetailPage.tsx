@@ -268,7 +268,7 @@ export default function ServiceDetailPage() {
             </motion.div>
           </div>
         </motion.section>
-        <motion.section className="flex mx-auto max-w-screen-xl">
+        <motion.section className="flex flex-col mx-auto max-w-screen-xl">
           <motion.div className="flex gap-4 text-white flex-col">
             <motion.span>Featured work</motion.span>
             <motion.p>

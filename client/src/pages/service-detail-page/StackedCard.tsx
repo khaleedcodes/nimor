@@ -44,6 +44,7 @@ export const StackedCard: React.FC<StackedCardProps> = ({
     event: MouseEvent | TouchEvent | PointerEvent,
     info: PanInfo
   ) => {
+    console.log(event);
     setIsDragging(false);
 
     const threshold = 80;
@@ -66,9 +67,9 @@ export const StackedCard: React.FC<StackedCardProps> = ({
     <LazyMotion features={domAnimation}>
       <div
         ref={containerRef}
-        className="w-full min-h-[600px] max-w-4xl mx-auto flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-950 to-gray-900 rounded-2xl"
+        className="w-full min-h-[750px] mx-auto flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-950 to-gray-900 rounded-2xl"
       >
-        <div className="relative w-full h-[600px] flex items-center justify-center perspective-1000">
+        <div className="relative w-full h-[750px] flex items-center justify-center perspective-1000">
           {Children.map(children, (child, index) => (
             <Card
               key={index}

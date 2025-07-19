@@ -1,0 +1,5 @@
+
+> nimor@0.0.0 build
+> tsc && vite build
+
+src/pages/service-detail-page/StackedCard.tsx(44,5): error TS6133: 'event' is declared but its value is never read.
