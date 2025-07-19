@@ -5,6 +5,10 @@ import ErrorPage from "./pages/error-page/ErrorPage";
 import FormSubmittedPage from "./pages/form-submitted-page/FormSubmittedPage";
 import Logo from "./pages/landing-page/Logo";
 import WorkPage from "./pages/work-page/WorkPage";
+import CaseStudyPage from "./pages/work-page/CaseStudyPage";
+import AboutPage from "./pages/about-page/AboutPage";
+import ContactPage from "./pages/contact-page/ContactPage";
+import ServiceDetailPage from "./pages/service-detail-page/ServiceDetailPage";
 
 const router = createBrowserRouter([
   {
@@ -17,10 +21,42 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/work",
+    path: "/works",
     element: (
       <PageLayout>
         <WorkPage />
+      </PageLayout>
+    ),
+  },
+  {
+    path: "/about",
+    element: (
+      <PageLayout>
+        <AboutPage />
+      </PageLayout>
+    ),
+  },
+  {
+    path: "/contact",
+    element: (
+      <PageLayout>
+        <ContactPage />
+      </PageLayout>
+    ),
+  },
+  {
+    path: "/services/:id",
+    element: (
+      <PageLayout>
+        <ServiceDetailPage />
+      </PageLayout>
+    ),
+  },
+  {
+    path: "/works/:id",
+    element: (
+      <PageLayout>
+        <CaseStudyPage />
       </PageLayout>
     ),
   },
